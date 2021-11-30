@@ -1,0 +1,234 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200&display=swap");
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    text-decoration: none;
+    z-index: 0;
+}
+*:focus {
+    outline: none;
+}
+html::-webkit-scrollbar {
+    width: 6px;
+}
+html::-webkit-scrollbar-track {
+    background-color: #0033ab;
+}
+html::-webkit-scrollbar-thumb {
+    background-color: #2659d1;
+}
+body {
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    background-color: #eae9f3;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    color: #1d1d1d;
+}
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+main {
+    flex-grow: 1;
+}
+ul {
+    list-style: none;
+}
+img {
+    max-width: 100%;
+}
+.heading {
+    font-size: 42.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #fff;
+}
+h2 {
+    font-size: 17.5px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #1d1d1d;
+}
+.button,
+.link {
+    border: none;
+    background-color: #0033ab;
+    text-decoration: none;
+    font-weight: 600;
+    display: flex;
+    height: 50px;
+    align-items: center;
+    padding: 0px 16px;
+    border-radius: 15px;
+    color: #fff;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 17.5px;
+}
+.button--big,
+.link--big {
+    height: 60px;
+}
+.button--small,
+.link--small {
+    height: 35px;
+    border-radius: 10px;
+}
+/* Clears the ‘X’ from Internet Explorer */
+input[type="search"]::-ms-clear {
+    display: none;
+    visibility: hidden;
+}
+input[type="search"]::-ms-reveal {
+    display: none;
+    visibility: hidden;
+}
+/* Clears the ‘X’ from Chrome */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+    display: none;
+    visibility: hidden;
+}
+.container {
+    width: 100%;
+    max-width: 1300px;
+    padding-left: 70px;
+    padding-right: 70px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+.view-more {
+    min-width: max-content;
+    padding-left: 30px;
+    font-weight: 300;
+    font-size: 10px;
+    position: relative;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    left: 0px;
+    transition: 0.3s;
+}
+.view-more__icon {
+    display: flex;
+    height: 25px;
+    width: 25px;
+    border-radius: 8px;
+    background-color: #00b052;
+    justify-content: center;
+    align-items: center;
+    padding-left: 1px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    transition: 0.3s;
+}
+/*! vitrin section start */
+.vitrin {
+    display: flex;
+    min-height: 595px;
+    align-items: center;
+    position: relative;
+    color: #fff;
+}
+.vitrin__img {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.vitrin__title {
+    text-transform: uppercase;
+    font-size: 42.5px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    max-width: 625px;
+}
+.vitrin__text {
+    max-width: 625px;
+    font-size: 22px;
+    font-weight: 300;
+    margin-bottom: 25px;
+}
+.vitrin__text--home {
+    padding-left: 30px;
+}
+.vitrin__link-wrap,
+.button-wrap {
+    max-width: 625px;
+}
+.vitrin__button,
+.vitrin__link {
+    max-width: 330px;
+    display: flex;
+    justify-content: center;
+    min-height: 60px;
+    margin-left: auto;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.vitrin__button:hover,
+.vitrin__link:hover {
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 15%);
+}
+/*! vitrin section end */
+/*! values list start */
+.values-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.values-list__title {
+    min-width: max-content;
+    width: max-content;
+    font-size: 17.5px;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: #0033ab;
+    margin-bottom: 5px;
+}
+.values-list__text {
+    max-width: 135px;
+    color: #8f8f8f;
+}
+/*! values list end */
+/*! adaptive styles start */
+@media screen and (max-width: 1399px) {
+}
+@media screen and (max-width: 1199px) {
+    .container {
+        display: none !important;
+    }
+}
+@media screen and (max-width: 991px) {
+}
+@media screen and (max-width: 767px) {
+}
+@media screen and (max-width: 575px) {
+}
+/*! adaptive styles end */
