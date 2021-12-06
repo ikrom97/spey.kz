@@ -12,7 +12,7 @@
                     {{__('Our mission is to contribute to improving the health and well-being of people.')}}
                 </p>
                 <div class="vitrin__link-wrap">
-                    <a class="button vitrin__link" href="#">{{__('Cooperate with us')}}</a>
+                    <a class="button vitrin__link" href="#">{{__('Learn more')}}</a>
                 </div>
             </div>
         </section>

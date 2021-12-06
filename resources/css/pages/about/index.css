@@ -1,0 +1,387 @@
+/** our histories section start */
+.our-history__title {
+    padding-top: 80px;
+    padding-bottom: 30px;
+}
+.histories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 35px;
+}
+.histories__item {
+    display: flex;
+    width: calc((100% - 70px) / 3);
+    flex-direction: column;
+    padding-left: 25px;
+    gap: 10px;
+}
+.histories__item.hidden {
+    display: none;
+}
+.histories__title {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-left: 40px;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    background-color: #fff;
+    border-radius: 15px;
+    font-weight: 400;
+    text-transform: uppercase;
+    min-height: 80px;
+    max-height: 80px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.histories__item:hover .histories__title {
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 15%);
+}
+.histories__year {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 50px;
+    border-radius: 15px;
+    background-color: #2659d1;
+    color: #fff;
+    min-width: 50px;
+    font-weight: 800;
+    position: absolute;
+    top: calc(50% - 25px);
+    left: -25px;
+}
+.histories__inner {
+    font-size: 10px;
+    font-weight: 300;
+    color: #8f8f8f;
+    display: flex;
+    flex-direction: column;
+}
+.histories__text {
+    height: 0px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+.histories__item.show .histories__text {
+    height: max-content;
+}
+.histories__button {
+    border: none;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    max-width: max-content;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    transition: 0.3s;
+}
+.histories__item.show .histories__button {
+    height: 0px;
+}
+.our-history__view-all-btn {
+    border: none;
+    background-color: transparent;
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+    margin-bottom: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    cursor: pointer;
+}
+.our-history__view-all-text {
+    text-align: end;
+    color: #8f8f8f;
+}
+.our-history__view-all-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 50px;
+    min-width: 50px;
+    background-color: #00b052;
+    border-radius: 15px;
+    transition: 0.3s;
+}
+.our-history__view-all-btn:hover .our-history__view-all-icon {
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 15%);
+}
+.our-history__view-all-icon svg {
+    transform: rotate(-90deg);
+    transition: 0.3s;
+}
+.our-history__view-all-btn.show svg {
+    transform: rotate(-180deg);
+}
+/** our histories section end */
+/** present time section start */
+.present-time {
+    background-color: #2659d1;
+    color: #fff;
+    padding: 60px 0px;
+}
+.present-time__title {
+    color: #fff;
+    margin-bottom: 30px;
+}
+.present-time__notation {
+    text-transform: uppercase;
+    font-size: 17.5px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    display: block;
+}
+/** present time section end */
+/** company in numbers section start */
+.company-numbers__title {
+    padding-top: 80px;
+    padding-bottom: 30px;
+}
+.company-numbers-item {
+    padding-left: 50px;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 15px;
+    margin-left: 33px;
+    padding-top: 40px;
+    padding-right: 30px;
+    padding-bottom: 10px;
+    height: 185px;
+    max-height: 185px;
+    width: calc(100% - 33px);
+}
+.company-numbers-value {
+    top: 15px;
+    background-color: #2659d1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    height: 66px;
+    width: 66px;
+    color: #fff;
+    font-weight: 800;
+    position: absolute;
+    left: 0px;
+}
+.company-numbers-title {
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+.company-numbers-text {
+    font-size: 12px;
+    color: #8f8f8f;
+}
+.company-carousel-wrap {
+    position: relative;
+}
+.company-carousel .owl-dots {
+    display: none;
+}
+.company-carousel .owl-nav {
+    height: 0px;
+}
+.owl-carousel.company-carousel .owl-nav button.owl-prev,
+.owl-carousel.company-carousel .owl-nav button.owl-next,
+.company-carousel__prev-btn,
+.company-carousel__next-btn {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    color: transparent;
+    border-radius: 8px;
+    height: 25px;
+    width: 25px;
+    top: calc(50% - 12.5px);
+    cursor: pointer;
+    transition: 0.3s;
+}
+.owl-carousel.company-carousel .owl-nav button.owl-prev {
+    left: -45px;
+}
+.owl-carousel.company-carousel .owl-nav button.owl-next {
+    right: -45px;
+}
+.owl-carousel.company-carousel .owl-nav button.owl-prev:hover,
+.owl-carousel.company-carousel .owl-nav button.owl-next:hover {
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 15%);
+}
+.company-carousel__prev-btn,
+.company-carousel__next-btn {
+    background-color: #00b052;
+}
+.company-carousel__prev-btn {
+    left: -45px;
+    transform: rotate(180deg);
+}
+.company-carousel__next-btn {
+    right: -45px;
+}
+
+.mission-vision {
+    margin-top: 80px;
+    display: flex;
+    gap: 10px;
+}
+.mission-vision-item {
+    color: #fff;
+    background-color: #2659d1;
+    border-radius: 15px;
+    min-height: 150px;
+    width: calc(50% - 5px);
+}
+.mission-vision-item:last-child {
+    background-color: #2ec7d6;
+}
+.mission-vision-title {
+    max-width: 265px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 45px;
+    text-transform: uppercase;
+    font-size: 17.5px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+.mission-vision-text {
+    max-width: 265px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/** company in numbers section end */
+.about-page-values {
+    padding-top: 80px;
+}
+/** rdp-areas section start */
+.rdp-areas__heading {
+    padding-top: 80px;
+    padding-bottom: 30px;
+}
+.rdp-areas {
+    color: #8f8f8f;
+}
+.rdp-areas-carousel__wrap {
+    position: relative;
+    margin-bottom: 30px;
+}
+.rdp-areas-carousel__img {
+    border-radius: 15px;
+}
+.rdp-areas-carousel .owl-dots {
+    display: none;
+}
+.rdp-areas-carousel .owl-nav {
+    height: 0px;
+}
+.owl-carousel.rdp-areas-carousel .owl-nav button.owl-prev,
+.owl-carousel.rdp-areas-carousel .owl-nav button.owl-next,
+.rdp-areas-carousel__prev-btn,
+.rdp-areas-carousel__next-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25px;
+    width: 25px;
+    border-radius: 8px;
+    position: absolute;
+    top: calc(50% - 12.5px);
+    color: transparent;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.owl-carousel.rdp-areas-carousel .owl-nav button.owl-prev,
+.rdp-areas-carousel__prev-btn {
+    left: -45px;
+}
+.owl-carousel.rdp-areas-carousel .owl-nav button.owl-next,
+.rdp-areas-carousel__next-btn {
+    right: -45px;
+}
+.owl-carousel.rdp-areas-carousel .owl-nav button.owl-prev:hover,
+.owl-carousel.rdp-areas-carousel .owl-nav button.owl-next:hover {
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 15%);
+}
+.rdp-areas-carousel__prev-btn,
+.rdp-areas-carousel__next-btn {
+    background-color: #00b052;
+}
+.rdp-areas-carousel__prev-btn {
+    transform: rotate(180deg);
+    left: -45px;
+}
+.rdp-areas-carousel__next-btn {
+    right: -45px;
+}
+.rdp-areas__title {
+    font-size: 17.5px;
+    text-transform: uppercase;
+    color: #0033ab;
+    font-weight: 600;
+}
+/** rdp-areas section end */
+/** geography-presence section start */
+.geography-presence {
+    padding-bottom: 80px;
+}
+.geography-presence__title {
+    padding-top: 80px;
+    padding-bottom: 30px;
+}
+.map-wrap {
+    height: 540px;
+    overflow: hidden;
+}
+.map-wrap iframe {
+    width: 100%;
+    height: 100%;
+}
+.geography-countries {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    gap: 5px 10px;
+}
+.countries-item {
+    display: flex;
+    flex-grow: 1;
+    max-width: 280px;
+    min-width: max-content;
+}
+.countries-link {
+    display: flex;
+    min-width: max-content;
+    height: 35px;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #8f8f8f;
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100%;
+}
+.countries-link:hover {
+    border-color: #0033ab;
+    color: #0033ab;
+}
+.countries-link.current {
+    border-color: #0033ab;
+    background-color: #0033ab;
+    color: #fff;
+}
+.countries-link.current:hover {
+    color: #fff;
+}
+/** geography-presence section end */
