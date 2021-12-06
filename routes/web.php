@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\ProductsController;
@@ -29,3 +31,15 @@ Route::get('/contacts', [PagesController::class, 'contacts'])->name('contacts');
 // Products' routes
 Route::post('/products/search', [ProductsController::class, 'search'])->name('products.search');
 Route::get('/products/download/instructions', [ProductsController::class, 'downloadInstructions'])->name('products.download.instructions');
+// Auth routes
+Route::post('/auth/check', [AuthController::class, 'check'])->name('auth.check');
+Route::get('/auth/logout', [AuthController::class, 'logout'])->name('auth.logout');
+
+Route::group(['middleware' => ['AuthCheck']], function () {
+    Route::get('/auth/login', [AuthController::class, 'login'])->name('auth.login');
+
+    Route::group(['middleware' => ['AdminCheck']], function () {
+        // dashboard pages
+        Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    });
+});

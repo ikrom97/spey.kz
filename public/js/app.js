@@ -109,6 +109,29 @@ if (footer) {
 
 // This entry need to be wrapped in an IIFE because it need to be isolated against other entry modules.
 (() => {
+/*!************************************!*\
+  !*** ./resources/js/auth/login.js ***!
+  \************************************/
+var loginPage = document.querySelector('.login-page');
+
+if (loginPage) {
+  var visibilityBtn = loginPage.querySelector('.login-eye-btn'),
+      passwordInput = loginPage.querySelector('#password');
+
+  visibilityBtn.onclick = function () {
+    if (visibilityBtn.classList.contains('show')) {
+      visibilityBtn.classList.remove('show');
+      passwordInput.setAttribute('type', 'password');
+    } else {
+      visibilityBtn.classList.add('show');
+      passwordInput.setAttribute('type', 'text');
+    }
+  };
+}
+})();
+
+// This entry need to be wrapped in an IIFE because it need to be isolated against other entry modules.
+(() => {
 /*!**********************************************!*\
   !*** ./resources/js/components/news-card.js ***!
   \**********************************************/

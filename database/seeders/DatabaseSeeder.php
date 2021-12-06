@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -13,6 +14,15 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        $user = new User;
+        $user->name = 'Админ';
+        $user->login = 'admin';
+        $user->role = 'admin';
+        $password = 'admin';
+
+        $user->password = bcrypt($password);
+        $user->save();
+
         $this->call([
             SitesSeeder::class,
             ProductsCategoriesSeeder::class,

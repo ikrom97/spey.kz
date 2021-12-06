@@ -14,6 +14,7 @@ const mix = require('laravel-mix');
 mix.js(['resources/js/layouts/master.js',
     'resources/js/layouts/header.js',
     'resources/js/layouts/footer.js',
+    'resources/js/auth/login.js',
     'resources/js/components/news-card.js',
     'resources/js/components/pagination.js',
     'resources/js/components/products-card.js',
@@ -23,9 +24,12 @@ mix.js(['resources/js/layouts/master.js',
     'resources/js/pages/news/index.js',
     'resources/js/pages/products/index.js',
     'resources/js/pages/products/read.js'], 'public/js/app.js')
+.js(['resources/js/dashboard/master.js',
+    'resources/js/dashboard/products/index.js'], 'public/js/dashboard.js')
     .styles(['resources/css/layouts/master.css',
         'resources/css/layouts/header.css',
         'resources/css/layouts/footer.css',
+        'resources/css/auth/login.css',
         'resources/css/components/news-card.css',
         'resources/css/components/pagination.css',
         'resources/css/components/products-card.css',
@@ -35,4 +39,6 @@ mix.js(['resources/js/layouts/master.js',
         'resources/css/pages/news/index.css',
         'resources/css/pages/products/index.css',
         'resources/css/pages/products/read.css'], 'public/css/app.css')
+    .styles(['resources/css/dashboard/master.css',
+        'resources/css/dashboard/products/index.css'], 'public/css/dashboard.css')
     .version();
