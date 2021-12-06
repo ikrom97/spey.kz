@@ -1,0 +1,19 @@
+/** all-news section start */
+.all-news {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+.all-news__title {
+    margin-bottom: 30px;
+}
+.all-news__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px 35px;
+    margin-bottom: 30px;
+}
+.all-news__item {
+    width: calc((100% - 70px) / 3);
+    display: flex;
+}
+/** all-news section end */

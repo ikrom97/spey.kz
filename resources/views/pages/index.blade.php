@@ -12,7 +12,7 @@
                     {{__('Our mission is to contribute to improving the health and well-being of people.')}}
                 </p>
                 <div class="vitrin__link-wrap">
-                    <a class="button vitrin__link" href="#">{{__('Learn more')}}</a>
+                    <a class="button vitrin__link" href="{{route('about')}}">{{__('Learn more')}}</a>
                 </div>
             </div>
         </section>
@@ -68,7 +68,7 @@
                 <ul class="news-categories">
                     @foreach ($industryNews as $newsCategory)
                         <li class="news-categories__item">
-                            <a class="news-categories__link" href="#">
+                            <a class="news-categories__link" href="{{route('news')}}?category={{$newsCategory->id}}#all-news">
                                 <h3 class="news-categories__title">{{$newsCategory->title}}</h3>
                                 <div class="news-categories__description">{{$newsCategory->description}}</div>
                                 <div class="news-categories__read">
@@ -89,7 +89,7 @@
                 <ul class="products-categories">
                     @foreach ($prodCategories as $category)
                         <li class="products-categories__item">
-                            <a class="products-categories__link" href="#">
+                            <a class="products-categories__link" href="{{route('products')}}?category={{$category->id}}#products">
                                 <div class="products-categories__icon">{!! $category->icon !!}</div>
                                 <span class="products-categories__title">{{$category->title}}</span>
                                 <div class="view-more">

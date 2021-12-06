@@ -6,10 +6,10 @@
                     {{__('About us')}}
                 </li>
                 <li class="footer-navigation__item">
-                    <a class="footer-navigation__link" href="#">{{__('History')}}</a>
+                    <a class="footer-navigation__link" href="{{route('about')}}#history">{{__('History')}}</a>
                 </li>
                 <li class="footer-navigation__item">
-                    <a class="footer-navigation__link" href="#">{{__('Geography of presence')}}</a>
+                    <a class="footer-navigation__link" href="{{route('about')}}#geography">{{__('Geography of presence')}}</a>
                 </li>
             </ul>
             <ul class="footer-navigation">
@@ -18,7 +18,7 @@
                 </li>
                 @foreach ($footerProdCategories as $category)
                     <li class="footer-navigation__item">
-                        <a class="footer-navigation__link" href="#">{{$category->title}}</a>
+                        <a class="footer-navigation__link" data-type="footer-category" href="{{route('products')}}?category={{$category->id}}#products">{{$category->title}}</a>
                     </li>
                 @endforeach
             </ul>
@@ -28,7 +28,7 @@
                 </li>
                 @foreach ($footerNewsCategories as $category)
                     <li class="footer-navigation__item">
-                        <a class="footer-navigation__link" href="#">{{$category->title}}</a>
+                        <a class="footer-navigation__link" href="{{route('news')}}?category={{$category->id}}#all-news">{{$category->title}}</a>
                     </li>
                 @endforeach
             </ul>

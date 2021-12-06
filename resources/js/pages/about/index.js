@@ -43,7 +43,8 @@ if (aboutPage) {
         if (e.target.dataset.family != 'history') {
             historyItems.forEach((item, index) => {
                 if (index > 8) {
-                    item.classList.toggle('hidden');
+                    item.classList.add('hidden');
+                    viewAllBtn.classList.remove('show');
                 }
             });
         }

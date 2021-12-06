@@ -1,0 +1,160 @@
+/** cooperation section start */
+.cooperation {
+    padding-top: 80px;
+}
+.cooperation-text {
+    color: #8f8f8f;
+}
+.cooperation__title {
+    margin-bottom: 30px;
+}
+/** cooperation section end */
+/** geography presence start */
+.geography-presence-title {
+    padding-top: 80px;
+}
+.geography-info {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0px;
+    gap: 20px;
+}
+.geography-info__item {
+    height: 80px;
+    max-height: 80px;
+    margin-left: 25px;
+    position: relative;
+    border-radius: 15px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    padding-left: 35px;
+    padding-right: 15px;
+    gap: 10px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    flex-grow: 1;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 15%);
+}
+.geography-info__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    background-color: #2659d1;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: calc(50% - 25px);
+    left: -25px;
+}
+.geography-info__content {
+    max-width: 230px;
+    flex-grow: 1;
+    min-width: max-content;
+}
+.geography-info__location-icon {
+    display: flex;
+    min-width: 25px;
+    width: 25px;
+    height: 25px;
+    border-radius: 8px;
+    background-color: #00b052;
+    justify-content: center;
+    align-items: center;
+}
+.geography-info__title {
+    font-size: 10px;
+    color: #8f8f8f;
+}
+/** geography presence end */
+/** pharmacovigilanc section start */
+.pharmacovigilanc__container {
+   width: 585px;
+   padding-left: 0px;
+   padding-right: 0px;
+}
+.pharmacovigilanc__title {
+   padding-top: 80px;
+   padding-bottom: 30px;
+}
+.pharmacovigilanc__text {
+   color: #8f8f8f;
+}
+.pharmacovigilanc__text b {
+   color: #1d1d1d;
+   font-weight: 400;
+}
+/** pharmacovigilanc section end */
+/** contact-us section start */
+.contact-us {
+   padding-bottom: 80px;
+}
+.contact-us__container {
+   width: 585px;
+   padding-left: 0px;
+   padding-right: 0px;
+}
+.contact-us__title {
+    padding-top: 80px;
+    padding-bottom: 30px;
+}
+.contact-form {
+   border-radius: 15px;
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   background-color: #fff;
+   width: calc(100% - 33px);
+   margin-left: 33px;
+   padding: 30px 25px 30px 75px;
+   gap: 10px;
+}
+.contact-form__icon {
+   position: absolute;
+   top: 30px;
+   left: -33px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border-radius: 15px;
+   background-color: #2659d1;
+   height: 66px;
+   width: 66px;
+}
+.contact-form__input {
+   border-radius: 15px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 8px 15px;
+   height: 50px;
+   border: 1px solid #707070;
+}
+.contact-form__input--medicine {
+   border-color: #2ec7d6;
+   background-color: #2ec7d6;
+   color: #fff;
+   font-weight: 600;
+}
+.contact-form__input--medicine::placeholder {
+   color: inherit;
+}
+.contact-form__textarea {
+   border: 1px solid #707070;
+   border-radius: 15px;
+   padding: 15px;
+   min-height: 130px;
+   margin: 10px 0px 15px 0px;
+}
+.contact-form__submit-btn {
+   width: 200px;
+   display: flex;
+   justify-content: center;
+   margin-left: auto;
+   transition: 0.3s;
+}
+.contact-form__submit-btn:hover {
+   box-shadow: 0px 6px 12px rgba(0, 0, 0, 15%);
+}
+/** contact-us section start */

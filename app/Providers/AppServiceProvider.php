@@ -36,6 +36,7 @@ class AppServiceProvider extends ServiceProvider
 
         view()->composer('*', function ($view) {
             $locale = App::currentLocale();
+            $title = $locale . '_title';
 
             $headerSites = Site::select(
                 'id',
@@ -69,6 +70,7 @@ class AppServiceProvider extends ServiceProvider
                 ->with('headerSites', $headerSites)
                 ->with('footerProdCategories', $footerProdCategories)
                 ->with('footerNewsCategories', $footerNewsCategories)
+                ->with('title', $title)
                 ->with('currentSite', $currentSite);
         });
     }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\History;
+use App\Models\News;
 use App\Models\NewsCategory;
 use App\Models\Product;
 use App\Models\ProductsCategory;
@@ -59,7 +60,7 @@ class PagesController extends Controller
     {
         $locale = App::currentLocale();
         // get company histories
-        $histories = History::select( 
+        $histories = History::select(
             'id',
             $locale . '_title as title',
             $locale . '_text as text',
@@ -85,24 +86,149 @@ class PagesController extends Controller
 
         return view('pages.about.index', compact('histories', 'speySites', 'siteMap', 'siteID'));
     }
-    public function products()
+    public function products(Request $request)
     {
-        return view('pages.products.index');
+        $locale = App::currentLocale();
+        // Get product categories' titles
+        $productsCategories = ProductsCategory::select(
+            'id',
+            $locale . '_title as title',
+            'trashed',
+            'view_rate',
+        )->where('trashed', false)->orderBy('view_rate', 'desc')->get();
+
+        if ($request->category) {
+            // Get products by category
+            $products = Product::select(
+                'id',
+                'category_id',
+                $locale . '_title as title',
+                'img',
+                'view_rate',
+                'trashed',
+            )->where('trashed', false)->where('category_id', $request->category)->orderBy('view_rate', 'desc')->paginate(6);
+
+            $currentCategory = ProductsCategory::find($request->category);
+
+            return view('pages.products.index', compact('productsCategories', 'products', 'currentCategory'));
+        } else {
+            // Get all products
+            $products = Product::select(
+                'id',
+                'category_id',
+                $locale . '_title as title',
+                'img',
+                'view_rate',
+                'trashed',
+            )->where('trashed', false)->orderBy('view_rate', 'desc')->paginate(6);
+
+            return view('pages.products.index', compact('productsCategories', 'products'));
+        }
     }
-    public function productsRead()
+    public function productsRead($id)
     {
-        return view('pages.products.read');
+        $locale = App::currentLocale();
+        // Get product
+        $product = Product::select(
+            'id',
+            'category_id',
+            $locale . '_title as title',
+            $locale . '_instruction as instruction',
+            $locale . '_composition as composition',
+            $locale . '_indications as indications',
+            $locale . '_description as description',
+            'view_rate',
+            'recipe',
+            'img',
+        )->find($id);
+        // increase view rate
+        $product->view_rate++;
+        $product->save();
+        $productCategory = ProductsCategory::select(
+            'id',
+            'view_rate',
+        )->find($product->category_id);
+        $productCategory->view_rate++;
+        $productCategory->save();
+        // Get products' category's titles
+        $productsCategories = ProductsCategory::select(
+            'id',
+            $locale . '_title as title',
+            'trashed',
+        )->where('trashed', false)->get();
+        // Get similar products
+        $similarProducts = Product::select(
+            'id',
+            'category_id',
+            $locale . '_title as title',
+            'img',
+            'view_rate',
+            'trashed',
+        )->where('trashed', false)->where('category_id', $product->category_id)->orderBy('view_rate', 'desc')->get();
+
+        return view('pages.products.read', compact('product', 'productsCategories', 'similarProducts'));
     }
-    public function news()
+    public function news(Request $request)
     {
-        return view('pages.news.index');
+        $locale = App::currentLocale();
+
+        $allNews = News::select(
+            'id',
+            'category_id',
+            $locale . '_title as title',
+            'view_rate',
+            'img',
+            'trashed',
+        )->where('trashed', false)->orderBy('view_rate', 'desc');
+
+        $newsCategories = NewsCategory::select(
+            'id',
+            $locale . '_title as title',
+            'view_rate',
+            'trashed',
+        )->where('trashed', false)->orderBy('view_rate', 'desc')->get();
+
+        if ($request->category) {
+            $allNews = $allNews->where('category_id', $request->category)->paginate(9)->fragment('all-news');
+            $currentCategory = NewsCategory::select(
+                'id',
+                $locale . '_title as title',
+            )->find($request->category);
+            return view('pages.news.index', compact('allNews', 'newsCategories', 'currentCategory'));
+        } else {
+            $allNews = $allNews->paginate(9)->fragment('all-news');
+            return view('pages.news.index', compact('allNews', 'newsCategories'));
+        }
     }
     public function newsRead($id)
     {
         return view('pages.news.read');
     }
-    public function contacts()
+    public function contacts(Request $request)
     {
-        return view('pages.contacts.index');
+        $locale = App::currentLocale();
+        // Get spey sites
+        $speySites = Site::select(
+            'id',
+            $locale . '_location as location',
+            $locale . '_title as title',
+            'trashed',
+        )->where('trashed', false)->get();
+        // Get map
+        $defaultID = 3;
+        $siteID = $request->site;
+        if (!$siteID) {
+            $siteID = $defaultID;
+        }
+        $activeSite = Site::select(
+            'id',
+            $locale . '_title as title',
+            $locale . '_location as location',
+            $locale . '_map as map',
+            $locale . '_address as address',
+            'email',
+        )->find($siteID);
+
+        return view('pages.contacts.index', compact('speySites', 'activeSite'));
     }
 }

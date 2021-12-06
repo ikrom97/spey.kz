@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\ProductsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,3 +26,6 @@ Route::get('/products/{id}', [PagesController::class, 'productsRead'])->name('pr
 Route::get('/news', [PagesController::class, 'news'])->name('news');
 Route::get('/news/read/{id}', [PagesController::class, 'newsRead'])->name('news.read');
 Route::get('/contacts', [PagesController::class, 'contacts'])->name('contacts');
+// Products' routes
+Route::post('/products/search', [ProductsController::class, 'search'])->name('products.search');
+Route::get('/products/download/instructions', [ProductsController::class, 'downloadInstructions'])->name('products.download.instructions');

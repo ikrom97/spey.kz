@@ -152,6 +152,7 @@ input[type="search"]::-webkit-search-results-decoration {
     align-items: center;
     position: relative;
     color: #fff;
+    z-index: 1;
 }
 .vitrin__img {
     position: absolute;
@@ -183,7 +184,7 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 .vitrin__button,
 .vitrin__link {
-    max-width: 330px;
+    width: 330px;
     display: flex;
     justify-content: center;
     min-height: 60px;
@@ -196,6 +197,77 @@ input[type="search"]::-webkit-search-results-decoration {
 .vitrin__link:hover {
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 15%);
 }
+/** vitrin dropdown start */
+.vitrin-dropdown {
+    width: 330px;
+    margin-left: auto;
+    position: relative;
+}
+.vitrin-dropdown__button {
+    width: 100%;
+    justify-content: center;
+    z-index: 3;
+    position: relative;
+    cursor: pointer;
+    height: 60px;
+    transition: 0.3s;
+}
+.vitrin-dropdown__button:hover {
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 15%);
+}
+.vitrin-dropdown__content {
+    position: absolute;
+    top: 50%;
+    z-index: 2;
+    left: 0px;
+    overflow: hidden;
+    width: 100%;
+    max-height: 0px;
+    transition: 0.3s;
+}
+.vitrin-dropdown.show .vitrin-dropdown__content {
+    max-height: 100vh;
+}
+.vitrin-dropdown__list {
+    display: flex;
+    flex-direction: column;
+    padding-top: 30px;
+    padding-bottom: 6px;
+    background-color: #2659d1;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    transform: translateY(-100%);
+    max-height: 220px;
+    overflow-y: scroll;
+    transition: 0.3s;
+}
+.vitrin-dropdown__list::-webkit-scrollbar {
+    width: 0px;
+}
+.vitrin-dropdown__list::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+.vitrin-dropdown__list::-webkit-scrollbar-thumb {
+    background-color: transparent;
+}
+.vitrin-dropdown.show .vitrin-dropdown__list {
+    transform: translateY(0%);
+}
+.vitrin-dropdown__item {
+    display: flex;
+}
+.vitrin-dropdown__link {
+    display: flex;
+    width: 100%;
+    height: 36px;
+    align-items: center;
+    text-transform: uppercase;
+    justify-content: center;
+}
+.vitrin-dropdown__link:hover {
+    font-weight: 600;
+}
+/** vitrin dropdown end */
 /*! vitrin section end */
 /*! values list start */
 .values-list {
@@ -217,6 +289,85 @@ input[type="search"]::-webkit-search-results-decoration {
     color: #8f8f8f;
 }
 /*! values list end */
+/*! breadcrumbs start */
+.breadcrumbs {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-size: 13px;
+    color: #8f8f8f;
+    line-height: 1;
+    padding-top: 17px;
+    padding-bottom: 20px;
+}
+.breadcrumbs-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.breadcrumbs-item svg {
+    color: #0033ab;
+}
+.breadcrumbs-link:hover {
+    color: #ee3643;
+}
+.breadcrumbs-link.current {
+    color: var(--primary-color);
+    cursor: context-menu;
+}
+/*! breadcrumbs end */
+/*! geography-presence section start */
+.geography-presence__title {
+    padding-top: 80px;
+    padding-bottom: 30px;
+}
+.map-wrap {
+    height: 540px;
+    overflow: hidden;
+}
+.map-wrap iframe {
+    width: 100%;
+    height: 100%;
+}
+.geography-countries {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    gap: 5px 10px;
+}
+.countries-item {
+    display: flex;
+    flex-grow: 1;
+    max-width: 280px;
+    min-width: max-content;
+}
+.countries-link {
+    display: flex;
+    min-width: max-content;
+    height: 35px;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #8f8f8f;
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100%;
+}
+.countries-link:hover {
+    border-color: #0033ab;
+    color: #0033ab;
+}
+.countries-link.current {
+    border-color: #0033ab;
+    background-color: #0033ab;
+    color: #fff;
+}
+.countries-link.current:hover {
+    color: #fff;
+}
+/*! geography-presence section end */
+
 /*! adaptive styles start */
 @media screen and (max-width: 1399px) {
 }

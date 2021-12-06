@@ -12,11 +12,11 @@
                     {{__('Our mission is to contribute to improving the health and well-being of people.')}}
                 </p>
                 <div class="vitrin__link-wrap">
-                    <a class="button vitrin__link" href="#">{{__('Cooperate with us')}}</a>
+                    <a class="button vitrin__link" href="{{route('contacts')}}#cooperation">{{__('Cooperate with us')}}</a>
                 </div>
             </div>
         </section>
-        <section class="our-history">
+        <section class="our-history" id="history">
             <div class="container">
                 <h2 class="our-history__title">{{__('Our history')}}</h2>
                 <ul class="histories" data-family="history">
@@ -192,7 +192,7 @@
                 <p>{{__('These production sites are serviced by qualified employees - they are responsible for the production of really effective dosage forms. The production sites of our partners are constantly being improved, modern technological processes are being introduced on them. Quality audits are also regularly conducted, in which representatives of partner companies from different countries and state regulatory authorities take part.')}}</p>
             </div>
         </section>
-        <section class="geography-presence">
+        <section class="geography-presence" id="geography">
             <div class="container">
                 <h2 class="geography-presence__title" id="geography-presence">{{__('Geography of presence')}}</h2>
             </div>
