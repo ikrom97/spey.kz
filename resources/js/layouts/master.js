@@ -10,10 +10,11 @@ $("#top").click(function () {
     return false;
 });
 //! vitrin dropdown start
-const vitrinDropdown = document.querySelector('.vitrin-dropdown');
+const vitrinDropdown = document.querySelector('.vitrin-dropdown'),
+    body = document.querySelector('body'),
+    modals = body.querySelectorAll('.modal');
 if (vitrinDropdown) {
-    const dropdownBtn = vitrinDropdown.querySelector('.vitrin-dropdown__button'),
-        body = document.querySelector('body');
+    const dropdownBtn = vitrinDropdown.querySelector('.vitrin-dropdown__button');
 
     dropdownBtn.onclick = () => {
         vitrinDropdown.classList.toggle('show');
@@ -26,3 +27,10 @@ if (vitrinDropdown) {
     });
 }
 //! vitrin dropdown end
+//! hide modals start
+body.addEventListener('click', e => {
+    modals.forEach(modal => {
+        modal.classList.add('hidden');
+    });
+});
+//! hide modals end

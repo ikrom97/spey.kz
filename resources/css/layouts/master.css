@@ -145,6 +145,40 @@ input[type="search"]::-webkit-search-results-decoration {
     left: 0px;
     transition: 0.3s;
 }
+/*! modals start */
+.modal {
+   position: fixed;
+   top: 0px;
+   left: 0px;
+   padding: 20px;
+   z-index: 9;
+   transform: translateY(0%);
+   width: 100%;
+   color: #fff;
+   text-align: center;
+   transition: 0.3s;
+}
+.modal--fail {
+   background-color: #ff7070;
+}
+.modal--success {
+   background-color: #72b54e;
+}
+.modal.hidden {
+   z-index: -1;
+   transform: translateY(-100%);
+}
+.form-errors {
+   list-style: initial;
+   width: max-content;
+   margin-left: auto;
+   margin-right: auto;
+   display: flex;
+   flex-direction: column;
+   text-align: initial;
+   gap: 5px;
+}
+/*! modals end */
 /*! vitrin section start */
 .vitrin {
     display: flex;

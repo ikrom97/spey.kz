@@ -19,11 +19,12 @@ $("#top").click(function () {
   return false;
 }); //! vitrin dropdown start
 
-var vitrinDropdown = document.querySelector('.vitrin-dropdown');
+var vitrinDropdown = document.querySelector('.vitrin-dropdown'),
+    body = document.querySelector('body'),
+    modals = body.querySelectorAll('.modal');
 
 if (vitrinDropdown) {
-  var dropdownBtn = vitrinDropdown.querySelector('.vitrin-dropdown__button'),
-      body = document.querySelector('body');
+  var dropdownBtn = vitrinDropdown.querySelector('.vitrin-dropdown__button');
 
   dropdownBtn.onclick = function () {
     vitrinDropdown.classList.toggle('show');
@@ -35,6 +36,14 @@ if (vitrinDropdown) {
     }
   });
 } //! vitrin dropdown end
+//! hide modals start
+
+
+body.addEventListener('click', function (e) {
+  modals.forEach(function (modal) {
+    modal.classList.add('hidden');
+  });
+}); //! hide modals end
 })();
 
 // This entry need to be wrapped in an IIFE because it need to be isolated against other entry modules.

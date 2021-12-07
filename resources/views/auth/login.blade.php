@@ -13,13 +13,27 @@
         <link rel="stylesheet" href="{{mix('css/app.css')}}">
     </head>
     <body>
+        
+        <div class="modal modal--fail {{session()->has('fail') ? '' : 'hidden'}}">{{session()->get('fail')}}</div>
+        <div class="modal modal--success {{session()->has('success') ? '' : 'hidden'}}">{{session()->get('success')}}</div>
+        
+        @if ($errors->any())
+            <div class="modal modal--fail">
+                <ul class="form-errors">
+                    @foreach ($errors->all() as $error)
+                        <li class="form-errors__item">{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
         <main class="login-page">
             <form class="login-form" action="{{route('auth.check')}}" method="post">
                 @csrf
                 <fieldset class="login-fieldset">
                     <legend class="login-legend">Вход</legend>
                     <label class="login-label">
-                        <input class="login-input" name="login" type="text" placeholder="Логин">
+                        <input class="login-input" name="login" type="text" placeholder="Логин" value="{{old('login')}}">
                     </label>
                     <label class="login-label">
                         <input class="login-input" id="password" name="password" type="password" placeholder="Пароль">
@@ -31,6 +45,9 @@
                 </fieldset>
                 <button class="button login-submit-btn" type="submit">Войти</button>
             </form>
+            @if (session()->has('fail'))
+                <div class="modal">{{session()->get('fail')}}</div>
+            @endif
         </main>
         <!-- JQuery 3.6  -->
         <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
