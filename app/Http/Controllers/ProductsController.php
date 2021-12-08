@@ -21,7 +21,7 @@ class ProductsController extends Controller
             'products.img',
             'products.view_rate'
         )->where('products.' . $locale . '_title', 'like', '%' . $request->keyword . '%')->orderBy('products.view_rate', 'desc');
-            
+
         switch ($request->filter) {
             case 'with-recipe':
                 if ($request->category) {
@@ -61,14 +61,17 @@ class ProductsController extends Controller
                 break;
         }
     }
-    
+
     public function downloadInstructions(Request $request)
-    { 
+    {
         $product = Product::select(
             'products.id',
             'products.' . App::currentLocale() . '_instruction as instruction',
         )->find($request->id);
 
+        if (!$product->instruction) {
+            return back();
+        }
         $file = public_path('files/' . $product->instruction);
 
         $extension = pathinfo($file, PATHINFO_EXTENSION);
@@ -78,5 +81,63 @@ class ProductsController extends Controller
         );
 
         return response()->download($file, $product->instruction, $headers);
+    }
+
+    public function create(Request $request)
+    {
+        // validation
+        $request->validate([
+            'category-id' => 'required',
+            'ru-title' => 'required',
+            'en-title' => 'required',
+            'img' => 'required|mimes:png|max:100',
+            'ru-instruction' => 'required',
+            'en-instruction' => 'required',
+            'recipe' => 'required',
+            'ru-composition' => 'required',
+            'en-composition' => 'required',
+            'ru-indications' => 'required',
+            'en-indications' => 'required',
+        ]);
+        if ($request->recipe == 'true') {
+            $request->recipe = true;
+        } else {
+            $request->recipe = false;
+        }
+        // save image file
+        $img = $request->file('img');
+        $imgName = uniqid() . '.' . $img->getClientOriginalExtension();
+        $path = public_path('img/products');
+        $img->move($path, $imgName);
+        // save instruction files
+        $ruInstruction = $request->file('ru-instruction');
+        $enInstruction = $request->file('en-instruction');
+        $ruInstructionName = uniqid() . '.' . $ruInstruction->getClientOriginalExtension();
+        $enInstructionName = uniqid() . '.' . $enInstruction->getClientOriginalExtension();
+        $path = public_path('files');
+        $ruInstruction->move($path, $ruInstructionName);
+        $enInstruction->move($path, $enInstructionName);
+        // create new product
+        $product = new Product;
+        $product->category_id = $request->input('category-id');
+        $product->en_title = $request->input('en-title');
+        $product->ru_title = $request->input('ru-title');
+        $product->en_instruction = $enInstructionName;
+        $product->ru_instruction = $ruInstructionName;
+        $product->en_composition = $request->input('en-composition');
+        $product->ru_composition = $request->input('ru-composition');
+        $product->en_indications = $request->input('en-indications');
+        $product->ru_indications = $request->input('ru-indications');
+        $product->en_description = $request->input('en-description');
+        $product->ru_description = $request->input('ru-description');
+        $product->recipe = $request->recipe;
+        $product->img = $imgName;
+        $save = $product->save();
+
+        if ($save) {
+            return back()->with('success', 'Новый продукт успешно добавлен!');
+        } else {
+            return back()->with('fail', 'Упс... Что-то пошло не так попробуйте позже!');
+        }
     }
 }

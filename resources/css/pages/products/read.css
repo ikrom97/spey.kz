@@ -10,7 +10,7 @@
 .product-info__title-wrap {
     display: flex;
     align-items: center;
-    padding: 20px 0px 30px 0px;
+    padding: 80px 0px 30px 0px;
     max-height: 131px;
     gap: 20px;
 }

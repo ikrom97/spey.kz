@@ -41,5 +41,10 @@ Route::group(['middleware' => ['AuthCheck']], function () {
     Route::group(['middleware' => ['AdminCheck']], function () {
         // dashboard pages
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+        Route::get('/dashboard/products/create', [DashboardController::class, 'productsCreate'])->name('dashboard.products.create');
+        Route::get('/dashboard/products/update/{product}', [DashboardController::class, 'productsUpdate'])->name('dashboard.products.update');
+        Route::get('/dashboard/products/categories', [DashboardController::class, 'productsCategories'])->name('dashboard.products.categories');
+        // products routes
+        Route::post('/products/create', [ProductsController::class, 'create'])->name('products.create');
     });
 });

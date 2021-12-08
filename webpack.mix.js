@@ -24,8 +24,12 @@ mix.js(['resources/js/layouts/master.js',
     'resources/js/pages/news/index.js',
     'resources/js/pages/products/index.js',
     'resources/js/pages/products/read.js'], 'public/js/app.js')
-.js(['resources/js/dashboard/master.js',
-    'resources/js/dashboard/products/index.js'], 'public/js/dashboard.js')
+    .js(['resources/js/dashboard/master.js',
+        'resources/js/components/pagination.js',
+        'resources/js/dashboard/pages/products/index.js',
+        'resources/js/dashboard/pages/products/create.js',
+        'resources/js/dashboard/pages/products/update.js',
+        'resources/js/dashboard/pages/products/categories.js'], 'public/js/dashboard.js')
     .styles(['resources/css/layouts/master.css',
         'resources/css/layouts/header.css',
         'resources/css/layouts/footer.css',
@@ -40,5 +44,9 @@ mix.js(['resources/js/layouts/master.js',
         'resources/css/pages/products/index.css',
         'resources/css/pages/products/read.css'], 'public/css/app.css')
     .styles(['resources/css/dashboard/master.css',
-        'resources/css/dashboard/products/index.css'], 'public/css/dashboard.css')
+        'resources/css/components/pagination.css',
+        'resources/css/dashboard/pages/products/index.css',
+        'resources/css/dashboard/pages/products/create.css',
+        'resources/css/dashboard/pages/products/update.css',
+        'resources/css/dashboard/pages/products/categories.css'], 'public/css/dashboard.css')
     .version();

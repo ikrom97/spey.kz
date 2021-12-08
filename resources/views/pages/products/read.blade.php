@@ -16,21 +16,6 @@
                 </div>
             </div>
         </section>
-        <div class="container">
-            <ul class="breadcrumbs book-read-page__breadcrumbs">
-                <li class="breadcrumbs-item">
-                    <a class="breadcrumbs-link" href="{{route('home')}}">{{__('Home')}}</a>
-                    <svg width="5" height="10" viewBox="0 0 5 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 10L5 5L0 0V10Z" fill="#0033ab"/></svg>
-                </li>
-                <li class="breadcrumbs-item">
-                    <a class="breadcrumbs-link" href="{{route('products')}}">{{__('Our products')}}</a>
-                    <svg width="5" height="10" viewBox="0 0 5 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 10L5 5L0 0V10Z" fill="#0033ab"/></svg>
-                </li>
-                <li class="breadcrumbs-item">
-                    <a class="breadcrumbs-link current">{{$product->title}}</a>
-                </li>
-            </ul>
-        </div>
         <section class="product-info" data-id="product-info">
             <div class="container">
                 <div class="product-info__title-wrap">
