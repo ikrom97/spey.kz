@@ -98,6 +98,8 @@ class ProductsController extends Controller
             'en-composition' => 'required',
             'ru-indications' => 'required',
             'en-indications' => 'required',
+            'ru-description' => 'required',
+            'en-description' => 'required',
         ]);
         if ($request->recipe == 'true') {
             $request->recipe = true;
@@ -136,6 +138,109 @@ class ProductsController extends Controller
 
         if ($save) {
             return back()->with('success', 'Новый продукт успешно добавлен!');
+        } else {
+            return back()->with('fail', 'Упс... Что-то пошло не так попробуйте позже!');
+        }
+    }
+
+    public function update(Request $request)
+    {
+        // validation
+        $request->validate([
+            'category-id' => 'required',
+            'ru-title' => 'required',
+            'en-title' => 'required',
+            'recipe' => 'required',
+            'ru-composition' => 'required',
+            'en-composition' => 'required',
+            'ru-indications' => 'required',
+            'en-indications' => 'required',
+            'ru-description' => 'required',
+            'en-description' => 'required',
+        ]);
+        if ($request->file('img')) {
+            $request->validate([
+                'img' => 'mimes:png|max:100',
+            ]);
+        }
+        if ($request->recipe == 'true') {
+            $request->recipe = true;
+        } else {
+            $request->recipe = false;
+        }
+        // find product
+        $product = Product::find($request->id);
+        // save image file
+        if ($request->file('img')) {
+            // delete previous img
+            $path = public_path('img/products/' . $product->img);
+            if(file_exists($path)) {
+                unlink($path);
+            }
+            // save new img
+            $img = $request->file('img');
+            $imgName = uniqid() . '.' . $img->getClientOriginalExtension();
+            $path = public_path('img/products');
+            $img->move($path, $imgName);
+            // update product's img
+            $product->img = $imgName;
+        }
+        // save instruction files
+        if ($request->file('ru-instruction')) {
+            // delete previous ru_instruction
+            $path = public_path('files/' . $product->ru_instruction);
+            if (file_exists($path)) {
+                unlink($path);
+            }
+            // save new ru_instruction
+            $ruInstruction = $request->file('ru-instruction');
+            $ruInstructionName = uniqid() . '.' . $ruInstruction->getClientOriginalExtension();
+            $path = public_path('files');
+            $ruInstruction->move($path, $ruInstructionName);
+            // update product's ru_instruction
+            $product->ru_instruction = $ruInstructionName;
+        }
+        if ($request->file('en-instruction')) {
+            // delete previous ru_instruction
+            $path = public_path('files/' . $product->en_instruction);
+            if (file_exists($path)) {
+                unlink($path);
+            }
+            // save new ru_instruction
+            $enInstruction = $request->file('en-instruction');
+            $enInstructionName = uniqid() . '.' . $enInstruction->getClientOriginalExtension();
+            $path = public_path('files');
+            $enInstruction->move($path, $enInstructionName);
+            // update product's ru_instruction
+            $product->en_instruction = $enInstructionName;
+        }
+        // create new product
+        $product->category_id = $request->input('category-id');
+        $product->en_title = $request->input('en-title');
+        $product->ru_title = $request->input('ru-title');
+        $product->en_composition = $request->input('en-composition');
+        $product->ru_composition = $request->input('ru-composition');
+        $product->en_indications = $request->input('en-indications');
+        $product->ru_indications = $request->input('ru-indications');
+        $product->en_description = $request->input('en-description');
+        $product->ru_description = $request->input('ru-description');
+        $product->recipe = $request->recipe;
+        $save = $product->save();
+
+        if ($save) {
+            return back()->with('success', 'Продукт успешно изменен!');
+        } else {
+            return back()->with('fail', 'Упс... Что-то пошло не так попробуйте позже!');
+        }
+    }
+
+    public function delete($id)
+    {
+        $product = Product::find($id);
+        $product->trashed = true;
+        $save = $product->save();
+        if ($save) {
+            return redirect(route('dashboard'))->with('success', 'Продукт успешно удален!');
         } else {
             return back()->with('fail', 'Упс... Что-то пошло не так попробуйте позже!');
         }

@@ -190,5 +190,7 @@ return [
         'en-composition' => 'состав на английском',
         'ru-indications' => 'применению на русском',
         'en-indications' => 'применению на английском',
+        'ru-description' => 'описание на русском',
+        'en-description' => 'описание на английском',
     ],
 ];

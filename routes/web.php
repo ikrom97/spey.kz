@@ -46,5 +46,7 @@ Route::group(['middleware' => ['AuthCheck']], function () {
         Route::get('/dashboard/products/categories', [DashboardController::class, 'productsCategories'])->name('dashboard.products.categories');
         // products routes
         Route::post('/products/create', [ProductsController::class, 'create'])->name('products.create');
+        Route::post('/products/update', [ProductsController::class, 'update'])->name('products.update');
+        Route::get('/products/delete/{id}', [ProductsController::class, 'delete'])->name('products.delete');
     });
 });

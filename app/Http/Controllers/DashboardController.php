@@ -46,9 +46,14 @@ class DashboardController extends Controller
         $locale = App::currentLocale();
         // get quantities
         $productsQuantity = Product::where('trashed', false)->count();
-        $categoriesQuantity = ProductsCategory::where('trashed', false)->count();
+        // get all products categories
+        $categories = ProductsCategory::select(
+            'id',
+            $locale . '_title as title',
+            'trashed',
+        )->where('trashed', false)->orderBy('title', 'asc')->get();
 
-        return view('dashboard.pages.products.update', compact('productsQuantity', 'categoriesQuantity', 'product'));
+        return view('dashboard.pages.products.update', compact('productsQuantity', 'categories', 'product'));
     }
 
     public function productsCategories()

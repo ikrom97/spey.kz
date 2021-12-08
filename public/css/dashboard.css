@@ -346,6 +346,16 @@ input[type="file"] {
 input[type="radio"] {
     max-width: max-content;
 }
+.form-textarea {
+    width: 100%;
+    border: none;
+    min-height: 100px;
+    border-bottom: 1px solid;
+    line-height: 1;
+    padding-top: 10px;
+    max-width: 100%;
+    min-width: 100%;
+}
 .form-item {
     display: flex;
     gap: 20px;

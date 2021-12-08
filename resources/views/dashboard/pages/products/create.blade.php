@@ -48,13 +48,13 @@
                 <input class="form-input" type="text" name="en-title" value="{{old('en-title')}}">
             </label>
             <label class="form-label">Выберите картинку для продукта
-                <input class="form-input" type="file" name="img" value="{{old('img')}}">
+                <input class="form-input" type="file" name="img">
             </label>
             <label class="form-label">Инструкция на русском
-                <input class="form-input" type="file" name="ru-instruction" value="{{old('ru-instruction')}}">
+                <input class="form-input" type="file" name="ru-instruction">
             </label>
             <label class="form-label">Инструкция на английском
-                <input class="form-input" type="file" name="en-instruction" value="{{old('en-instruction')}}">
+                <input class="form-input" type="file" name="en-instruction">
             </label>
             <div class="form-item">
                 Способ применения:
@@ -78,6 +78,12 @@
             </label>
             <label class="form-label form-label-textarea">Показания к применению на английском:
                 <textarea class="simditor-textarea" name="en-indications">{{old('en-indications')}}</textarea>
+            </label>
+            <label class="form-label form-label-textarea">Описание на русском:
+                <textarea class="form-textarea" name="ru-description">{{old('ru-description')}}</textarea>
+            </label>
+            <label class="form-label form-label-textarea">Описание на английском:
+                <textarea class="form-textarea" name="en-description">{{old('en-description')}}</textarea>
             </label>
             <div class="form-btn-wrap">
                 <button class="form-btn green-bg" type="submit">Добавить</button>
