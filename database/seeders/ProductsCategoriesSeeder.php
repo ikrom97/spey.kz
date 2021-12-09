@@ -184,7 +184,9 @@ class ProductsCategoriesSeeder extends Seeder
             $productsCategory = new ProductsCategory;
             $productsCategory->en_title = $category['en_title'];
             $productsCategory->ru_title = $category['ru_title'];
-            $productsCategory->icon = $category['icon'];
+            if ($category['icon'] != null) {
+                $productsCategory->icon = $category['icon'];
+            }
             $productsCategory->view_rate = Faker::create()->numberBetween($min = 0, $max = 27);
             $productsCategory->save();
         }

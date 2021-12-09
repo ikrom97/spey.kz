@@ -57,6 +57,8 @@
     position: absolute;
     top: calc(50% - 25px);
     left: -25px;
+    padding: 12px;
+    fill: #fff;
 }
 .product-card:hover .view-more {
     left: -30px;

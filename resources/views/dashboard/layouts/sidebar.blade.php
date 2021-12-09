@@ -13,7 +13,13 @@
                     || $route == 'dashboard.products.categories.search' ? 'current' : ''}}" href="{{route('dashboard')}}">Продукты</a>
             </li>
             <li class="page-navigation-item">
-                <a class="page-navigation-link news" href="#">Новости</a>
+                <a class="page-navigation-link news
+                    {{$route == 'dashboard.news' 
+                    || $route == 'dashboard.news.categories' 
+                    || $route == 'dashboard.news.create' 
+                    || $route == 'dashboard.news.update'
+                    || $route == 'dashboard.news.search'
+                    || $route == 'dashboard.news.categories.search' ? 'current' : ''}}" href="{{route('dashboard.news')}}">Новости</a>
             </li>
             <li class="page-navigation-item">
                 <a class="page-navigation-link histories" href="#">Истории</a>

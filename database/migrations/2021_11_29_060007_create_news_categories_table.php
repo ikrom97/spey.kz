@@ -17,7 +17,7 @@ class CreateNewsCategoriesTable extends Migration
             $table->id();
             $table->string('en_title');
             $table->string('ru_title');
-            $table->bigInteger('view_rate');
+            $table->bigInteger('view_rate')->default(0);
             $table->boolean('trashed')->default(false);
             $table->timestamps();
         });

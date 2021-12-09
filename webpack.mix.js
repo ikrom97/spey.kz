@@ -29,7 +29,11 @@ mix.js(['resources/js/layouts/master.js',
         'resources/js/dashboard/pages/products/index.js',
         'resources/js/dashboard/pages/products/create.js',
         'resources/js/dashboard/pages/products/update.js',
-        'resources/js/dashboard/pages/products/categories.js'], 'public/js/dashboard.js')
+        'resources/js/dashboard/pages/products/categories.js',
+        'resources/js/dashboard/pages/news/index.js',
+        'resources/js/dashboard/pages/news/create.js',
+        'resources/js/dashboard/pages/news/update.js',
+        'resources/js/dashboard/pages/news/categories.js'], 'public/js/dashboard.js')
     .styles(['resources/css/layouts/master.css',
         'resources/css/layouts/header.css',
         'resources/css/layouts/footer.css',

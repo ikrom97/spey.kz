@@ -388,6 +388,7 @@ input[type="radio"] {
 .simditor .simditor-body,
 .editor-style {
     line-height: 1 !important;
+    height: auto;
 }
 .simditor-body {
     height: 200px;

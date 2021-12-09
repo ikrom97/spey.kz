@@ -146,6 +146,8 @@
     left: -25px;
     background-color: #2659d1;
     border-radius: 15px;
+    padding: 12px;
+    fill: #fff;
 }
 .products-categories__title {
     color: #1d1d1d;

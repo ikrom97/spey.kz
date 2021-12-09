@@ -18,7 +18,9 @@ class CreateNewsTable extends Migration
             $table->integer('category_id');
             $table->text('en_title');
             $table->text('ru_title');
-            $table->bigInteger('view_rate');
+            $table->text('ru_text');
+            $table->text('en_text');
+            $table->bigInteger('view_rate')->default(0);
             $table->string('img')->default('default.jpg');
             $table->boolean('trashed')->default(false);
             $table->timestamps();

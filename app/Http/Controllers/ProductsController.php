@@ -214,7 +214,7 @@ class ProductsController extends Controller
             // update product's ru_instruction
             $product->en_instruction = $enInstructionName;
         }
-        // create new product
+        // update product
         $product->category_id = $request->input('category-id');
         $product->en_title = $request->input('en-title');
         $product->ru_title = $request->input('ru-title');

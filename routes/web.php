@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\NewsController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\ProductsController;
 use Illuminate\Support\Facades\Route;
@@ -44,6 +45,11 @@ Route::group(['middleware' => ['AuthCheck']], function () {
         Route::get('/dashboard/products/create', [DashboardController::class, 'productsCreate'])->name('dashboard.products.create');
         Route::get('/dashboard/products/update/{product}', [DashboardController::class, 'productsUpdate'])->name('dashboard.products.update');
         Route::get('/dashboard/products/categories', [DashboardController::class, 'productsCategories'])->name('dashboard.products.categories');
+
+        Route::get('/dashboard/news', [DashboardController::class, 'news'])->name('dashboard.news');
+        Route::get('/dashboard/news/create', [DashboardController::class, 'newsCreate'])->name('dashboard.news.create');
+        Route::get('/dashboard/news/update/{news}', [DashboardController::class, 'newsUpdate'])->name('dashboard.news.update');
+        Route::get('/dashboard/news/categories', [DashboardController::class, 'newsCategories'])->name('dashboard.news.categories');
         // products routes
         Route::post('/products/create', [ProductsController::class, 'create'])->name('products.create');
         Route::post('/products/update', [ProductsController::class, 'update'])->name('products.update');
@@ -53,5 +59,14 @@ Route::group(['middleware' => ['AuthCheck']], function () {
         Route::post('/products/categories/update', [ProductsController::class, 'updateCategory'])->name('products.categories.update');
         Route::post('/products/categories/delete', [ProductsController::class, 'deleteCategory'])->name('products.categories.delete');
         Route::get('/dashboard/products/categories/search', [ProductsController::class, 'dashCategoriesSearch'])->name('dashboard.products.categories.search');
+        // news routes
+        Route::post('/news/create', [NewsController::class, 'create'])->name('news.create');
+        Route::post('/news/update', [NewsController::class, 'update'])->name('news.update');
+        Route::post('/news/delete', [NewsController::class, 'delete'])->name('news.delete');
+        Route::get('/dashboard/news/search', [NewsController::class, 'dashSearch'])->name('dashboard.news.search');
+        Route::post('/news/categories/create', [NewsController::class, 'createCategory'])->name('news.categories.create');
+        Route::post('/news/categories/update', [NewsController::class, 'updateCategory'])->name('news.categories.update');
+        Route::post('/news/categories/delete', [NewsController::class, 'deleteCategory'])->name('news.categories.delete');
+        Route::get('/dashboard/news/categories/search', [NewsController::class, 'dashCategoriesSearch'])->name('dashboard.news.categories.search');
     });
 });
