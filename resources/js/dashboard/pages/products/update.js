@@ -2,7 +2,9 @@ const productsUpdate = document.querySelector('.products-update-page');
 
 if (productsUpdate) {
     const editors = document.getElementsByClassName('simditor-textarea'),
-        textareas = [];
+        textareas = [],
+        deleteBtn = productsUpdate.querySelector('[data-action="delete-product"]'),
+        confirmModal = productsUpdate.querySelector('.confirm-modal');
     //change Simditor default locale
     Simditor.locale = 'ru-RU';
 
@@ -26,4 +28,15 @@ if (productsUpdate) {
             toolbarFloat: false,
         });
     }
+
+    //* confirm-modal start
+    deleteBtn.onclick = () => {
+        confirmModal.classList.remove('hidden');
+    };
+    confirmModal.addEventListener('click', e => {
+        if (e.target.className == 'confirm-modal' || e.target.dataset.action == 'cancel') {
+            confirmModal.classList.add('hidden');
+        }
+    });
+    //* confirm-modal end
 }

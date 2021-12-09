@@ -93,8 +93,19 @@
             </label>
             <div class="form-btn-wrap">
                 <button class="form-btn green-bg" type="submit">Редактировать</button>
-                <a class="form-btn red-bg" href="{{route('products.delete', $product->id)}}">Удалить</a>
+                <button class="form-btn red-bg" type="button" data-action="delete-product">Удалить</button>
             </div>
         </form>
+        <div class="confirm-modal hidden">
+            <form class="confirm-form" action="{{route('products.delete')}}" method="post">
+                @csrf
+                <input type="hidden" name="id" value="{{$product->id}}">
+                <p class="confirm-msg">Вы действительно хотите удалить этот продукт?</p>
+                <div class="form-btn-wrap">
+                    <button class="form-btn green-bg" type="reset" data-action="cancel">Отмена</button>
+                    <button class="form-btn red-bg" type="submit">Удалить</button>
+                </div>
+            </form>
+        </div>
     </main>
 @endsection

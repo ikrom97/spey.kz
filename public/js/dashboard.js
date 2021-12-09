@@ -34,7 +34,26 @@ html.addEventListener('click', function (e) {
 /*!********************************************************!*\
   !*** ./resources/js/dashboard/pages/products/index.js ***!
   \********************************************************/
+var productsPage = document.querySelector('.products-page');
 
+if (productsPage) {
+  var deleteBtns = productsPage.querySelectorAll('[data-action="delete-product"]'),
+      confirmModal = productsPage.querySelector('.confirm-modal'),
+      confirmInput = confirmModal.querySelector('[name="id"]'); //* confirm-modal start
+
+  deleteBtns.forEach(function (button) {
+    button.onclick = function () {
+      confirmModal.classList.remove('hidden');
+      confirmInput.value = button.dataset.product;
+    };
+  });
+  confirmModal.addEventListener('click', function (e) {
+    if (e.target.className == 'confirm-modal' || e.target.dataset.action == 'cancel') {
+      confirmModal.classList.add('hidden');
+      confirmInput.value = '';
+    }
+  }); //* confirm-modal end
+}
 })();
 
 // This entry need to be wrapped in an IIFE because it need to be isolated against other entry modules.
@@ -83,7 +102,9 @@ var productsUpdate = document.querySelector('.products-update-page');
 
 if (productsUpdate) {
   var editors = document.getElementsByClassName('simditor-textarea'),
-      textareas = []; //change Simditor default locale
+      textareas = [],
+      deleteBtn = productsUpdate.querySelector('[data-action="delete-product"]'),
+      confirmModal = productsUpdate.querySelector('.confirm-modal'); //change Simditor default locale
 
   Simditor.locale = 'ru-RU';
 
@@ -107,7 +128,18 @@ if (productsUpdate) {
       //image removed
       toolbarFloat: false
     });
-  }
+  } //* confirm-modal start
+
+
+  deleteBtn.onclick = function () {
+    confirmModal.classList.remove('hidden');
+  };
+
+  confirmModal.addEventListener('click', function (e) {
+    if (e.target.className == 'confirm-modal' || e.target.dataset.action == 'cancel') {
+      confirmModal.classList.add('hidden');
+    }
+  }); //* confirm-modal end
 }
 })();
 

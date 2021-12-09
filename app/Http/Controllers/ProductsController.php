@@ -234,9 +234,9 @@ class ProductsController extends Controller
         }
     }
 
-    public function delete($id)
+    public function delete(Request $request)
     {
-        $product = Product::find($id);
+        $product = Product::find($request->id);
         $product->trashed = true;
         $save = $product->save();
         if ($save) {
