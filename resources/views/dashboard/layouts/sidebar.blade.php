@@ -5,7 +5,12 @@
                 <a class="page-navigation-link home" target="_blank" href="{{route('home')}}">Главная</a>
             </li>
             <li class="page-navigation-item">
-                <a class="page-navigation-link products {{$route == 'dashboard' || $route == 'dashboard.products.categories' || $route == 'dashboard.products.create' || $route == 'dashboard.products.update' ? 'current' : ''}}" href="{{route('dashboard')}}">Продукты</a>
+                <a class="page-navigation-link products {{$route == 'dashboard' 
+                    || $route == 'dashboard.products.categories' 
+                    || $route == 'dashboard.products.create' 
+                    || $route == 'dashboard.products.update'
+                    || $route == 'dashboard.products.search'
+                    || $route == 'dashboard.products.categories.search' ? 'current' : ''}}" href="{{route('dashboard')}}">Продукты</a>
             </li>
             <li class="page-navigation-item">
                 <a class="page-navigation-link news" href="#">Новости</a>

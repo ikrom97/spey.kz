@@ -63,11 +63,7 @@ class DashboardController extends Controller
         $productsQuantity = Product::where('trashed', false)->count();
         $categoriesQuantity = ProductsCategory::where('trashed', false)->count();
         // paginate all products categories
-        $categories = ProductsCategory::select(
-            'id',
-            $locale . '_title as title',
-            'trashed',
-        )->where('trashed', false)->orderBy('title', 'asc')->paginate(15);
+        $categories = ProductsCategory::where('trashed', false)->orderBy('ru_title', 'asc')->paginate(15);
         $rank = $categories->firstItem();
 
         return view('dashboard.pages.products.categories', compact('productsQuantity', 'categoriesQuantity', 'categories', 'rank'));

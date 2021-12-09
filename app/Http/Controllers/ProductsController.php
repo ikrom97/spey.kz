@@ -245,4 +245,78 @@ class ProductsController extends Controller
             return back()->with('fail', 'Упс... Что-то пошло не так попробуйте позже!');
         }
     }
+
+    public function dashSearch(Request $request)
+    {
+        $keyword = $request->keyword;
+        $locale = App::currentLocale();
+        // get quantities
+        $productsQuantity = Product::where('trashed', false)->count();
+        $categoriesQuantity = ProductsCategory::where('trashed', false)->count();
+        // find result
+        $products = Product::select(
+            'id',
+            $locale . '_title as title',
+            'trashed',
+        )->where('trashed', false)->where($locale . '_title', 'like', '%' . $keyword . '%')
+        ->orderBy('title', 'asc')->paginate(15);
+        $rank = $products->firstItem();
+
+        return view('dashboard.pages.products.index', compact('productsQuantity', 'categoriesQuantity', 'products', 'rank', 'keyword'));
+    }
+
+    public function createCategory(Request $request)
+    {
+        $category = new ProductsCategory;
+        $category->ru_title = $request->input('ru-title');
+        $category->en_title = $request->input('en-title');
+        $save = $category->save();
+
+        if ($save) {
+            return redirect(route('dashboard.products.categories'))->with('success', 'Категория успешно добавлена!');
+        } else {
+            return back()->with('fail', 'Упс... Что-то пошло не так попробуйте позже!');
+        }
+    }
+
+    public function updateCategory(Request $request)
+    {
+        $category = ProductsCategory::find($request->id);
+        $category->ru_title = $request->input('ru-title');
+        $category->en_title = $request->input('en-title');
+        $save = $category->save();
+
+        if ($save) {
+            return redirect(route('dashboard.products.categories'))->with('success', 'Категория успешно изменена!');
+        } else {
+            return back()->with('fail', 'Упс... Что-то пошло не так попробуйте позже!');
+        }
+    }
+
+    public function deleteCategory(Request $request)
+    {
+        $category = ProductsCategory::find($request->id);
+        $category->trashed = true;
+        $save = $category->save();
+        if ($save) {
+            return redirect(route('dashboard.products.categories'))->with('success', 'Категория успешно удалена!');
+        } else {
+            return back()->with('fail', 'Упс... Что-то пошло не так попробуйте позже!');
+        }
+    }
+
+    public function dashCategoriesSearch(Request $request)
+    {
+        $keyword = $request->keyword;
+        $locale = App::currentLocale();
+        // get quantities
+        $productsQuantity = Product::where('trashed', false)->count();
+        $categoriesQuantity = ProductsCategory::where('trashed', false)->count();
+        // find result
+        $categories = ProductsCategory::where('trashed', false)->where($locale . '_title', 'like', '%' . $keyword . '%')
+            ->orderBy('ru_title', 'asc')->paginate(15);
+        $rank = $categories->firstItem();
+
+        return view('dashboard.pages.products.categories', compact('productsQuantity', 'categoriesQuantity', 'categories', 'rank', 'keyword'));
+    }
 }

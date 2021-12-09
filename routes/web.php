@@ -48,5 +48,10 @@ Route::group(['middleware' => ['AuthCheck']], function () {
         Route::post('/products/create', [ProductsController::class, 'create'])->name('products.create');
         Route::post('/products/update', [ProductsController::class, 'update'])->name('products.update');
         Route::post('/products/delete', [ProductsController::class, 'delete'])->name('products.delete');
+        Route::get('/dashboard/products/search', [ProductsController::class, 'dashSearch'])->name('dashboard.products.search');
+        Route::post('/products/categories/create', [ProductsController::class, 'createCategory'])->name('products.categories.create');
+        Route::post('/products/categories/update', [ProductsController::class, 'updateCategory'])->name('products.categories.update');
+        Route::post('/products/categories/delete', [ProductsController::class, 'deleteCategory'])->name('products.categories.delete');
+        Route::get('/dashboard/products/categories/search', [ProductsController::class, 'dashCategoriesSearch'])->name('dashboard.products.categories.search');
     });
 });
