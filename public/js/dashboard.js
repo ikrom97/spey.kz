@@ -379,5 +379,65 @@ if (newsCategories) {
 }
 })();
 
+// This entry need to be wrapped in an IIFE because it need to be isolated against other entry modules.
+(() => {
+/*!*********************************************************!*\
+  !*** ./resources/js/dashboard/pages/histories/index.js ***!
+  \*********************************************************/
+var historiesPage = document.querySelector('.histories-page');
+
+if (historiesPage) {
+  var deleteBtns = historiesPage.querySelectorAll('[data-action="delete-history"]'),
+      confirmModal = historiesPage.querySelector('.confirm-modal'),
+      confirmInput = confirmModal.querySelector('[name="id"]'); //* confirm-modal start
+
+  deleteBtns.forEach(function (button) {
+    button.onclick = function () {
+      confirmModal.classList.remove('hidden');
+      confirmInput.value = button.dataset.history;
+    };
+  });
+  confirmModal.addEventListener('click', function (e) {
+    if (e.target.className == 'confirm-modal' || e.target.dataset.action == 'cancel') {
+      confirmModal.classList.add('hidden');
+      confirmInput.value = '';
+    }
+  }); //* confirm-modal end
+}
+})();
+
+// This entry need to be wrapped in an IIFE because it need to be isolated against other entry modules.
+(() => {
+/*!**********************************************************!*\
+  !*** ./resources/js/dashboard/pages/histories/create.js ***!
+  \**********************************************************/
+
+})();
+
+// This entry need to be wrapped in an IIFE because it need to be isolated against other entry modules.
+(() => {
+/*!**********************************************************!*\
+  !*** ./resources/js/dashboard/pages/histories/update.js ***!
+  \**********************************************************/
+var historiesUpdate = document.querySelector('.histories-update-page');
+
+if (historiesUpdate) {
+  var editors = document.getElementsByClassName('simditor-textarea'),
+      textareas = [],
+      deleteBtn = historiesUpdate.querySelector('[data-action="delete-product"]'),
+      confirmModal = historiesUpdate.querySelector('.confirm-modal'); //* confirm-modal start
+
+  deleteBtn.onclick = function () {
+    confirmModal.classList.remove('hidden');
+  };
+
+  confirmModal.addEventListener('click', function (e) {
+    if (e.target.className == 'confirm-modal' || e.target.dataset.action == 'cancel') {
+      confirmModal.classList.add('hidden');
+    }
+  }); //* confirm-modal end
+}
+})();
+
 /******/ })()
 ;

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\History;
 use App\Models\News;
 use App\Models\NewsCategory;
 use App\Models\Product;
@@ -129,5 +130,40 @@ class DashboardController extends Controller
         $rank = $categories->firstItem();
 
         return view('dashboard.pages.news.categories', compact('newsQuantity', 'categoriesQuantity', 'categories', 'rank'));
+    }
+
+    public function histories()
+    {
+        $locale = App::currentLocale();
+        // get quantities
+        $historiesQuantity = History::where('trashed', false)->count();
+        // paginate all histories
+        $histories = History::select(
+            'id',
+            $locale . '_title as title',
+            'year',
+            'trashed',
+        )->where('trashed', false)->orderBy('year', 'desc')->paginate(15);
+        $rank = $histories->firstItem();
+
+        return view('dashboard.pages.histories.index', compact('historiesQuantity', 'histories', 'rank'));
+    }
+
+    public function historiesCreate()
+    {
+        $locale = App::currentLocale();
+        // get quantities
+        $historiesQuantity = News::where('trashed', false)->count();
+
+        return view('dashboard.pages.histories.create', compact('historiesQuantity'));
+    }
+
+    public function historiesUpdate(History $history)
+    {
+        $locale = App::currentLocale();
+        // get quantities
+        $historiesQuantity = History::where('trashed', false)->count();
+
+        return view('dashboard.pages.histories.update', compact('historiesQuantity', 'history'));
     }
 }

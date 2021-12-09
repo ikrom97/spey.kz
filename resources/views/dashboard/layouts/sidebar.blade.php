@@ -22,7 +22,11 @@
                     || $route == 'dashboard.news.categories.search' ? 'current' : ''}}" href="{{route('dashboard.news')}}">Новости</a>
             </li>
             <li class="page-navigation-item">
-                <a class="page-navigation-link histories" href="#">Истории</a>
+                <a class="page-navigation-link histories
+                    {{$route == 'dashboard.histories' 
+                    || $route == 'dashboard.histories.create' 
+                    || $route == 'dashboard.histories.update'
+                    || $route == 'dashboard.histories.search' ? 'current' : ''}}" href="{{route('dashboard.histories')}}">Истории</a>
             </li>
             <li class="page-navigation-item">
                 <a class="page-navigation-link logout" href="{{route('auth.logout')}}">Выход</a>

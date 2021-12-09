@@ -80,7 +80,7 @@ return [
     'max' => [
         'numeric' => 'The :attribute must not be greater than :max.',
         'file' => 'Поле :attribute не должно превышать :max килобайтов.',
-        'string' => 'The :attribute must not be greater than :max characters.',
+        'string' => 'Поле :attribute не должен содержать больше :max символов.',
         'array' => 'The :attribute must not have more than :max items.',
     ],
     'mimes' => 'Поле :attribute должен быть файлом типа: :values.',
@@ -194,5 +194,6 @@ return [
         'en-description' => 'описание на английском',
         'ru-text' => 'текст на русском',
         'en-text' => 'текст на английском',
+        'year' => 'год',
     ],
 ];

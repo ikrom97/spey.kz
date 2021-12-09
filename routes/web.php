@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\HistoriesController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\PagesController;
@@ -50,6 +51,11 @@ Route::group(['middleware' => ['AuthCheck']], function () {
         Route::get('/dashboard/news/create', [DashboardController::class, 'newsCreate'])->name('dashboard.news.create');
         Route::get('/dashboard/news/update/{news}', [DashboardController::class, 'newsUpdate'])->name('dashboard.news.update');
         Route::get('/dashboard/news/categories', [DashboardController::class, 'newsCategories'])->name('dashboard.news.categories');
+
+        Route::get('/dashboard/histories', [DashboardController::class, 'histories'])->name('dashboard.histories');
+        Route::get('/dashboard/histories/create', [DashboardController::class, 'historiesCreate'])->name('dashboard.histories.create');
+        Route::get('/dashboard/histories/update/{history}', [DashboardController::class, 'historiesUpdate'])->name('dashboard.histories.update');
+        Route::get('/dashboard/histories/categories', [DashboardController::class, 'historiesCategories'])->name('dashboard.histories.categories');
         // products routes
         Route::post('/products/create', [ProductsController::class, 'create'])->name('products.create');
         Route::post('/products/update', [ProductsController::class, 'update'])->name('products.update');
@@ -68,5 +74,10 @@ Route::group(['middleware' => ['AuthCheck']], function () {
         Route::post('/news/categories/update', [NewsController::class, 'updateCategory'])->name('news.categories.update');
         Route::post('/news/categories/delete', [NewsController::class, 'deleteCategory'])->name('news.categories.delete');
         Route::get('/dashboard/news/categories/search', [NewsController::class, 'dashCategoriesSearch'])->name('dashboard.news.categories.search');
+        // histories routes
+        Route::post('/histories/create', [HistoriesController::class, 'create'])->name('histories.create');
+        Route::post('/histories/update', [HistoriesController::class, 'update'])->name('histories.update');
+        Route::post('/histories/delete', [HistoriesController::class, 'delete'])->name('histories.delete');
+        Route::get('/dashboard/histories/search', [HistoriesController::class, 'dashSearch'])->name('dashboard.histories.search');
     });
 });

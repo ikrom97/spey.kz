@@ -33,7 +33,10 @@ mix.js(['resources/js/layouts/master.js',
         'resources/js/dashboard/pages/news/index.js',
         'resources/js/dashboard/pages/news/create.js',
         'resources/js/dashboard/pages/news/update.js',
-        'resources/js/dashboard/pages/news/categories.js'], 'public/js/dashboard.js')
+        'resources/js/dashboard/pages/news/categories.js',
+        'resources/js/dashboard/pages/histories/index.js',
+        'resources/js/dashboard/pages/histories/create.js',
+        'resources/js/dashboard/pages/histories/update.js'], 'public/js/dashboard.js')
     .styles(['resources/css/layouts/master.css',
         'resources/css/layouts/header.css',
         'resources/css/layouts/footer.css',
