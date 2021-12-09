@@ -22,16 +22,23 @@
                 </ul>
             </div>
         </div>
-        <div class="search" data-family="search">
-            <div class="search__wrap">
-                <form class="search__form" data-family="search" action="#" method="get">
-                    @csrf
-                    <input class="search__input" data-family="search" type="search">
-                    <button class="search__button" data-family="search" type="submit">
-                        <svg data-family="search" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path data-family="search" d="M19.734,18.448l-6.2-6.2a7.584,7.584,0,1,0-1.286,1.286l6.2,6.2a.909.909,0,0,0,1.286-1.286ZM1.818,7.576a5.758,5.758,0,1,1,5.758,5.758A5.764,5.764,0,0,1,1.818,7.576Z" fill="#1d1d1d"/></svg>
-                    </button>
-                </form>
-            </div>
+        <div class="search hidden" data-family="search">
+            <form class="search-form" data-family="search" action="#">
+                @csrf
+                <label class="search-label" data-family="search" for="keyword">
+                    <svg data-family="search" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                        <path data-family="search" d="M19.734,18.448l-6.2-6.2a7.584,7.584,0,1,0-1.286,1.286l6.2,6.2a.909.909,0,0,0,1.286-1.286ZM1.818,7.576a5.758,5.758,0,1,1,5.758,5.758A5.764,5.764,0,0,1,1.818,7.576Z" fill="#1d1d1d"/>
+                    </svg>
+                </label>
+                <input class="search-input" id="keyword" name="keyword" data-family="search" type="search" placeholder="Поиск" autocomplete="off">
+                <button class="search-submit-btn" data-family="search" type="submit">
+                    <svg class="search-icon" data-family="search" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                        <path data-family="search" d="M19.734,18.448l-6.2-6.2a7.584,7.584,0,1,0-1.286,1.286l6.2,6.2a.909.909,0,0,0,1.286-1.286ZM1.818,7.576a5.758,5.758,0,1,1,5.758,5.758A5.764,5.764,0,0,1,1.818,7.576Z" fill="#1d1d1d"/>
+                    </svg>
+                    <svg class="close-icon" data-family="search" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g data-family="search" data-name="Layer 2"><g data-family="search" data-name="close"><rect data-family="search" width="24" height="24" transform="rotate(180 12 12)" opacity="0"></rect><path data-family="search" d="M13.41 12l4.3-4.29a1 1 0 1 0-1.42-1.42L12 10.59l-4.29-4.3a1 1 0 0 0-1.42 1.42l4.3 4.29-4.3 4.29a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l4.29-4.3 4.29 4.3a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42z"></path></g></g></svg>
+                </button>
+            </form>
+            <div class="search-result"></div>
         </div>
         <div class="langs-dropdown" data-family="langs-dropdown">
             <button class="button langs-dropdown__button" data-family="langs-dropdown" type="button">
@@ -53,6 +60,8 @@
                 </ul>
             </div>
         </div>
+    </div>
+    <div class="container">
         <nav class="main-navigation">
             <ul class="page-navigation">
                 <li class="page-navigation__item">

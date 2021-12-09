@@ -56,10 +56,13 @@ var header = document.querySelector('.header');
 if (header) {
   var sitesDropdown = header.querySelector('.sites-dropdown'),
       sitesDropdownBtn = sitesDropdown.querySelector('.sites-dropdown__button'),
-      searchWrap = header.querySelector('.search'),
-      searchBtn = searchWrap.querySelector('.search__button'),
+      searchWrap = document.querySelector('.search'),
+      searchForm = searchWrap.querySelector('.search-form'),
+      searchInput = searchForm.querySelector('.search-input'),
+      searchBtn = searchForm.querySelector('.search-submit-btn'),
       langsDropdown = header.querySelector('.langs-dropdown'),
       langsDropdownBtn = langsDropdown.querySelector('.langs-dropdown__button'),
+      resultWrap = document.querySelector('.search-result'),
       body = document.querySelector('body'); //* sites dropdown start
 
   sitesDropdownBtn.onclick = function (e) {
@@ -76,15 +79,29 @@ if (header) {
 
   searchBtn.onclick = function (e) {
     e.preventDefault();
-    searchWrap.classList.toggle('show');
+    searchWrap.classList.toggle('hidden');
+    searchInput.focus();
+    searchForm.reset();
   };
 
   body.addEventListener('click', function (e) {
-    if (e.target.dataset.family != 'search' && searchWrap.classList.contains('show')) {
-      searchWrap.classList.remove('show');
+    if (e.target.dataset.family != 'search' && !searchForm.classList.contains('hidden')) {
+      searchWrap.classList.add('hidden');
+      resultWrap.innerHTML = '';
     }
-  }); //* search end
+  });
+
+  searchInput.onkeyup = function () {
+    var keyword = searchInput.value;
+    $.ajax({
+      url: "/search?keyword=".concat(keyword),
+      success: function success(result) {
+        resultWrap.innerHTML = result;
+      }
+    });
+  }; //* search end
   //* langs dropdown start 
+
 
   langsDropdownBtn.onclick = function (e) {
     langsDropdown.classList.toggle('show');

@@ -10,6 +10,7 @@ use App\Models\ProductsCategory;
 use App\Models\Site;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
+use stdClass;
 
 class PagesController extends Controller
 {

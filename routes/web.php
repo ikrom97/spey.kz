@@ -36,6 +36,8 @@ Route::get('/products/download/instructions', [ProductsController::class, 'downl
 // Auth routes
 Route::post('/auth/check', [AuthController::class, 'check'])->name('auth.check');
 Route::get('/auth/logout', [AuthController::class, 'logout'])->name('auth.logout');
+// search route
+Route::get('/search', [MainController::class, 'search']);
 
 Route::group(['middleware' => ['AuthCheck']], function () {
     Route::get('/auth/login', [AuthController::class, 'login'])->name('auth.login');

@@ -3,10 +3,13 @@ const header = document.querySelector('.header');
 if (header) {
     const sitesDropdown = header.querySelector('.sites-dropdown'),
         sitesDropdownBtn = sitesDropdown.querySelector('.sites-dropdown__button'),
-        searchWrap = header.querySelector('.search'),
-        searchBtn = searchWrap.querySelector('.search__button'),
+        searchWrap = document.querySelector('.search'),
+        searchForm = searchWrap.querySelector('.search-form'),
+        searchInput = searchForm.querySelector('.search-input'),
+        searchBtn = searchForm.querySelector('.search-submit-btn'),
         langsDropdown = header.querySelector('.langs-dropdown'),
         langsDropdownBtn = langsDropdown.querySelector('.langs-dropdown__button'),
+        resultWrap = document.querySelector('.search-result'),
         body = document.querySelector('body');
 
     //* sites dropdown start
@@ -23,13 +26,27 @@ if (header) {
     //* search start
     searchBtn.onclick = e => {
         e.preventDefault();
-        searchWrap.classList.toggle('show');
+        searchWrap.classList.toggle('hidden');
+        searchInput.focus();
+        searchForm.reset();
     };
     body.addEventListener('click', e => {
-        if (e.target.dataset.family != 'search' && searchWrap.classList.contains('show')) {
-            searchWrap.classList.remove('show');
+        if (e.target.dataset.family != 'search' && !searchForm.classList.contains('hidden')) {
+            searchWrap.classList.add('hidden');
+            resultWrap.innerHTML = '';
         }
     });
+    searchInput.onkeyup = () => {
+        const keyword = searchInput.value;
+
+        $.ajax({
+            url: `/search?keyword=${keyword}`,
+
+            success: function (result) {
+                resultWrap.innerHTML = result;
+            }
+        });
+    };
     //* search end
     //* langs dropdown start 
     langsDropdownBtn.onclick = e => {
