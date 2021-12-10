@@ -167,7 +167,7 @@ class SitesSeeder extends Seeder
             $speySite->en_map = $site['en_map'];
             $speySite->ru_map = $site['ru_map'];
             $speySite->en_address = '23 Osenniy Boulvar, BC Krylatsky, <br> 121609, Russia, Moscow';
-            $speySite->ru_address = 'Осенний бульвар, 23, БЦ Крылатский, <br> 121609, Россия, г. Москва';
+            $speySite->ru_address = 'Осенний бульвар, 23, БЦ Крылатский, 121609, Россия, г. Москва';
             $speySite->email = 'info@spey.com.ru';
             $speySite->link = $site['link'];
             $speySite->save();

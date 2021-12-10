@@ -112,6 +112,25 @@ if (header) {
       langsDropdown.classList.remove('show');
     }
   }); //* langs dropdown end
+  //* main navigation start
+
+  var hamburder = header.querySelector('.hamburger'),
+      navigationWrap = header.querySelector('.main-navigation__container'),
+      closeBtn = navigationWrap.querySelector('.main-navigation-btn');
+
+  hamburder.onclick = function () {
+    navigationWrap.classList.add('show');
+  };
+
+  closeBtn.onclick = function () {
+    navigationWrap.classList.remove('show');
+  };
+
+  navigationWrap.addEventListener('click', function (e) {
+    if (e.target.dataset.id == 'navigation-wrap') {
+      navigationWrap.classList.remove('show');
+    }
+  }); //* main navigation end
 }
 })();
 

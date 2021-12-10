@@ -405,11 +405,12 @@ input[type="search"]::-webkit-search-results-decoration {
 /*! adaptive & responsive start */
 @media screen and (max-width: 991px) {
     /** tablet */
-    .container {
-        display: none !important;
-    }
 }
 @media screen and (max-width: 575px) {
     /** mobile */
+    .container {
+        padding-left: 35px;
+        padding-right: 35px;
+    }
 }
 /*! adaptive & responsive end */

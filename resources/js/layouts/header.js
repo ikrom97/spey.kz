@@ -58,4 +58,21 @@ if (header) {
         }
     });
     //* langs dropdown end
+    //* main navigation start
+    const hamburder = header.querySelector('.hamburger'),
+        navigationWrap = header.querySelector('.main-navigation__container'),
+        closeBtn = navigationWrap.querySelector('.main-navigation-btn');       
+
+        hamburder.onclick = () => {
+            navigationWrap.classList.add('show');
+        };
+        closeBtn.onclick = () => {
+            navigationWrap.classList.remove('show');
+        };
+        navigationWrap.addEventListener('click', e => {
+            if (e.target.dataset.id == 'navigation-wrap') {
+                navigationWrap.classList.remove('show');
+            }
+        });
+    //* main navigation end
 }
