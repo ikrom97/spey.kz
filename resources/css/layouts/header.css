@@ -478,4 +478,8 @@
         z-index: 4;
     }
 }
+main,
+footer {
+    overflow: hidden;
+}
 /*! adaptive & responsive end */
