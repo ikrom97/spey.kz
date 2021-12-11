@@ -121,16 +121,11 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 .view-more {
     min-width: max-content;
-    padding-left: 30px;
     font-weight: 300;
-    font-size: 10px;
-    position: relative;
-    height: 25px;
+    font-size: 11px;
     display: flex;
     align-items: center;
-    position: relative;
-    left: 0px;
-    transition: 0.3s;
+    gap: 8px;
 }
 .view-more__icon {
     display: flex;
@@ -141,10 +136,11 @@ input[type="search"]::-webkit-search-results-decoration {
     justify-content: center;
     align-items: center;
     padding-left: 1px;
-    position: absolute;
-    top: 0px;
-    left: 0px;
     transition: 0.3s;
+    min-width: 25px;
+}
+.view-more__text {
+    width: max-content;
 }
 /*! modals start */
 .modal {
@@ -424,6 +420,9 @@ input[type="search"]::-webkit-search-results-decoration {
     h2 {
         font-size: 16px;
         font-weight: 600;
+    }
+    .view-more__text {
+        max-width: 62px;
     }
     /* vitrin start */
     .vitrin {
