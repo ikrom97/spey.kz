@@ -309,14 +309,15 @@ input[type="search"]::-webkit-search-results-decoration {
 /*! vitrin section end */
 /*! values list start */
 .values-carousel {
-    max-width: 1160px;
+    max-width: 1300px;
     margin-left: auto;
     margin-right: auto;
     width: 100%;
+    padding-left: 70px;
+    padding-right: 70px;
 }
 .values__item {
     min-width: max-content;
-    margin-right: 40px;
 }
 .values__title {
     min-width: max-content;
@@ -451,15 +452,8 @@ input[type="search"]::-webkit-search-results-decoration {
     }
     /* vitrin end */
     /* values start */
-    .values-carousel {
-        min-width: 100%;
-        padding-left: 70px;
-    }
     .values-carousel .owl-stage-outer {
         overflow: visible;
-    }
-    .values__item {
-        margin-right: 32px;
     }
     /* values start */
 }
@@ -487,6 +481,6 @@ input[type="search"]::-webkit-search-results-decoration {
         min-width: 100%;
         padding-left: 35px;
     }
-        /* values start */
+    /* values start */
 }
 /*! adaptive & responsive end */
