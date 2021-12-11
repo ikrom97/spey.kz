@@ -148,46 +148,49 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 /*! modals start */
 .modal {
-   position: fixed;
-   top: 0px;
-   left: 0px;
-   padding: 20px;
-   z-index: 9;
-   transform: translateY(0%);
-   width: 100%;
-   color: #fff;
-   text-align: center;
-   transition: 0.3s;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    padding: 20px;
+    z-index: 9;
+    transform: translateY(0%);
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    transition: 0.3s;
 }
 .modal--fail {
-   background-color: #ff7070;
+    background-color: #ff7070;
 }
 .modal--success {
-   background-color: #72b54e;
+    background-color: #72b54e;
 }
 .modal.hidden {
-   z-index: -1;
-   transform: translateY(-100%);
+    z-index: -1;
+    transform: translateY(-100%);
 }
 .form-errors {
-   list-style: initial;
-   width: max-content;
-   margin-left: auto;
-   margin-right: auto;
-   display: flex;
-   flex-direction: column;
-   text-align: initial;
-   gap: 5px;
+    list-style: initial;
+    width: max-content;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: initial;
+    gap: 5px;
 }
 /*! modals end */
 /*! vitrin section start */
 .vitrin {
     display: flex;
-    min-height: 595px;
     align-items: center;
     position: relative;
     color: #fff;
     z-index: 1;
+}
+.vitrin__container {
+    padding-top: 160px;
+    padding-bottom: 160px;
 }
 .vitrin__img {
     position: absolute;
@@ -201,14 +204,14 @@ input[type="search"]::-webkit-search-results-decoration {
     text-transform: uppercase;
     font-size: 42.5px;
     font-weight: 700;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
     max-width: 625px;
 }
 .vitrin__text {
     max-width: 625px;
     font-size: 22px;
     font-weight: 300;
-    margin-bottom: 25px;
+    margin-bottom: 32px;
 }
 .vitrin__text--home {
     padding-left: 30px;
@@ -305,23 +308,31 @@ input[type="search"]::-webkit-search-results-decoration {
 /** vitrin dropdown end */
 /*! vitrin section end */
 /*! values list start */
-.values-list {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+.values-carousel {
+    max-width: 1160px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
 }
-.values-list__title {
+.values__item {
     min-width: max-content;
-    width: max-content;
+    margin-right: 40px;
+}
+.values__title {
+    min-width: max-content;
     font-size: 17.5px;
     text-transform: uppercase;
     font-weight: 500;
     color: #0033ab;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
 }
-.values-list__text {
-    max-width: 135px;
+.values__text {
     color: #8f8f8f;
+    max-width: 150px;
+}
+.values-carousel .owl-dots,
+.values-carousel .owl-nav {
+    display: none;
 }
 /*! values list end */
 /*! breadcrumbs start */
@@ -405,6 +416,52 @@ input[type="search"]::-webkit-search-results-decoration {
 /*! adaptive & responsive start */
 @media screen and (max-width: 991px) {
     /** tablet */
+    .button {
+        font-size: 16px;
+        font-weight: 400;
+    }
+    h2 {
+        font-size: 16px;
+        font-weight: 600;
+    }
+    /* vitrin start */
+    .vitrin {
+        min-height: auto;
+    }
+    .vitrin__container {
+        backdrop-filter: brightness(0.6);
+        padding-top: 64px;
+        padding-bottom: 64px;
+    }
+    .vitrin__title {
+        font-size: 34px;
+        line-height: 48px;
+        max-width: 300px;
+    }
+    .vitrin__text {
+        max-width: 500px;
+    }
+    .vitrin__text--home {
+        padding-left: 0px;
+    }
+    .vitrin__link {
+        width: 248px;
+        min-height: 48px;
+        margin-left: 0px;
+    }
+    /* vitrin end */
+    /* values start */
+    .values-carousel {
+        min-width: 100%;
+        padding-left: 70px;
+    }
+    .values-carousel .owl-stage-outer {
+        overflow: visible;
+    }
+    .values__item {
+        margin-right: 32px;
+    }
+    /* values start */
 }
 @media screen and (max-width: 575px) {
     /** mobile */
@@ -412,5 +469,24 @@ input[type="search"]::-webkit-search-results-decoration {
         padding-left: 35px;
         padding-right: 35px;
     }
+    /* vitrin start */
+    .vitrin__container {
+        backdrop-filter: brightness(0.6);
+        padding-top: 48px;
+        padding-bottom: 48px;
+    }
+    .vitrin__text {
+        max-width: auto;
+    }
+    .vitrin__link {
+        width: 100%;
+    }
+    /* vitrin end */
+    /* values start */
+    .values-carousel {
+        min-width: 100%;
+        padding-left: 35px;
+    }
+        /* values start */
 }
 /*! adaptive & responsive end */

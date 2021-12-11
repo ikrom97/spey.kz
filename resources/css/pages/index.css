@@ -1,10 +1,14 @@
 /** our values section start */
 .our-values {
     position: relative;
-    padding-top: 25px;
-    padding-bottom: 50px;
-    display: flex;
-    justify-content: center;
+    overflow: hidden;
+}
+.our-values__container {
+    z-index: 2;
+}
+.our-values__title {
+    padding-top: 80px;
+    padding-bottom: 32px;
 }
 .our-values__img {
     position: absolute;
@@ -16,17 +20,20 @@
     opacity: 0.05;
     z-index: -1;
 }
-.our-values__inner {
-    flex-grow: 1;
-    max-width: 1260px;
-    background-color: #eae9f3;
-    display: flex;
-    flex-direction: column;
-    padding-top: 55px;
-    padding-bottom: 30px;
+.our-values__list {
+    position: relative;
+    margin-bottom: 80px;
 }
-.our-values__title {
-    margin-bottom: 30px;
+.our-values__list::before {
+    content: "";
+    display: block;
+    height: calc(100% + 136px);
+    width: calc(100% + 112px);
+    position: absolute;
+    left: -56px;
+    bottom: -32px;
+    background: #eae9f3;
+    border-radius: 15px;
 }
 /** our values section end */
 /** industry news section start */
@@ -208,3 +215,30 @@
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 15%);
 }
 /** popular products section end */
+/*! adaptive & responsive start */
+@media screen and (max-width: 991px) {
+    /** tablet */
+    .our-values__title {
+        padding-top: 48px;
+        padding-bottom: 16px;
+    }
+    .our-values__list {
+        position: relative;
+        margin-bottom: 48px;
+    }
+    .our-values__list::before {
+        content: "";
+        display: block;
+        height: calc(100% + 80px);
+        width: calc(100% + 112px);
+        position: absolute;
+        left: -56px;
+        bottom: -16px;
+        background: #eae9f3;
+        border-radius: 15px;
+    }
+}
+@media screen and (max-width: 575px) {
+    /** mobile */
+}
+/*! adaptive & responsive end */

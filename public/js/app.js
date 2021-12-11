@@ -204,7 +204,19 @@ if (loginPage) {
 /*!*************************************!*\
   !*** ./resources/js/pages/index.js ***!
   \*************************************/
+var body = document.querySelector('body'),
+    homePage = body.querySelector('.home-page');
 
+if (homePage) {
+  // values start
+  $('.values-carousel').owlCarousel({
+    loop: true,
+    lazyLoad: true,
+    nav: false,
+    autoWidth: true,
+    items: 6
+  }); // values end
+}
 })();
 
 // This entry need to be wrapped in an IIFE because it need to be isolated against other entry modules.

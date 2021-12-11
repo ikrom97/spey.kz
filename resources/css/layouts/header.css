@@ -322,6 +322,8 @@
     .search.hidden .search-form,
     .search-form {
         max-width: none;
+        min-width: 0px;
+        width: 100%;
     }
     /* search end */
     /* sites dropdown start */
@@ -458,6 +460,7 @@
         order: 2;
         margin-right: 16px;
         left: 0px;
+        min-width: 158px;
     }
     .sites-dropdown {
         margin-left: auto;
@@ -477,9 +480,5 @@
         margin-left: 0px;
         z-index: 4;
     }
-}
-main,
-footer {
-    overflow: hidden;
 }
 /*! adaptive & responsive end */
