@@ -301,4 +301,34 @@
         width: 100%;
     }
 }
+@media screen and (max-width: 360px) {
+    .values-carousel,
+    .industry-news-carousel,
+    .industry-news__container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .news-categories__link {
+        max-width: 260px;
+        min-width: 260px;
+    }
+    .products-categories__item {
+        min-width: 250px;
+    }
+    .products-categories__link {
+        margin-left: 20px;
+        height: 60px;
+        border-radius: 10px;
+        padding-left: 28px;
+        padding-right: 8px;
+    }
+    .products-categories__icon {
+        height: 40px;
+        width: 40px;
+        left: -20px;
+        border-radius: 10px;
+        padding: 8px;
+        top: calc(50% - 20px);
+    }
+}
 /*! adaptive & responsive end */

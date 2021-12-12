@@ -461,6 +461,7 @@
         margin-right: 16px;
         left: 0px;
         min-width: 158px;
+        max-width: 158px;
     }
     .sites-dropdown {
         margin-left: auto;
@@ -479,6 +480,66 @@
         order: 0;
         margin-left: 0px;
         z-index: 4;
+    }
+}
+@media screen and (max-width: 360px) {
+    .header {
+        padding-top: 32px;
+        padding-bottom: 16px;
+        min-height: 151px;
+    }
+    .home-link {
+        min-width: 148px;
+        max-width: 148px;
+    }
+    .sites-dropdown__button {
+        min-width: 40px;
+        max-width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        padding-left: 11px;
+    }
+    .sites-dropdown.show .sites-dropdown__button {
+        min-width: 212px;
+        max-width: 155px;
+    }
+    .search,
+    .search.hidden {
+        width: calc(100% - 20px);
+        margin-left: 10px;
+        margin-right: 10px;
+        top: calc(100% + 16px);
+    }
+    .hamburger {
+        height: 40px;
+        width: 40px;
+        min-width: 40px;
+        border-radius: 10px;
+    }
+    .search.hidden .search-form,
+    .search-form {
+        border-radius: 10px;
+        height: 40px;
+    }
+    .search-label {
+        min-width: 40px;
+        width: 40px px;
+        height: 40px;
+    }
+    .search-result {
+        top: 48px;
+    }
+    .langs-dropdown__button {
+        min-width: 40px;
+        max-width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        padding-left: 11px;
+    }
+    .main-navigation-title,
+    .main-navigation-info,
+    .main-navigation-logo {
+        display: none;
     }
 }
 /*! adaptive & responsive end */

@@ -436,7 +436,8 @@ input[type="search"]::-webkit-search-results-decoration {
     .vitrin__title {
         font-size: 34px;
         line-height: 48px;
-        max-width: 300px;
+        max-width: 350px;
+        overflow: hidden;
     }
     .vitrin__text {
         max-width: 500px;
@@ -481,5 +482,11 @@ input[type="search"]::-webkit-search-results-decoration {
         padding-left: 35px;
     }
     /* values start */
+}
+@media screen and (max-width: 360px) {
+    .container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
 }
 /*! adaptive & responsive end */
