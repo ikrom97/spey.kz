@@ -1496,7 +1496,7 @@ input[type="search"]::-webkit-search-results-decoration {
     padding-right: 16px;
     display: flex;
     gap: 10px;
-    align-items: end;
+    align-items: flex-end;
     justify-content: space-between;
     padding-bottom: 30px;
 }
