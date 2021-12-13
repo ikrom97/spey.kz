@@ -39,7 +39,7 @@ class PagesController extends Controller
             'view_rate',
             'icon',
             'trashed'
-        )->where('trashed', false)->orderBy('view_rate', 'desc')->paginate(6);
+        )->where('trashed', false)->orderBy('view_rate', 'desc')->take(6)->get();
         // Count products categries
         $prodCategoriesQuantity = ProductsCategory::where('trashed', false)->count();
         // Count products
@@ -53,7 +53,7 @@ class PagesController extends Controller
             'view_rate',
             'recipe',
             'trashed',
-        )->where('trashed', false)->orderBy('view_rate', 'desc')->paginate(6);
+        )->where('trashed', false)->orderBy('view_rate', 'desc')->take(6)->get();
 
         return view('pages.index', compact('industryNews', 'prodCategories', 'prodCategoriesQuantity', 'productsQuantity', 'popularProducts'));
     }

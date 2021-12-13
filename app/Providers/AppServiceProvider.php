@@ -55,14 +55,14 @@ class AppServiceProvider extends ServiceProvider
                 $locale . '_title as title',
                 'view_rate',
                 'trashed'
-            )->where('trashed', false)->orderBy('view_rate', 'desc')->paginate(10);
+            )->where('trashed', false)->orderBy('view_rate', 'desc')->take(10)->get();
 
             $footerNewsCategories = NewsCategory::select(
                 'id',
                 $locale . '_title as title',
                 'view_rate',
                 'trashed'
-            )->where('trashed', false)->orderBy('view_rate', 'desc')->get();
+            )->where('trashed', false)->orderBy('view_rate', 'desc')->take(4)->get();
 
             return $view->with('route', \Route::currentRouteName())
                 ->with('locale', $locale)

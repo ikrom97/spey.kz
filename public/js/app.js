@@ -149,6 +149,18 @@ if (footer) {
     }, "slow");
     return false;
   }); //* Scroll to top start
+  //* show hide mobile navigation start
+
+  var navBtns = footer.querySelectorAll('[data-action="show"]'),
+      navs = footer.querySelectorAll('.footer-navigation');
+  navBtns.forEach(function (button) {
+    button.onclick = function () {
+      // navs.forEach(nav => {
+      //     nav.classList.remove('show');
+      // });
+      button.parentNode.classList.toggle('show');
+    };
+  }); //* show hide mobile navigation end
 }
 })();
 
@@ -219,10 +231,10 @@ if (homePage) {
       0: {
         margin: 32
       },
-      575: {
+      576: {
         margin: 32
       },
-      991: {
+      992: {
         margin: 48
       }
     }
@@ -239,16 +251,42 @@ if (homePage) {
         margin: 32,
         items: 1
       },
-      575: {
+      576: {
         margin: 32,
         items: 3
       },
-      991: {
+      992: {
         margin: 96,
         items: 4
       }
     }
   }); // industry-news end
+  // popular products carousel start
+
+  $('.popular-products-carousel').owlCarousel({
+    loop: false,
+    lazyLoad: true,
+    mouseDrag: false,
+    nav: false,
+    autoWidth: false,
+    responsive: {
+      0: {
+        loop: true,
+        margin: 0,
+        items: 1
+      },
+      715: {
+        mouseDrag: true,
+        loop: true,
+        margin: 24,
+        items: 2
+      },
+      992: {
+        margin: 0,
+        items: 6
+      }
+    }
+  }); // popular products carousel end
 }
 })();
 
