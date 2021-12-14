@@ -21,7 +21,7 @@
                 <h2 class="our-history__title">{{__('Our history')}}</h2>
                 <ul class="histories" data-family="history">
                     @foreach ($histories as $key => $history)
-                        <li class="histories__item {{$key > 8 ? 'hidden' : ''}}" data-row="{{ceil(($key + 1) / 3)}}" data-family="history">
+                        <li class="histories__item" data-row="" data-family="history">
                             <h3 class="histories__title" data-family="history">
                                 {{$history->title}}
                                 <span class="histories__year" data-family="history">{{$history->year}}</span>
@@ -47,7 +47,7 @@
             </div>
         </section>
         <section class="present-time">
-            <div class="container">
+            <div class="container present-time__container">
                 <h2 class="present-time__title">{{__('Present time')}}</h2>
                 <b class="present-time__notation">{{__('SPEY is an international pharmaceutical company founded in 2001')}}.</b>
                 <p>{{__('Our company is engaged in the development and marketing of high-quality and innovative pharmaceutical products for the needs of a wide range of therapeutic areas. All products are manufactured at production facilities equipped with advanced technology and approved by the world quality standards of the World Health Organization (WHO) and Good Manufacturing Practice (GMP)')}}.</p><br>
@@ -105,16 +105,20 @@
                 </div>
                 <ul class="mission-vision">
                     <li class="mission-vision-item">
-                        <h3 class="mission-vision-title">{{__('Our mission')}}</h3>
-                        <p class="mission-vision-text">
-                            {{__('To contribute to improving the health and well-being of people.')}}
-                        </p>
+                        <div class="mission-vision-content">
+                            <h3 class="mission-vision-title">{{__('Our mission')}}</h3>
+                            <p class="mission-vision-text">
+                                {{__('To contribute to improving the health and well-being of people.')}}
+                            </p>
+                        </div>
                     </li>
                     <li class="mission-vision-item">
-                        <h3 class="mission-vision-title">{{__('Our vision')}}</h3>
-                        <p class="mission-vision-text">
-                            {{__('To be a leading company, recognized for quality and innovation.')}}
-                        </p>
+                        <div class="mission-vision-content">
+                            <h3 class="mission-vision-title">{{__('Our vision')}}</h3>
+                            <p class="mission-vision-text">
+                                {{__('To be a leading company, recognized for quality and innovation.')}}
+                            </p>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -122,61 +126,57 @@
         <section class="about-page-values">
             <div class="container">
                 <h2 class="our-values__title">{{__('Our values')}}</h2>
-                <ul class="values-list">
-                    <li class="values-list__item">
-                        <h3 class="values-list__title">{{__('Life')}}</h3>
-                        <p class="values-list__text">
-                            {{__('We recognize life as a gift that needs to be cherished.')}}
-                        </p>
-                    </li>
-                    <li class="values-list__item">
-                        <h3 class="values-list__title">{{__('Creation')}}</h3>
-                        <p class="values-list__text">
-                            {{__('We are discovering new facets of the possible.')}}
-                        </p>
-                    </li>
-                    <li class="values-list__item">
-                        <h3 class="values-list__title">{{__('Responsibility')}}</h3>
-                        <p class="values-list__text">
-                            {{__('We are responsible for the well-being of society.')}}
-                        </p>
-                    </li>
-                    <li class="values-list__item">
-                        <h3 class="values-list__title">{{__('Team spirit')}}</h3>
-                        <p class="values-list__text">
-                            {{__('We are united and achieve our goals.')}}
-                        </p>
-                    </li>
-                    <li class="values-list__item">
-                        <h3 class="values-list__title">{{__('Professionalism')}}</h3>
-                        <p class="values-list__text">
-                            {{__('We show a high level of working skills.')}}
-                        </p>
-                    </li>
-                    <li class="values-list__item">
-                        <h3 class="values-list__title">{{__('Relationship')}}</h3>
-                        <p class="values-list__text">
-                            {{__("We value everyone's opinion.")}}
-                        </p>
-                    </li>
-                </ul>
+            </div>
+            <div class="owl-carousel values-carousel our-values__list">
+                <div class="values__item">
+                    <h3 class="values__title">{{__('Life')}}</h3>
+                    <p class="values__text">
+                        {{__('We recognize life as a gift that needs to be cherished.')}}
+                    </p>
+                </div>
+                <div class="values__item">
+                    <h3 class="values__title">{{__('Creation')}}</h3>
+                    <p class="values__text">
+                        {{__('We are discovering new facets of the possible.')}}
+                    </p>
+                </div>
+                <div class="values__item">
+                    <h3 class="values__title">{{__('Responsibility')}}</h3>
+                    <p class="values__text">
+                        {{__('We are responsible for the well-being of society.')}}
+                    </p>
+                </div>
+                <div class="values__item">
+                    <h3 class="values__title">{{__('Team spirit')}}</h3>
+                    <p class="values__text">
+                        {{__('We are united and achieve our goals.')}}
+                    </p>
+                </div>
+                <div class="values__item">
+                    <h3 class="values__title">{{__('Professionalism')}}</h3>
+                    <p class="values__text">
+                        {{__('We show a high level of working skills.')}}
+                    </p>
+                </div>
+                <div class="values__item">
+                    <h3 class="values__title">{{__('Relationship')}}</h3>
+                    <p class="values__text">
+                        {{__("We value everyone's opinion.")}}
+                    </p>
+                </div>
             </div>
         </section>
         <section class="rdp-areas">
             <div class="container">
                 <h2 class="rdp-areas__heading">{{__('Research, development and production areas')}}</h2>
+            </div>
+            <div class="container rdp-areas-carousel__container">
                 <div class="rdp-areas-carousel__wrap">
-                    <ul class="owl-carousel rdp-areas-carousel">
-                        <li class="item rdp-areas-carousel__item">
-                            <img class="rdp-areas-carousel__img" src="{{asset('img/rdp-areas.jpg')}}">
-                        </li>
-                        <li class="item rdp-areas-carousel__item">
-                            <img class="rdp-areas-carousel__img" src="{{asset('img/rdp-areas.jpg')}}">
-                        </li>
-                        <li class="item rdp-areas-carousel__item">
-                            <img class="rdp-areas-carousel__img" src="{{asset('img/rdp-areas.jpg')}}">
-                        </li>
-                    </ul>
+                    <div class="owl-carousel rdp-areas-carousel">
+                        <img class="rdp-areas-carousel__img" src="{{asset('img/rdp-areas.jpg')}}">
+                        <img class="rdp-areas-carousel__img" src="{{asset('img/rdp-areas.jpg')}}">
+                        <img class="rdp-areas-carousel__img" src="{{asset('img/rdp-areas.jpg')}}">
+                    </div>
                     <span class="more-icon rdp-areas-carousel__prev-btn">
                         <svg xmlns="http://www.w3.org/2000/svg" width="8" height="14.525" viewBox="0 0 8 14.525"><g id="download" transform="translate(0 14.525) rotate(-90)"><path id="Expand_More" d="M13.276.216,7.263,6.229,1.251.215A.733.733,0,0,0,.214,1.253l6.53,6.532h0a.732.732,0,0,0,1.036,0l6.53-6.532A.733.733,0,1,0,13.276.216Z" fill="#fff"/></g></svg>
                     </span>
@@ -184,6 +184,8 @@
                         <svg xmlns="http://www.w3.org/2000/svg" width="8" height="14.525" viewBox="0 0 8 14.525"><g id="download" transform="translate(0 14.525) rotate(-90)"><path id="Expand_More" d="M13.276.216,7.263,6.229,1.251.215A.733.733,0,0,0,.214,1.253l6.53,6.532h0a.732.732,0,0,0,1.036,0l6.53-6.532A.733.733,0,1,0,13.276.216Z" fill="#fff"/></g></svg>
                     </span>
                 </div>
+            </div>
+            <div class="container">
                 <p>{{__('In the pharmaceutical industry, it is always important to move forward - this is what the employees of our research centers in different countries are doing.')}}</p><br>
                 <p>{{__('Specialists in the creation of new dosage forms have modern equipment and high-precision analytical devices at their disposal. SPEY already has many achievements in the pharmaceutical industry, and drug development continues.')}}</p><br>
                 <h2 class="rdp-areas__title">{{__('Today, the company is developing more than 30 new drugs in various dosage forms.')}}</h2><br>
@@ -199,7 +201,7 @@
             <div class="map-wrap">
                 {!!$siteMap!!}
             </div>
-            <div class="container">
+            <div class="geography-container">
                 <ul class="geography-countries">
                     @foreach ($speySites as $site)
                         <li class="countries-item">

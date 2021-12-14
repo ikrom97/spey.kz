@@ -363,7 +363,7 @@ input[type="search"]::-webkit-search-results-decoration {
 /*! geography-presence section start */
 .geography-presence__title {
     padding-top: 80px;
-    padding-bottom: 30px;
+    padding-bottom: 32px;
 }
 .map-wrap {
     height: 540px;
@@ -373,11 +373,25 @@ input[type="search"]::-webkit-search-results-decoration {
     width: 100%;
     height: 100%;
 }
+.geography-container {
+    padding-left: 70px;
+    padding-right: 70px;
+    max-width: 1300px;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+}
+.geography-container::-webkit-scrollbar {
+    display: none;
+}
 .geography-countries {
+    scroll-snap-align: center;
     display: flex;
     flex-wrap: wrap;
-    margin-top: 30px;
-    gap: 5px 10px;
+    margin-top: 32px;
+    gap: 8px 8px;
+    padding-left: 100px;
+    padding-right: 100px;
+    min-width: 1360px;
 }
 .countries-item {
     display: flex;
@@ -449,6 +463,7 @@ input[type="search"]::-webkit-search-results-decoration {
         width: 248px;
         min-height: 48px;
         margin-left: 0px;
+        min-width: max-content;
     }
     /* vitrin end */
     /* values start */
@@ -456,6 +471,15 @@ input[type="search"]::-webkit-search-results-decoration {
         overflow: visible;
     }
     /* values start */
+    .geography-presence__title {
+        padding-top: 48px;
+        padding-bottom: 16px;
+        font-size: 16px;
+        font-weight: 600;
+    }
+    .map-wrap {
+        height: 400px;
+    }
 }
 @media screen and (max-width: 575px) {
     /** mobile */
