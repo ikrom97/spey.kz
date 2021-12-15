@@ -26,14 +26,12 @@ if (header) {
     //* search start
     searchBtn.onclick = e => {
         e.preventDefault();
-        searchWrap.classList.toggle('hidden');
-        searchInput.focus();
-        searchForm.reset();
     };
     body.addEventListener('click', e => {
         if (e.target.dataset.family != 'search' && !searchForm.classList.contains('hidden')) {
             searchWrap.classList.add('hidden');
             resultWrap.innerHTML = '';
+            searchForm.reset();
         }
     });
     searchInput.onkeyup = () => {
@@ -64,14 +62,14 @@ if (header) {
         closeBtn = navigationWrap.querySelector('.main-navigation-btn');       
 
         hamburder.onclick = () => {
-            navigationWrap.classList.add('show');
+            navigationWrap.classList.remove('hidden');
         };
         closeBtn.onclick = () => {
-            navigationWrap.classList.remove('show');
+            navigationWrap.classList.add('hidden');
         };
         navigationWrap.addEventListener('click', e => {
             if (e.target.dataset.id == 'navigation-wrap') {
-                navigationWrap.classList.remove('show');
+                navigationWrap.classList.add('hidden');
             }
         });
     //* main navigation end

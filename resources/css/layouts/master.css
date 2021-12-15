@@ -11,8 +11,11 @@
     text-decoration: none;
     z-index: 0;
 }
+*:focus {
+    outline: none;
+}
 html::-webkit-scrollbar {
-    width: 6px;
+    width: 8px;
 }
 html::-webkit-scrollbar-track {
     background-color: #0033ab;
@@ -28,6 +31,7 @@ body {
     flex-direction: column;
     min-height: 100vh;
     color: #1d1d1d;
+    overflow-x: hidden;
 }
 .visually-hidden:not(:focus):not(:active),
 input[type="checkbox"].visually-hidden,
@@ -52,7 +56,7 @@ ul {
 img {
     max-width: 100%;
 }
-.h1 {
+h1 {
     font-size: 42.5px;
     font-weight: 700;
     text-transform: uppercase;
@@ -80,15 +84,6 @@ h2 {
     cursor: pointer;
     font-size: 17.5px;
 }
-.button--big,
-.link--big {
-    height: 60px;
-}
-.button--small,
-.link--small {
-    height: 35px;
-    border-radius: 10px;
-}
 /* Clears the ‘X’ from Internet Explorer */
 input[type="search"]::-ms-clear {
     display: none;
@@ -107,38 +102,12 @@ input[type="search"]::-webkit-search-results-decoration {
     visibility: hidden;
 }
 .container {
-    width: 100%;
-    max-width: 1300px;
-    padding-left: 70px;
-    padding-right: 70px;
+    width: 1160px;
+    max-width: 1160px;
     margin-left: auto;
     margin-right: auto;
-    position: relative;
 }
-.view-more {
-    min-width: max-content;
-    font-weight: 300;
-    font-size: 11px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-.view-more__icon {
-    display: flex;
-    height: 25px;
-    width: 25px;
-    border-radius: 8px;
-    background-color: #00b052;
-    justify-content: center;
-    align-items: center;
-    padding-left: 1px;
-    transition: 0.3s;
-    min-width: 25px;
-}
-.view-more__text {
-    width: max-content;
-}
-/*! modals start */
+/** modals start */
 .modal {
     position: fixed;
     top: 0px;
@@ -171,8 +140,8 @@ input[type="search"]::-webkit-search-results-decoration {
     text-align: initial;
     gap: 5px;
 }
-/*! modals end */
-/*! vitrin section start */
+/** modals end */
+/** vitrin section start */
 .vitrin {
     display: flex;
     align-items: center;
@@ -247,7 +216,7 @@ input[type="search"]::-webkit-search-results-decoration {
     width: 100%;
     object-fit: contain;
 }
-/** vitrin dropdown start */
+/* vitrin dropdown start */
 .vitrin-dropdown {
     width: 330px;
     margin-left: auto;
@@ -317,9 +286,9 @@ input[type="search"]::-webkit-search-results-decoration {
 .vitrin-dropdown__link:hover {
     font-weight: 600;
 }
-/** vitrin dropdown end */
-/*! vitrin section end */
-/*! values list start */
+/* vitrin dropdown end */
+/** vitrin section end */
+/** values list start */
 .values-carousel {
     max-width: 1300px;
     margin-left: auto;
@@ -347,8 +316,8 @@ input[type="search"]::-webkit-search-results-decoration {
 .values-carousel .owl-nav {
     display: none;
 }
-/*! values list end */
-/*! breadcrumbs start */
+/** values list end */
+/** breadcrumbs start */
 .breadcrumbs {
     width: 100%;
     display: flex;
@@ -375,8 +344,8 @@ input[type="search"]::-webkit-search-results-decoration {
     color: var(--primary-color);
     cursor: context-menu;
 }
-/*! breadcrumbs end */
-/*! geography-presence section start */
+/** breadcrumbs end */
+/** geography-presence section start */
 .geography-presence__title {
     padding-top: 80px;
     padding-bottom: 32px;
@@ -439,97 +408,18 @@ input[type="search"]::-webkit-search-results-decoration {
 .countries-link.current:hover {
     color: #fff;
 }
-/*! geography-presence section end */
-/*! adaptive & responsive start */
-@media screen and (max-width: 991px) {
-    /** tablet */
-    .button {
-        font-size: 16px;
-        font-weight: 400;
-    }
-    h2 {
-        font-size: 16px;
-        font-weight: 600;
-    }
-    .view-more__text {
-        max-width: 62px;
-    }
-    /* vitrin start */
-    .vitrin {
-        min-height: auto;
-    }
-    .vitrin__container {
-        backdrop-filter: brightness(0.6);
-        padding-top: 64px;
-        padding-bottom: 64px;
-    }
-    .vitrin__title {
-        font-size: 34px;
-        line-height: 48px;
-        max-width: 350px;
-        overflow: hidden;
-    }
-    .vitrin__text {
-        max-width: 500px;
-    }
-    .vitrin__text--home {
-        padding-left: 0px;
-    }
-    .vitrin__link {
-        width: 248px;
-        min-height: 48px;
-        margin-left: 0px;
-        min-width: max-content;
-    }
-    .vitrin__product-img-wrap {
-        display: none;
-    }
-    /* vitrin end */
-    /* values start */
-    .values-carousel .owl-stage-outer {
-        overflow: visible;
-    }
-    /* values start */
-    .geography-presence__title {
-        padding-top: 48px;
-        padding-bottom: 16px;
-        font-size: 16px;
-        font-weight: 600;
-    }
-    .map-wrap {
-        height: 400px;
+/** geography-presence section end */
+/*! adaptive start */
+@media screen and (max-width: 1299px) {
+    /** tablets */
+    .container {
+        max-width: 694px;
     }
 }
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 833px) {
     /** mobile */
     .container {
-        padding-left: 35px;
-        padding-right: 35px;
+        max-width: 358px;
     }
-    /* vitrin start */
-    .vitrin__container {
-        backdrop-filter: brightness(0.6);
-        padding-top: 48px;
-        padding-bottom: 48px;
-    }
-    .vitrin__text {
-        max-width: auto;
-    }
-    .vitrin__link {
-        width: 100%;
-    }
-    /* vitrin end */
-    /* values start */
-    .values-carousel {
-        min-width: 100%;
-        padding-left: 35px;
-    }
-    /* values start */
 }
-/* @media screen and (max-width: 360px) {
-    .container {
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-} */
-/*! adaptive & responsive end */
+/*! adaptive end */

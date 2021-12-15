@@ -79,15 +79,13 @@ if (header) {
 
   searchBtn.onclick = function (e) {
     e.preventDefault();
-    searchWrap.classList.toggle('hidden');
-    searchInput.focus();
-    searchForm.reset();
   };
 
   body.addEventListener('click', function (e) {
     if (e.target.dataset.family != 'search' && !searchForm.classList.contains('hidden')) {
       searchWrap.classList.add('hidden');
       resultWrap.innerHTML = '';
+      searchForm.reset();
     }
   });
 
@@ -119,16 +117,16 @@ if (header) {
       closeBtn = navigationWrap.querySelector('.main-navigation-btn');
 
   hamburder.onclick = function () {
-    navigationWrap.classList.add('show');
+    navigationWrap.classList.remove('hidden');
   };
 
   closeBtn.onclick = function () {
-    navigationWrap.classList.remove('show');
+    navigationWrap.classList.add('hidden');
   };
 
   navigationWrap.addEventListener('click', function (e) {
     if (e.target.dataset.id == 'navigation-wrap') {
-      navigationWrap.classList.remove('show');
+      navigationWrap.classList.add('hidden');
     }
   }); //* main navigation end
 }
