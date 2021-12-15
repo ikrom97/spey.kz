@@ -62,7 +62,7 @@ class AppServiceProvider extends ServiceProvider
                 $locale . '_title as title',
                 'view_rate',
                 'trashed'
-            )->where('trashed', false)->orderBy('view_rate', 'desc')->take(4)->get();
+            )->where('trashed', false)->orderBy('view_rate', 'desc')->take(10)->get();
 
             return $view->with('route', \Route::currentRouteName())
                 ->with('locale', $locale)

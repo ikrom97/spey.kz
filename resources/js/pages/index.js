@@ -4,19 +4,21 @@ const body = document.querySelector('body'),
 if (homePage) {
     // values start
     $('.values-carousel').owlCarousel({
-        loop: true,
-        lazyLoad: true,
         nav: false,
-        autoWidth: true,
         items: 6,
         responsive: {
             0: {
+                autoWidth: true,
+                loop: true,
                 margin: 32,
             },
-            576: {
+            834: {
+                autoWidth: true,
+                loop: true,
                 margin: 32,
             },
-            992: {
+            1300: {
+                loop: false,
                 margin: 48,
             }
         }

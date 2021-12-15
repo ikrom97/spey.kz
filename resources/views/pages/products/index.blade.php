@@ -5,9 +5,9 @@
 @section('content')
     <main class="products-page" data-id="products-page">
         <section class="vitrin">
-            <img class="vitrin__img" src="{{asset('img/products-vitrin-bg.jpg')}}">
-            <div class="container vitrin__container">
-                <h1 class="vitrin__title">{{__('Our products')}}</h1>
+            <img class="vitrin-img" src="{{asset('img/products-vitrin-bg.jpg')}}">
+            <div class="container vitrin-container">
+                <h1 class="vitrin-title">{{__('Our products')}}</h1>
                 <p class="vitrin__text">
                     {{__('We pay great attention to the issue of the production of drugs and choose the most modern production sites, which are located in several European countries, proven by time and quality control system')}}.
                 </p>

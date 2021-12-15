@@ -32,7 +32,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
                         <path fill="#1d1d1d" d="M19.734,18.448l-6.2-6.2a7.584,7.584,0,1,0-1.286,1.286l6.2,6.2a.909.909,0,0,0,1.286-1.286ZM1.818,7.576a5.758,5.758,0,1,1,5.758,5.758A5.764,5.764,0,0,1,1.818,7.576Z"/>
                     </svg>
-                    <input class="search-input" id="keyword" name="keyword" type="search" placeholder="Поиск" autocomplete="off">
+                    <input class="search-input" id="keyword" name="keyword" type="search" placeholder="{{__('Search')}}" autocomplete="off">
                 </label>
                 <button class="search-submit-btn" type="submit"></button>
             </form>

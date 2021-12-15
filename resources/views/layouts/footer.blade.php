@@ -44,10 +44,7 @@
                     </svg>
                 </button>
             </div>
-            <div class="site-info__copyright">
-                © {{date('Y')}} | Spey
-                {{__('International pharmaceutical company')}}
-            </div>
+            <div class="site-info__copyright">© {{date('Y')}} | Spey - {{__('International pharmaceutical company')}}</div>
         </div>
     </div>
 </footer>

@@ -149,14 +149,10 @@ if (footer) {
   }); //* Scroll to top start
   //* show hide mobile navigation start
 
-  var navBtns = footer.querySelectorAll('[data-action="show"]'),
-      navs = footer.querySelectorAll('.footer-navigation');
-  navBtns.forEach(function (button) {
-    button.onclick = function () {
-      // navs.forEach(nav => {
-      //     nav.classList.remove('show');
-      // });
-      button.parentNode.classList.toggle('show');
+  var navBtns = footer.querySelectorAll('[data-action="show"]');
+  navBtns.forEach(function (btn) {
+    btn.onclick = function () {
+      btn.parentNode.classList.toggle('show');
     };
   }); //* show hide mobile navigation end
 }
@@ -220,19 +216,21 @@ var body = document.querySelector('body'),
 if (homePage) {
   // values start
   $('.values-carousel').owlCarousel({
-    loop: true,
-    lazyLoad: true,
     nav: false,
-    autoWidth: true,
     items: 6,
     responsive: {
       0: {
+        autoWidth: true,
+        loop: true,
         margin: 32
       },
-      576: {
+      834: {
+        autoWidth: true,
+        loop: true,
         margin: 32
       },
-      992: {
+      1300: {
+        loop: false,
         margin: 48
       }
     }

@@ -5,14 +5,16 @@
 @section('content')
     <main class="about-page">
         <section class="vitrin">
-            <img class="vitrin__img" src="{{asset('img/about-vitrin-bg.jpg')}}">
-            <div class="container vitrin__container">
-                <h1 class="vitrin__title">{{__('About us')}}</h1>
-                <p class="vitrin__text">
-                    {{__('To achieve our goals in the field of healthcare, we work together with representatives of large pharmacy chains and medical structures from different countries.')}}
-                </p>
-                <div class="vitrin__link-wrap">
-                    <a class="button vitrin__link" href="{{route('contacts')}}#cooperation">{{__('Cooperate with us')}}</a>
+            <img class="vitrin-img" src="{{asset('img/about-vitrin-bg.jpg')}}">
+            <div class="container vitrin-container">
+                <div class="vitrin-left">
+                    <h1 class="vitrin-title">{{__('About us')}}</h1>
+                    <p class="vitrin__text">
+                        {{__('To achieve our goals in the field of healthcare, we work together with representatives of large pharmacy chains and medical structures from different countries.')}}
+                    </p>
+                    <div class="vitrin__link-wrap">
+                        <a class="button vitrin__link" href="{{route('contacts')}}#cooperation">{{__('Cooperate with us')}}</a>
+                    </div>
                 </div>
             </div>
         </section>

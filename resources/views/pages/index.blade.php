@@ -5,58 +5,47 @@
 @section('content')
     <main class="home-page">
         <section class="vitrin">
-            <img class="vitrin__img" src="{{asset('img/home-vitrin-bg.jpg')}}">
-            <div class="container vitrin__container">
-                <h1 class="vitrin__title">{{__('Health is a responsibility')}}</h1>
-                <p class="vitrin__text vitrin__text--home">
-                    {{__('Our mission is to contribute to improving the health and well-being of people.')}}
-                </p>
-                <div class="vitrin__link-wrap">
-                    <a class="button vitrin__link" href="{{route('about')}}">{{__('Learn more')}}</a>
+            <img class="vitrin-img" src="{{asset('img/home-vitrin-bg.jpg')}}">
+            <div class="container vitrin-container">
+                <div class="vitrin-left">
+                    <h1 class="vitrin-title">{{__('Health is a responsibility')}}</h1>
+                    <p class="vitrin__text vitrin__text--home">
+                        {{__('Our mission is to contribute to improving the health and well-being of people.')}}
+                    </p>
+                    <div class="vitrin__link-wrap">
+                        <a class="button vitrin__link" href="{{route('about')}}">{{__('Learn more')}}</a>
+                    </div>
                 </div>
             </div>
         </section>
         <section class="our-values">
-            <img class="our-values__img" src="{{asset('img/our-values-bg.jpg')}}">
-            <div class="container our-values__container">
-                <h2 class="our-values__title">{{__('Our values')}}</h2>
-            </div>
-            <div class="owl-carousel values-carousel our-values__list">
-                <div class="values__item">
-                    <h3 class="values__title">{{__('Life')}}</h3>
-                    <p class="values__text">
-                        {{__('We recognize life as a gift that needs to be cherished.')}}
-                    </p>
-                </div>
-                <div class="values__item">
-                    <h3 class="values__title">{{__('Creation')}}</h3>
-                    <p class="values__text">
-                        {{__('We are discovering new facets of the possible.')}}
-                    </p>
-                </div>
-                <div class="values__item">
-                    <h3 class="values__title">{{__('Responsibility')}}</h3>
-                    <p class="values__text">
-                        {{__('We are responsible for the well-being of society.')}}
-                    </p>
-                </div>
-                <div class="values__item">
-                    <h3 class="values__title">{{__('Team spirit')}}</h3>
-                    <p class="values__text">
-                        {{__('We are united and achieve our goals.')}}
-                    </p>
-                </div>
-                <div class="values__item">
-                    <h3 class="values__title">{{__('Professionalism')}}</h3>
-                    <p class="values__text">
-                        {{__('We show a high level of working skills.')}}
-                    </p>
-                </div>
-                <div class="values__item">
-                    <h3 class="values__title">{{__('Relationship')}}</h3>
-                    <p class="values__text">
-                        {{__("We value everyone's opinion.")}}
-                    </p>
+            <div class="our-values-inner">
+                <h2 class="our-values-title">{{__('Our values')}}</h2>
+                <div class="owl-carousel values-carousel">
+                    <div class="values-item">
+                        <h3 class="values-title">{{__('Life')}}</h3>
+                        <p class="values-text">{{__('We recognize life as a gift that needs to be cherished.')}}</p>
+                    </div>
+                    <div class="values-item">
+                        <h3 class="values-title">{{__('Creation')}}</h3>
+                        <p class="values-text">{{__('We are discovering new facets of the possible.')}}</p>
+                    </div>
+                    <div class="values-item">
+                        <h3 class="values-title">{{__('Responsibility')}}</h3>
+                        <p class="values-text">{{__('We are responsible for the well-being of society.')}}</p>
+                    </div>
+                    <div class="values-item">
+                        <h3 class="values-title">{{__('Team spirit')}}</h3>
+                        <p class="values-text">{{__('We are united and achieve our goals.')}}</p>
+                    </div>
+                    <div class="values-item">
+                        <h3 class="values-title">{{__('Professionalism')}}</h3>
+                        <p class="values-text">{{__('We show a high level of working skills.')}}</p>
+                    </div>
+                    <div class="values-item">
+                        <h3 class="values-title">{{__('Relationship')}}</h3>
+                        <p class="values-text">{{__("We value everyone's opinion.")}}</p>
+                    </div>
                 </div>
             </div>
         </section>

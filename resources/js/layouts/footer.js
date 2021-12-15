@@ -8,14 +8,10 @@ if (footer) {
     });
     //* Scroll to top start
     //* show hide mobile navigation start
-    const navBtns = footer.querySelectorAll('[data-action="show"]'),
-        navs = footer.querySelectorAll('.footer-navigation');
-    navBtns.forEach(button => {
-        button.onclick = () => {
-            // navs.forEach(nav => {
-            //     nav.classList.remove('show');
-            // });
-            button.parentNode.classList.toggle('show');
+    const navBtns = footer.querySelectorAll('[data-action="show"]');
+    navBtns.forEach(btn => {
+        btn.onclick = () => {
+            btn.parentNode.classList.toggle('show');
         };
     });
     //* show hide mobile navigation end
