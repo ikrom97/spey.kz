@@ -153,6 +153,7 @@ if (productPage) {
             });
             searchInput.value = '';
             keyword = '';
+            productsSection.style.marginTop = '0px';
         }
         if (e.target.dataset.type != 'dropdown-btn') {
             dropdownItems.forEach(item => {
@@ -176,20 +177,20 @@ if (productPage) {
     //! all-products section end */
     //! similar-products section start
     $('.products-carousel').owlCarousel({
-        loop: true,
-        autoplay: true,
-        autoplayTimeout: 3000,
-        autoplayHoverPause: true,
+        // autoplay: true,
+        // autoplayTimeout: 3000,
+        // autoplayHoverPause: true,
         nav: true,
-        margin: 25,
+        margin: 24,
+        autoWidth: true,
         responsive: {
             0: {
-                items: 3
+                items: 1
             },
-            600: {
-                items: 3
+            575: {
+                items: 2
             },
-            1000: {
+            992: {
                 items: 3
             }
         }

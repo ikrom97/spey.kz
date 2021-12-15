@@ -46,6 +46,8 @@
     width: calc((100% - 70px) / 3);
     display: flex;
     flex-direction: column;
+    flex-grow: 1;
+    min-width: 320px;
 }
 .instruction-dropdown.hidden {
     opacity: 0.2;
@@ -131,74 +133,19 @@
     padding: 0px;
 }
 /*! similar-products section start */
-.similar-products__list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px 35px;
-    margin-bottom: 80px;
-}
-.similar-products__cards {
-    width: calc((100% - 70px) / 3);
-    display: flex;
-}
-.similar-products__title {
-    margin-bottom: 24px;
-    margin-top: 50px;
-}
-.products-carousel__wrap {
-    position: relative;
-    margin-bottom: 80px;
-}
-.products-carousel .product-card:hover {
-    box-shadow: none;
-} 
-.products-carousel__prev-icon,
-.products-carousel__next-icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 25px;
-    width: 25px;
-    border-radius: 8px;
-    background-color: #00b052;
-    position: absolute;
-    top: calc(50% - 12.5px);
-    transition: 0.3s;
-}
-.products-carousel__prev-icon {
-    left: -45px;
-    transform: rotate(90deg);
-}
-.products-carousel__next-icon {
-    right: -45px;
-    transform: rotate(-90deg);
-}
-.products-carousel .owl-dots {
-    display: none;
-}
-.products-carousel .owl-nav {
-    height: 0px;
-}
-.owl-carousel.products-carousel .owl-nav button.owl-prev,
-.owl-carousel.products-carousel .owl-nav button.owl-next {
-    display: flex;
-    height: 25px;
-    width: 25px;
-    border-radius: 8px;
-    color: transparent;
-    position: absolute;
-    top: calc(50% - 12.5px);
-    cursor: pointer;
-    transition: 0.3s;
-}
-.owl-carousel.products-carousel .owl-nav button.owl-prev {
-    left: -45px;
-}
-.owl-carousel.products-carousel .owl-nav button.owl-next {
-    right: -45px;
-}
-.owl-carousel.products-carousel .owl-nav button.owl-prev:hover,
-.owl-carousel.products-carousel .owl-nav button.owl-next:hover {
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 15%);
-}
+
 /*! similar-products section start */
+/*! adaptive & responsive start */
+@media screen and (max-width: 991px) {
+    /** tablet */
+    .product-info__title-wrap {
+        padding-top: 48px;
+        padding-bottom: 16px;
+    }
+}
+@media screen and (max-width: 575px) {
+    /** mobile */
+}
+@media screen and (max-width: 360px) {
+}
+/*! adaptive & responsive end */

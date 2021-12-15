@@ -6,6 +6,9 @@
    <main class="main products-read" data-id="products-read-page">
        <section class="vitrin">
             <img class="vitrin__img" src="{{asset('img/products/default-vitrin-bg.jpg')}}">
+            <div class="vitrin__product-img-wrap">
+                <img class="vitrin__product-img" src="{{asset('img/products/' . $product->img)}}" alt="{{$product->title}}">
+            </div>
             <div class="container vitrin__container">
                 <h1 class="vitrin__title">{{$product->title}}</h1>
                 <p class="vitrin__text">
@@ -131,31 +134,13 @@
         <section class="similar-products">
             <div class="container">
                 <h2 class="title similar-products__title">{{__('Similar products')}}</h2>
-                @if ($similarProducts->count() <= 3)
-                <ul class="similar-products__list">
-                    @foreach ($similarProducts as $product)
-                        <li class="similar-products__cards">
-                            <x-products-card :product="$product" />
-                        </li>
-                    @endforeach               
-                </ul>
-                @else
-                <div class="products-carousel__wrap">
-                    <div class="owl-carousel products-carousel">
-                        @foreach ($similarProducts as $product)
-                            <div class="products-carousel__item">
-                                <x-products-card :product="$product" />
-                            </div>
-                        @endforeach
+            </div>
+            <div class="owl-carousel products-carousel">
+                @foreach ($similarProducts as $product)
+                    <div class="products-carousel__item">
+                        <x-products-card :product="$product" />
                     </div>
-                    <span class="products-carousel__prev-icon">
-                        <svg width="14.525" height="8" viewBox="0 0 14.525 8"><path d="M13.276.216,7.263,6.229,1.251.215A.733.733,0,0,0,.214,1.253l6.53,6.532h0a.732.732,0,0,0,1.036,0l6.53-6.532A.733.733,0,1,0,13.276.216Z" fill="#fff"/></svg>
-                    </span>
-                    <span class="products-carousel__next-icon">
-                        <svg width="14.525" height="8" viewBox="0 0 14.525 8"><path d="M13.276.216,7.263,6.229,1.251.215A.733.733,0,0,0,.214,1.253l6.53,6.532h0a.732.732,0,0,0,1.036,0l6.53-6.532A.733.733,0,1,0,13.276.216Z" fill="#fff"/></svg>
-                    </span>
-                </div>
-                @endif
+                @endforeach
             </div>
         </section>
    </main>

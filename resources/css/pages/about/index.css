@@ -422,7 +422,7 @@
         width: 100%;
     }
 }
-@media screen and (max-width: 360px) {
+/* @media screen and (max-width: 360px) {
     .present-time__container {
         padding-left: 10px;
     }
@@ -430,5 +430,5 @@
         padding-left: 10px;
         padding-right: 10px;
     }
-}
+} */
 /*! adaptive & responsive end */

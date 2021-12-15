@@ -1,21 +1,18 @@
 /*! product-search section start */
-.product-search {
-    padding-top: 40px;
-}
 .product-search__container {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 8px 16px;
 }
 .product-search__title {
     width: 100%;
-    margin-bottom: 15px;
-    margin-top: 0px;
-    padding-top: 40px;
+    margin-bottom: 24px;
+    padding-top: 80px;
 }
 /** search form start */
 .product-search__form {
-    flex-grow: 1;
+    flex-grow: 999;
+    min-width: calc((100% - 16px) / 2);
 }
 .product-search__label {
     display: flex;
@@ -55,30 +52,12 @@
     background-color: #fff;
     border-radius: 15px;
     position: relative;
-}
-.product-filter::before {
-    content: "";
-    display: block;
-    height: 100%;
-    width: 70px;
-    position: absolute;
-    border-radius: 15px;
-    background-color: #0033ab;
-    z-index: 0;
-    transform: translateX(0);
-    transition: 0.3s;
-}
-.product-filter.with-recipe::before {
-    transform: translateX(70px);
-    width: 190px;
-}
-.product-filter.without-recipe::before {
-    transform: translateX(260px);
-    width: 190px;
+    flex-grow: 1;
+    flex-wrap: wrap;
 }
 .product-filter__link {
     display: flex;
-    width: 190px;
+    min-width: max-content;
     text-decoration: none;
     text-transform: uppercase;
     justify-content: center;
@@ -86,16 +65,33 @@
     position: relative;
     z-index: 0;
     cursor: pointer;
+    padding-left: 16px;
+    padding-right: 16px;
+    flex-grow: 1;
+    height: 50px;
     transition: 0.3s;
 }
 .product-filter__link:hover {
     color: #0033ab;
 }
-.product-filter__link:first-child {
-    width: 70px;
-}
 .product-filter__link.current {
     color: #fff;
+}
+.product-filter__link::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: #0033ab;
+    height: 100%;
+    width: 100%;
+    border-radius: 15px;
+    z-index: -1;
+    opacity: 0;
+    transition: 0.3s;
+}
+.product-filter__link.current::before {
+    opacity: 1;
 }
 .product-filter__link.current:hover {
     color: #fff;
@@ -104,6 +100,7 @@
 /** product categories start */
 .product-categories {
     width: 100%;
+    transition: 0.3s;
 }
 .product-categories__dropdown-btn {
     display: flex;
@@ -134,25 +131,23 @@
 .product-categories__content-wrap {
     position: relative;
     top: -15px;
-    height: 260px;
+    max-height: 2000px;
     overflow: hidden;
     transition: 0.3s;
 }
 .product-categories.hidden .product-categories__content-wrap {
-    height: 0px;
+    max-height: 0px;
 }
 .product-categories__content {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    padding-bottom: 5px;
-    position: absolute;
-    bottom: 0px;
-    left: 0px;
+    padding-top: 47px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-gap: 8px 16px;
+    transform: translateY(0%);
+    transition: 0.3s;
 }
-.product-categories__item {
-    width: calc((100% - 75px) / 6);
-    margin-bottom: -5px;
+.product-categories.hidden .product-categories__content {
+    transform: translateY(-100%);
 }
 .product-categories__link {
     display: flex;
@@ -225,21 +220,45 @@
 /*! product-search section end */
 /*! all-products section start */
 .all-products {
-    padding: 80px 0px;
+    padding-top: 80px;
+    padding-bottom: 80px;
 }
 .all-products__title {
-    margin-bottom: 30px;
+    margin-bottom: 32px;
 }
 .all-products__list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px 35px;
-}
-.all-products__item {
-    width: calc((100% - 70px) / 3);
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 32px 32px;
 }
 .all-products__pagination {
-    margin-top: 30px;
+    margin-top: 32px;
 }
 /*! all-products section end */
+/*! adaptive & responsive start */
+@media screen and (max-width: 991px) {
+    /** tablet */
+    .product-search__title {
+        padding-top: 48px;
+        margin-bottom: 16px;
+    }
+    .product-categories__content {
+        padding-top: 23px;
+    }
+    .all-products {
+        padding-top: 48px;
+        padding-bottom: 48px;
+    }
+    .all-products__list {
+        grid-gap: 16px 16px;
+    }
+    .all-products__pagination {
+        margin-top: 16px;
+    }
+}
+@media screen and (max-width: 575px) {
+    /** mobile */
+}
+@media screen and (max-width: 360px) {
+}
+/*! adaptive & responsive end */

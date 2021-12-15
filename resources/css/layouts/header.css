@@ -482,7 +482,7 @@
         z-index: 4;
     }
 }
-@media screen and (max-width: 360px) {
+/* @media screen and (max-width: 360px) {
     .header {
         padding-top: 32px;
         padding-bottom: 16px;
@@ -541,5 +541,5 @@
     .main-navigation-logo {
         display: none;
     }
-}
+} */
 /*! adaptive & responsive end */
