@@ -322,7 +322,7 @@ if (aboutPage) {
     });
   };
 
-  if (view < 576) {
+  if (view < 834) {
     initialHiddens = function initialHiddens() {
       viewAllBtn.classList.add('hidden');
       historiesItems.forEach(function (item, index) {
@@ -336,7 +336,7 @@ if (aboutPage) {
         }
       });
     };
-  } else if (view < 992) {
+  } else if (view < 1300) {
     initialHiddens = function initialHiddens() {
       viewAllBtn.classList.add('hidden');
       historiesItems.forEach(function (item, index) {
@@ -405,52 +405,44 @@ if (aboutPage) {
       0: {
         items: 1
       },
-      576: {
+      834: {
+        margin: 16,
         items: 2
       },
-      992: {
+      1300: {
         items: 3
       }
     }
   }); //* company in numbers end
 
   $('.values-carousel').owlCarousel({
-    loop: true,
-    lazyLoad: true,
     nav: false,
-    autoWidth: true,
     items: 6,
     responsive: {
       0: {
+        autoWidth: true,
+        loop: true,
         margin: 32
       },
-      576: {
+      834: {
+        autoWidth: true,
+        loop: true,
         margin: 32
       },
-      992: {
+      1300: {
+        loop: false,
         margin: 48
       }
     }
   });
   $('.rdp-areas-carousel').owlCarousel({
-    // loop: true,
-    // autoplay: true,
-    // autoplayTimeout: 3000,
-    // autoplayHoverPause: true,
+    loop: true,
+    autoplay: true,
+    autoplayTimeout: 4000,
+    autoplayHoverPause: true,
     margin: 16,
     nav: true,
-    items: 1,
-    responsive: {
-      0: {
-        margin: 0
-      },
-      576: {
-        margin: 0
-      },
-      992: {
-        margin: 0
-      }
-    }
+    items: 1
   });
 }
 })();

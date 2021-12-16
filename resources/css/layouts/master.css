@@ -324,8 +324,7 @@ input[type="search"]::-webkit-search-results-decoration {
 /** breadcrumbs end */
 /** geography-presence section start */
 .geography-presence__title {
-    padding-top: 80px;
-    padding-bottom: 32px;
+    margin-bottom: 32px;
 }
 .map-wrap {
     height: 540px;
@@ -417,6 +416,9 @@ input[type="search"]::-webkit-search-results-decoration {
     .link {
         font-size: 16px;
         font-weight: 400;
+    }
+    .geography-presence__title {
+        margin-bottom: 16px;
     }
 }
 @media screen and (max-width: 833px) {

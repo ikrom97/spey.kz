@@ -20,7 +20,7 @@
         </section>
         <section class="our-history" id="history">
             <div class="container">
-                <h2 class="our-history__title">{{__('Our history')}}</h2>
+                <h2 class="our-history-title">{{__('Our history')}}</h2>
                 <ul class="histories" data-family="history">
                     @foreach ($histories as $key => $history)
                         <li class="histories__item" data-row="" data-family="history">
@@ -57,47 +57,47 @@
                 <p>{{__("In today's society, SPEY strives to improve the quality of life of people with effective and affordable medicines. We are sure that successful projects are born from good ideas and their high-quality execution together with great talent")}}.</p>
             </div>
         </section>
-        <section class="company-numbers">
+        <section class="company-in-numbers">
             <div class="container">
                 <h2 class="company-numbers__title">{{__('Company in numbers')}}</h2>
                 <div class="company-carousel-wrap">
-                    <ul class="owl-carousel company-carousel">
-                        <li class="item company-numbers-item">
-                            <span class="company-numbers-value">5000</span>
+                    <div class="owl-carousel company-carousel">
+                        <div class="company-numbers-item">
+                            <span class="company-numbers-value">50 000</span>
                             <h3 class="company-numbers-title">{{__('medications')}}</h3>
                             <p class="company-numbers-text">
                                 {{__('Such a number of our products are produced annually on the production lines of our partners, and this figure continues to grow.')}}
                             </p>
-                        </li>
-                        <li class="item company-numbers-item">
+                        </div>
+                        <div class="company-numbers-item">
                             <span class="company-numbers-value">450</span>
                             <h3 class="company-numbers-title">{{__('employees')}}</h3>
                             <p class="company-numbers-text">
                                 {{__('Our main asset is our close-knit team of medical representatives, distributors and marketing and sales specialists.')}}
                             </p>
-                        </li>
-                        <li class="item company-numbers-item">
+                        </div>
+                        <div class="company-numbers-item">
                             <span class="company-numbers-value">300</span>
                             <h3 class="company-numbers-title">{{__('items')}}</h3>
                             <p class="company-numbers-text">
                                 {{__('We have already produced more than 300 well-established registered names of drugs on the market.')}}
                             </p>
-                        </li>
-                        <li class="item company-numbers-item">
+                        </div>
+                        <div class="company-numbers-item">
                             <span class="company-numbers-value">15</span>
                             <h3 class="company-numbers-title">{{__('branches')}}</h3>
                             <p class="company-numbers-text">
                                 {{__("The company's work around the world is supported by 15 of our branches-representative offices, which allows us to ensure uninterrupted supply of the necessary volumes of medicines.")}}
                             </p>
-                        </li>
-                        <li class="item company-numbers-item">
+                        </div>
+                        <div class="company-numbers-item">
                             <span class="company-numbers-value">20</span>
                             <h3 class="company-numbers-title">{{__('countries of presence')}}</h3>
                             <p class="company-numbers-text">
                                 {{__('Large regular deliveries of SPEY products are carried out in 5 regions of the world, such as Europe, Africa, Latin America, Southeast Asia and Central Asia.')}}
                             </p>
-                        </li>
-                    </ul>
+                        </div>
+                    </div>
                     <span class="company-carousel__icon company-carousel__prev-btn">
                         <svg xmlns="http://www.w3.org/2000/svg" width="8" height="14.525" viewBox="0 0 8 14.525"><g id="download" transform="translate(0 14.525) rotate(-90)"><path id="Expand_More" d="M13.276.216,7.263,6.229,1.251.215A.733.733,0,0,0,.214,1.253l6.53,6.532h0a.732.732,0,0,0,1.036,0l6.53-6.532A.733.733,0,1,0,13.276.216Z" fill="#fff"/></g></svg>
                     </span>
@@ -127,52 +127,38 @@
         </section>
         <section class="about-page-values">
             <div class="container">
-                <h2 class="our-values__title">{{__('Our values')}}</h2>
-            </div>
-            <div class="owl-carousel values-carousel our-values__list">
-                <div class="values__item">
-                    <h3 class="values__title">{{__('Life')}}</h3>
-                    <p class="values__text">
-                        {{__('We recognize life as a gift that needs to be cherished.')}}
-                    </p>
-                </div>
-                <div class="values__item">
-                    <h3 class="values__title">{{__('Creation')}}</h3>
-                    <p class="values__text">
-                        {{__('We are discovering new facets of the possible.')}}
-                    </p>
-                </div>
-                <div class="values__item">
-                    <h3 class="values__title">{{__('Responsibility')}}</h3>
-                    <p class="values__text">
-                        {{__('We are responsible for the well-being of society.')}}
-                    </p>
-                </div>
-                <div class="values__item">
-                    <h3 class="values__title">{{__('Team spirit')}}</h3>
-                    <p class="values__text">
-                        {{__('We are united and achieve our goals.')}}
-                    </p>
-                </div>
-                <div class="values__item">
-                    <h3 class="values__title">{{__('Professionalism')}}</h3>
-                    <p class="values__text">
-                        {{__('We show a high level of working skills.')}}
-                    </p>
-                </div>
-                <div class="values__item">
-                    <h3 class="values__title">{{__('Relationship')}}</h3>
-                    <p class="values__text">
-                        {{__("We value everyone's opinion.")}}
-                    </p>
+                <h2 class="about-page-values__title">{{__('Our values')}}</h2>
+                <div class="owl-carousel values-carousel">
+                    <div class="values-item">
+                        <h3 class="values-title">{{__('Life')}}</h3>
+                        <p class="values-text">{{__('We recognize life as a gift that needs to be cherished.')}}</p>
+                    </div>
+                    <div class="values-item">
+                        <h3 class="values-title">{{__('Creation')}}</h3>
+                        <p class="values-text">{{__('We are discovering new facets of the possible.')}}</p>
+                    </div>
+                    <div class="values-item">
+                        <h3 class="values-title">{{__('Responsibility')}}</h3>
+                        <p class="values-text">{{__('We are responsible for the well-being of society.')}}</p>
+                    </div>
+                    <div class="values-item">
+                        <h3 class="values-title">{{__('Team spirit')}}</h3>
+                        <p class="values-text">{{__('We are united and achieve our goals.')}}</p>
+                    </div>
+                    <div class="values-item">
+                        <h3 class="values-title">{{__('Professionalism')}}</h3>
+                        <p class="values-text">{{__('We show a high level of working skills.')}}</p>
+                    </div>
+                    <div class="values-item">
+                        <h3 class="values-title">{{__('Relationship')}}</h3>
+                        <p class="values-text">{{__("We value everyone's opinion.")}}</p>
+                    </div>
                 </div>
             </div>
         </section>
         <section class="rdp-areas">
             <div class="container">
                 <h2 class="rdp-areas__heading">{{__('Research, development and production areas')}}</h2>
-            </div>
-            <div class="container rdp-areas-carousel__container">
                 <div class="rdp-areas-carousel__wrap">
                     <div class="owl-carousel rdp-areas-carousel">
                         <img class="rdp-areas-carousel__img" src="{{asset('img/rdp-areas.jpg')}}">
@@ -186,8 +172,6 @@
                         <svg xmlns="http://www.w3.org/2000/svg" width="8" height="14.525" viewBox="0 0 8 14.525"><g id="download" transform="translate(0 14.525) rotate(-90)"><path id="Expand_More" d="M13.276.216,7.263,6.229,1.251.215A.733.733,0,0,0,.214,1.253l6.53,6.532h0a.732.732,0,0,0,1.036,0l6.53-6.532A.733.733,0,1,0,13.276.216Z" fill="#fff"/></g></svg>
                     </span>
                 </div>
-            </div>
-            <div class="container">
                 <p>{{__('In the pharmaceutical industry, it is always important to move forward - this is what the employees of our research centers in different countries are doing.')}}</p><br>
                 <p>{{__('Specialists in the creation of new dosage forms have modern equipment and high-precision analytical devices at their disposal. SPEY already has many achievements in the pharmaceutical industry, and drug development continues.')}}</p><br>
                 <h2 class="rdp-areas__title">{{__('Today, the company is developing more than 30 new drugs in various dosage forms.')}}</h2><br>

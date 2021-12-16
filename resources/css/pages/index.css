@@ -308,6 +308,8 @@
         height: 60px;
         border-radius: 12px;
         margin-left: 20px;
+        padding-left: 32px;
+        padding-right: 8px;
     }
     .products-categories-icon {
         border-radius: 8px;
