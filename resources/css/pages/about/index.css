@@ -386,6 +386,7 @@
     }
     .company-in-numbers {
         padding-top: 48px;
+        overflow: hidden;
     }
     .company-numbers__title {
         margin-bottom: 16px;

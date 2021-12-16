@@ -7,12 +7,14 @@
         <section class="vitrin">
             <img class="vitrin-img" src="{{asset('img/products-vitrin-bg.jpg')}}">
             <div class="container vitrin-container">
-                <h1 class="vitrin-title">{{__('Our products')}}</h1>
-                <p class="vitrin__text">
-                    {{__('We pay great attention to the issue of the production of drugs and choose the most modern production sites, which are located in several European countries, proven by time and quality control system')}}.
-                </p>
-                <div class="vitrin__link-wrap">
-                    <a class="button vitrin__link" href="{{route('contacts')}}#cooperation">{{__('Cooperate with us')}}</a>
+                <div class="vitrin-left">
+                    <h1 class="vitrin-title">{{__('Our products')}}</h1>
+                    <p class="vitrin__text">
+                        {{__('We pay great attention to the issue of the production of drugs and choose the most modern production sites, which are located in several European countries, proven by time and quality control system')}}.
+                    </p>
+                    <div class="vitrin__link-wrap">
+                        <a class="button vitrin__link" href="{{route('contacts')}}#cooperation">{{__('Cooperate with us')}}</a>
+                    </div>
                 </div>
             </div>
         </section>

@@ -4,18 +4,18 @@
 
 @section('content')
    <main class="main products-read" data-id="products-read-page">
-       <section class="vitrin">
-            <img class="vitrin__img" src="{{asset('img/products/default-vitrin-bg.jpg')}}">
-            <div class="vitrin__product-img-wrap">
-                <img class="vitrin__product-img" src="{{asset('img/products/' . $product->img)}}" alt="{{$product->title}}">
-            </div>
-            <div class="container vitrin__container">
-                <h1 class="vitrin__title">{{$product->title}}</h1>
-                <p class="vitrin__text">
-                    {{$product->description}}
-                </p>
-                <div class="vitrin__link-wrap">
-                    <a class="button vitrin__link" href="{{route('contacts')}}#cooperation">{{__('Cooperate with us')}}</a>
+        <section class="vitrin">
+            <img class="vitrin-img" src="{{asset('img/products/default-vitrin-bg.jpg')}}">
+            <div class="container vitrin-container">
+                <div class="vitrin-left">
+                    <h1 class="vitrin-title">{{$product->title}}</h1>
+                    <p class="vitrin__text">{{$product->description}}</p>
+                    <div class="vitrin__link-wrap">
+                        <a class="button vitrin__link" href="{{route('contacts')}}#cooperation">{{__('Cooperate with us')}}</a>
+                    </div>
+                </div>
+                <div class="vitrin-right">
+                    <img class="vitrin__product-img" src="{{asset('img/products/' . $product->img)}}" alt="{{$product->title}}">
                 </div>
             </div>
         </section>
@@ -132,9 +132,7 @@
             <input data-id="current-category" type="hidden" value="null">
         </section>
         <section class="similar-products">
-            <div class="container">
-                <h2 class="title similar-products__title">{{__('Similar products')}}</h2>
-            </div>
+            <h2 class="title similar-products-title">{{__('Similar products')}}</h2>
             <div class="owl-carousel products-carousel">
                 @foreach ($similarProducts as $product)
                     <div class="products-carousel__item">

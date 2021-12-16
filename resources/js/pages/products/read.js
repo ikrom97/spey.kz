@@ -48,7 +48,7 @@ if (productPage) {
 
             success: function (productsList) {
                 productsSection.innerHTML = productsList;
-                productsSection.style.marginTop = '80px';
+                productsSection.style.marginTop = '48px';
             }
         });
     }
@@ -177,20 +177,22 @@ if (productPage) {
     //! all-products section end */
     //! similar-products section start
     $('.products-carousel').owlCarousel({
-        // autoplay: true,
-        // autoplayTimeout: 3000,
-        // autoplayHoverPause: true,
-        nav: true,
-        margin: 24,
-        autoWidth: true,
+        autoplay: true,
+        autoplayTimeout: 3000,
+        autoplayHoverPause: true,
+        loop:true,
+        nav: false,
         responsive: {
             0: {
+                margin: 0,
                 items: 1
             },
-            575: {
+            834: {
+                margin: 24,
                 items: 2
             },
-            992: {
+            1300: {
+                margin: 32,
                 items: 3
             }
         }
