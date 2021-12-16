@@ -26,20 +26,19 @@ if (homePage) {
     // values end
     // industry-news start
     $('.industry-news-carousel').owlCarousel({
-        loop: true,
-        lazyLoad: true,
         nav: false,
-        autoWidth: true,
         responsive: {
             0: {
+                loop: true,
+                autoWidth: true,
                 margin: 32,
-                items: 1,
             },
-            576: {
+            834: {
+                loop: true,
+                autoWidth: true,
                 margin: 32,
-                items: 3,
             },
-            992: {
+            1300: {
                 margin: 96,
                 items: 4,
             }
@@ -48,24 +47,19 @@ if (homePage) {
     // industry-news end
     // popular products carousel start
     $('.popular-products-carousel').owlCarousel({
-        loop: false,
-        lazyLoad: true,
-        mouseDrag: false,
         nav: false,
-        autoWidth: false,
         responsive: {
             0: {
                 loop: true,
                 margin: 0,
                 items: 1,
             },
-            715: {
-                mouseDrag: true,
+            834: {
                 loop: true,
                 margin: 24,
                 items: 2,
             },
-            992: {
+            1300: {
                 margin: 0,
                 items: 6,
             }

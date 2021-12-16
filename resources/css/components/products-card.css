@@ -60,20 +60,23 @@
     padding: 12px;
     fill: #fff;
 }
-@media screen and (max-width: 360px) {
-    .product-card {
-        margin-left: 20px;
-    }
-    .product-card__body {
-        padding-left: 28px;
-        padding-bottom: 24px;
-        padding-right: 8px;
-        height: 100px;
-    }
-    .product-card__category-icon {
-        height: 40px;
-        width: 40px;
-        border-radius: 10px;
-        left: -20px;
-    }
+.products-card__view-more {
+    display: flex;
+    min-width: 95px;
+    text-transform: capitalize;
+    gap: 8px;
+    align-items: center;
+    font-size: 11px;
+    max-width: 95px;
+    color: #fff;
+}
+.products-card__view-more-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #00b052;
+    min-width: 25px;
+    min-height: 25px;
+    border-radius: 8px;
+    padding-left: 1px;
 }

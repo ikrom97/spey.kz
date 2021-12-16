@@ -50,16 +50,14 @@
             </div>
         </section>
         <section class="industry-news">
-            <div class="container industry-news__container">
-                <h2 class="industry-news__title">{{__('Industry news')}}</h2>
-            </div>
+            <h2 class="industry-news-title">{{__('Industry news')}}</h2>
             <div class="owl-carousel industry-news-carousel">
                 @foreach ($industryNews as $newsCategory)
-                    <a class="news-categories__link" href="{{route('news')}}?category={{$newsCategory->id}}#all-news">
-                        <h3 class="news-categories__title">{{$newsCategory->title}}</h3>
-                        <div class="news-categories__description">{{$newsCategory->description}}</div>
-                        <div class="news-categories__read">
-                            <span class="news-categories__read-icon">
+                    <a class="news-categories-item" href="{{route('news')}}?category={{$newsCategory->id}}#all-news">
+                        <h3 class="news-categories-title">{{$newsCategory->title}}</h3>
+                        <div class="news-categories-description">{{$newsCategory->description}}</div>
+                        <div class="news-categories-read">
+                            <span class="news-categories-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="8" height="14.525" viewBox="0 0 8 14.525"><g transform="translate(0 14.525) rotate(-90)"><path d="M13.276.216,7.263,6.229,1.251.215A.733.733,0,0,0,.214,1.253l6.53,6.532h0a.732.732,0,0,0,1.036,0l6.53-6.532A.733.733,0,1,0,13.276.216Z" fill="#fff"/></g></svg>
                             </span>
                             {{__('Read article')}}
@@ -68,42 +66,40 @@
                 @endforeach
             </div>
         </section>
-        <section class="products-block">
+        <section class="products-categories">
             <div class="container">
-                <h2 class="products-block__title">{{__('Products')}}</h2>
-                <ul class="products-categories">
+                <h2 class="products-block-title">{{__('Products')}}</h2>
+                <ul class="products-categories-list">
                     @foreach ($prodCategories as $category)
-                        <li class="products-categories__item">
-                            <a class="products-categories__link" href="{{route('products')}}?category={{$category->id}}#products">
-                                <div class="products-categories__icon">{!! $category->icon !!}</div>
-                                <span class="products-categories__title">{{$category->title}}</span>
+                        <li class="products-categories-item">
+                            <a class="products-categories-link" href="{{route('products')}}?category={{$category->id}}#products">
+                                <div class="products-categories-icon">{!! $category->icon !!}</div>
+                                <span class="products-categories-title">{{$category->title}}</span>
                                 <div class="view-more">
-                                    <span class="view-more__icon">
+                                    <span class="view-more-icon">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="8" height="14.525" viewBox="0 0 8 14.525"><g transform="translate(0 14.525) rotate(-90)"><path d="M13.276.216,7.263,6.229,1.251.215A.733.733,0,0,0,.214,1.253l6.53,6.532h0a.732.732,0,0,0,1.036,0l6.53-6.532A.733.733,0,1,0,13.276.216Z" fill="#fff"></path></g></svg>
                                     </span>
-                                    <span class="view-more__text">{{__('View products')}}</span>
+                                    <span class="view-more-text">{{__('View products')}}</span>
                                 </div>
                             </a>
                         </li>
                     @endforeach
                 </ul>
-                <div class="products-block__info">
+                <div class="products-block-info">
                     <p>
-                        {{$prodCategoriesQuantity}} {{__('categories')}} {{__('and')}} <br>
+                        {{$prodCategoriesQuantity}} {{__('categories')}} {{__('and')}}<br>
                         <b>{{$productsQuantity}} {{__('products')}}</b>
                     </p>
-                    <a class="link products-block__link" href="{{route('products')}}#products">{{__('All products')}}</a>
+                    <a class="link products-block-link" href="{{route('products')}}#products">{{__('All products')}}</a>
                 </div>
             </div>
         </section>
         <section class="popular-products">
             <div class="container">
-                <h2 class="popular-products__title">{{__('Most popular products')}}</h2>
+                <h2 class="popular-products-title">{{__('Most popular products')}}</h2>
                 <div class="owl-carousel popular-products-carousel">
                     @foreach ($popularProducts as $product)
-                        <div class="popular-products__item">
-                            <x-products-card :product="$product"/>
-                        </div>
+                        <x-products-card :product="$product"/>
                     @endforeach
                 </div>
                 <a class="link popular-products__link" href="{{route('products')}}#products">{{__('All products')}}</a>

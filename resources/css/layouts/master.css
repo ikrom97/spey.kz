@@ -413,6 +413,11 @@ input[type="search"]::-webkit-search-results-decoration {
     .vitrin__link {
         min-height: 50px;
     }
+    .button,
+    .link {
+        font-size: 16px;
+        font-weight: 400;
+    }
 }
 @media screen and (max-width: 833px) {
     /** mobile */
