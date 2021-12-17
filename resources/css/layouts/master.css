@@ -456,6 +456,7 @@ input[type="search"]::-webkit-search-results-decoration {
     .countries-link {
         height: 48px;
     }
+
 }
 @media screen and (max-width: 833px) {
     /** mobile */
@@ -489,6 +490,9 @@ input[type="search"]::-webkit-search-results-decoration {
         left: 0;
     }
     .vitrin-dropdown {
+        width: 100%;
+    }
+    .vitrin-dropdown__button {
         width: 100%;
     }
 }
