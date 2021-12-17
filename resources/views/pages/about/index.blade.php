@@ -182,7 +182,7 @@
         </section>
         <section class="geography-presence" id="geography">
             <div class="container">
-                <h2 class="geography-presence__title" id="geography-presence">{{__('Geography of presence')}}</h2>
+                <h2 id="geography-presence">{{__('Geography of presence')}}</h2>
             </div>
             <div class="map-wrap">
                 {!!$siteMap!!}

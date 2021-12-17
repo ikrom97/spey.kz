@@ -63,6 +63,8 @@ h1 {
     color: #fff;
 }
 h2 {
+    padding-top: 80px;
+    padding-bottom: 32px;
     font-size: 17.5px;
     font-weight: 800;
     text-transform: uppercase;
@@ -75,10 +77,11 @@ h2 {
     text-decoration: none;
     font-weight: 600;
     display: flex;
-    height: 50px;
+    height: 48px;
     align-items: center;
-    padding: 0px 16px;
-    border-radius: 15px;
+    padding-left: 16px;
+    padding-right: 16px;
+    border-radius: 16px;
     color: #fff;
     text-transform: uppercase;
     cursor: pointer;
@@ -112,7 +115,7 @@ input[type="search"]::-webkit-search-results-decoration {
     position: fixed;
     top: 0px;
     left: 0px;
-    padding: 20px;
+    padding: 24px;
     z-index: 9;
     transform: translateY(0%);
     width: 100%;
@@ -138,7 +141,7 @@ input[type="search"]::-webkit-search-results-decoration {
     display: flex;
     flex-direction: column;
     text-align: initial;
-    gap: 5px;
+    gap: 8px;
 }
 /** modals end */
 /** vitrin section start */
@@ -183,18 +186,14 @@ input[type="search"]::-webkit-search-results-decoration {
     margin-bottom: 32px;
 }
 .vitrin__text--home {
-    padding-left: 30px;
-}
-.vitrin__link-wrap,
-.button-wrap {
-    max-width: 625px;
+    padding-left: 32px;
 }
 .vitrin__button,
 .vitrin__link {
     width: 330px;
     display: flex;
     justify-content: center;
-    min-height: 60px;
+    min-height: 56px;
     margin-left: auto;
     border: none;
     cursor: pointer;
@@ -232,7 +231,7 @@ input[type="search"]::-webkit-search-results-decoration {
     z-index: 3;
     position: relative;
     cursor: pointer;
-    height: 60px;
+    height: 56px;
     transition: 0.3s;
 }
 .vitrin-dropdown__button:hover {
@@ -254,11 +253,11 @@ input[type="search"]::-webkit-search-results-decoration {
 .vitrin-dropdown__list {
     display: flex;
     flex-direction: column;
-    padding-top: 30px;
-    padding-bottom: 6px;
+    padding-top: 32px;
+    padding-bottom: 8px;
     background-color: #2659d1;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
     transform: translateY(-100%);
     max-height: 220px;
     overflow-y: scroll;
@@ -282,7 +281,7 @@ input[type="search"]::-webkit-search-results-decoration {
 .vitrin-dropdown__link {
     display: flex;
     width: 100%;
-    height: 36px;
+    height: 48px;
     align-items: center;
     text-transform: uppercase;
     justify-content: center;
@@ -311,7 +310,7 @@ input[type="search"]::-webkit-search-results-decoration {
 .breadcrumbs-item {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
 }
 .breadcrumbs-item svg {
     color: #0033ab;
@@ -331,14 +330,15 @@ input[type="search"]::-webkit-search-results-decoration {
 .map-wrap {
     height: 540px;
     overflow: hidden;
+    margin-bottom: 32px;
 }
 .map-wrap iframe {
     width: 100%;
     height: 100%;
 }
 .geography-container {
-    padding-left: 70px;
-    padding-right: 70px;
+    padding-left: 72px;
+    padding-right: 72px;
     max-width: 1300px;
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
@@ -352,10 +352,9 @@ input[type="search"]::-webkit-search-results-decoration {
     scroll-snap-align: center;
     display: flex;
     flex-wrap: wrap;
-    margin-top: 32px;
     gap: 8px 8px;
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-left: 104px;
+    padding-right: 104px;
     min-width: 1360px;
 }
 .countries-item {
@@ -367,13 +366,14 @@ input[type="search"]::-webkit-search-results-decoration {
 .countries-link {
     display: flex;
     min-width: max-content;
-    height: 35px;
+    height: 40px;
     justify-content: center;
     align-items: center;
     border: 1px solid #8f8f8f;
-    border-radius: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
+    border-radius: 8px;
+    padding-left: 8px;
+    padding-right: 8px;
+    overflow: hidden;
     width: 100%;
 }
 .countries-link:hover {
@@ -396,40 +396,65 @@ input[type="search"]::-webkit-search-results-decoration {
         max-width: 694px;
     }
     h1 {
-        font-size: 30px;
+        font-size: 32px;
     }
     h2 {
-        font-size: 16px;
+        padding-top: 48px;
+        padding-bottom: 16px;
         font-weight: 600;
+        font-size: 16px;
     }
     .vitrin-container {
-        min-height: 370px;
-        padding-top: 48px;
-        padding-bottom: 48px;
+        min-height: 368px;
+        padding-top: 64px;
+        padding-bottom: 64px;
     }
     .vitrin-left {
-        max-width: 470px;
+        max-width: 480px;
+    }
+    .vitrin-right {
+        padding-right: 32px;
+        padding-left: 32px;
+        align-items: center;
     }
     .vitrin__text--home {
         padding-left: 0px;
     }
     .vitrin__link {
-        min-height: 50px;
+        min-height: 48px;
+        width: 248px;
+        margin-left: 0px;
     }
     .button,
     .link {
         font-size: 16px;
         font-weight: 400;
     }
+    .vitrin__button:hover,
+    .vitrin__link:hover,
+    .vitrin-dropdown__button:hover {
+        box-shadow: none;
+    }
+    .vitrin-dropdown {
+        width: max-content;
+        margin-left: 0px;
+    }
+    .vitrin-dropdown__button {
+        width: 248px;
+    }
+    .vitrin-dropdown__list {
+        padding-top: 24px;
+    }
     .geography-presence__title {
         margin-bottom: 16px;
     }
     .breadcrumbs {
         height: 48px;
-        left: 174px;
+        left: 182px;
     }
-    .vitrin-dropdown__button {
-        height: 50px;
+    .vitrin-dropdown__button,
+    .countries-link {
+        height: 48px;
     }
 }
 @media screen and (max-width: 833px) {
@@ -443,13 +468,21 @@ input[type="search"]::-webkit-search-results-decoration {
     .vitrin-left {
         max-width: 100%;
     }
+    .vitrin-right {
+        width: 100%;
+        padding-left: 64px;
+        padding-right: 64px;
+        padding-bottom: 32px;
+    }
     .vitrin__link {
         margin-top: auto;
         width: 100%;
     }
     .vitrin-container {
+        padding-top: 48px;
+        padding-bottom: 48px;
+        min-height: auto;
         flex-direction: column-reverse;
-        gap: 32px;
     }
     .breadcrumbs {
         height: 32px;

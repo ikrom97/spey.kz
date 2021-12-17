@@ -218,13 +218,16 @@ if (homePage) {
   $('.values-carousel').owlCarousel({
     nav: false,
     items: 6,
+    mouseDrag: false,
     responsive: {
       0: {
+        mouseDrag: true,
         autoWidth: true,
         loop: true,
         margin: 32
       },
       834: {
+        mouseDrag: true,
         autoWidth: true,
         loop: true,
         margin: 32
@@ -239,13 +242,16 @@ if (homePage) {
 
   $('.industry-news-carousel').owlCarousel({
     nav: false,
+    mouseDrag: false,
     responsive: {
       0: {
+        mouseDrag: true,
         loop: true,
         autoWidth: true,
         margin: 32
       },
       834: {
+        mouseDrag: true,
         loop: true,
         autoWidth: true,
         margin: 32
@@ -260,13 +266,16 @@ if (homePage) {
 
   $('.popular-products-carousel').owlCarousel({
     nav: false,
+    mouseDrag: false,
     responsive: {
       0: {
+        mouseDrag: true,
         loop: true,
         margin: 0,
         items: 1
       },
       834: {
+        mouseDrag: true,
         loop: true,
         margin: 24,
         items: 2
@@ -430,6 +439,7 @@ if (aboutPage) {
         margin: 32
       },
       1300: {
+        mouseDrag: false,
         loop: false,
         margin: 48
       }
@@ -620,8 +630,11 @@ if (productsPage) {
         }
       });
       search(page, keyword, filter, category);
-      var scrollToEl = productSearchSection.querySelector('#products');
-      scrollToEl.scrollIntoView();
+
+      if (window.screen.width > 1299) {
+        var scrollToEl = productSearchSection.querySelector('#products');
+        scrollToEl.scrollIntoView();
+      }
     } else if (e.target.dataset.action != 'filter' && e.target.className != 'page-link' && e.target.dataset.type != 'footer-category' && e.target.dataset.type != 'product-card') {
       prodCategoriesWrap.classList.add('hidden');
       category = null;
@@ -668,7 +681,6 @@ if (productPage) {
       },
       success: function success(productsList) {
         productsSection.innerHTML = productsList;
-        productsSection.style.marginTop = '48px';
       }
     });
   }; //! product-search section start */
@@ -796,8 +808,11 @@ if (productPage) {
         }
       });
       search(page, keyword, filter, category);
-      var scrollToEl = productSearchSection.querySelector('#products');
-      scrollToEl.scrollIntoView();
+
+      if (window.screen.width > 1299) {
+        var scrollToEl = productSearchSection.querySelector('#products');
+        scrollToEl.scrollIntoView();
+      }
     } else if (e.target.dataset.action != 'filter' && e.target.className != 'page-link' && e.target.dataset.type != 'footer-category' && e.target.dataset.type != 'product-card') {
       prodCategoriesWrap.classList.add('hidden');
       category = null;

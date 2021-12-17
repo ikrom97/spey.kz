@@ -66,3 +66,8 @@
     background-color: #00b052;
     transition: 0.3s;
 }
+@media screen and (max-width: 1299px) {
+    .news-card:hover {
+        box-shadow: none;
+    }
+}

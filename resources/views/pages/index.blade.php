@@ -53,9 +53,9 @@
             <h2 class="industry-news-title">{{__('Industry news')}}</h2>
             <div class="owl-carousel industry-news-carousel">
                 @foreach ($industryNews as $newsCategory)
-                    <a class="news-categories-item" href="{{route('news')}}?category={{$newsCategory->id}}#all-news">
+                    <a class="news-categories-item" href="{{route('news.read', $newsCategory->new->id)}}">
                         <h3 class="news-categories-title">{{$newsCategory->title}}</h3>
-                        <div class="news-categories-description">{{$newsCategory->description}}</div>
+                        <div class="news-categories-description">{{$newsCategory->new->title}}</div>
                         <div class="news-categories-read">
                             <span class="news-categories-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="8" height="14.525" viewBox="0 0 8 14.525"><g transform="translate(0 14.525) rotate(-90)"><path d="M13.276.216,7.263,6.229,1.251.215A.733.733,0,0,0,.214,1.253l6.53,6.532h0a.732.732,0,0,0,1.036,0l6.53-6.532A.733.733,0,1,0,13.276.216Z" fill="#fff"/></g></svg>
@@ -79,7 +79,7 @@
                                     <span class="view-more-icon">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="8" height="14.525" viewBox="0 0 8 14.525"><g transform="translate(0 14.525) rotate(-90)"><path d="M13.276.216,7.263,6.229,1.251.215A.733.733,0,0,0,.214,1.253l6.53,6.532h0a.732.732,0,0,0,1.036,0l6.53-6.532A.733.733,0,1,0,13.276.216Z" fill="#fff"></path></g></svg>
                                     </span>
-                                    <span class="view-more-text">{{__('View products')}}</span>
+                                    <span class="view-more-text">{!!__('View <br> products')!!}</span>
                                 </div>
                             </a>
                         </li>

@@ -1,11 +1,7 @@
+.news-page {
+    padding-bottom: 80px;
+}
 /** all-news section start */
-.all-news {
-    padding-top: 80px;
-    margin-bottom: 80px;
-}
-.all-news__title {
-    margin-bottom: 32px;
-}
 .all-news__list {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -16,12 +12,8 @@
 /*! adaptive start */
 @media screen and (max-width: 1299px) {
     /** tablet */
-    .all-news {
-        padding-top: 48px;
-        margin-bottom: 48px;
-    }
-    .all-news__title {
-        margin-bottom: 16px;
+    .news-page {
+        padding-bottom: 48px;
     }
     .all-news__list {
         grid-template-columns: 1fr 1fr;

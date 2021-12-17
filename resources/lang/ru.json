@@ -42,7 +42,7 @@
     "products": "продуктов",
     "All products": "Все продукты",
     "View product": "Посмотреть",
-    "View products": "Посмотреть",
+    "View <br> products": "Посмотреть",
     "Most popular products": "Самые популярные товары",
     "Medicine without <br> prescription": "Лекарства без <br> рецепта",
     "Medicine with <br> prescription": "Лекарства по <br> рецепту",
@@ -108,7 +108,10 @@
     "Send": "Отправить",
     "Kazakhstan": "Казахстан",
     "Learn more": "Подробнее",
-    "No results were found for your search" : "По вашему запросу ничего не найдено",
+    "No results were found for your search": "По вашему запросу ничего не найдено",
     "Search": "Поиск",
-    "Similar news": "Похожие новости"
+    "Similar news": "Похожие новости",
+    "By filling out the information on the website": "Заполнив информацию на сайте",
+    "By sending the information by e-mail": "Отправив информацию по электронной почте",
+    "By calling a free round-the-clock phone": "Позвонив на бесплатный круглосуточный телефон"
 }

@@ -2,13 +2,12 @@
     display: flex;
     flex-direction: column;
     text-decoration: none;
-    width: calc(100% - 25px);
-    height: 470px;
-    margin-left: 25px;
+    width: calc(100% - 24px);
+    margin-left: 24px;
     position: relative;
     top: 0px;
     left: 0px;
-    border-radius: 15px;
+    border-radius: 16px;
     transition: 0.3s;
 }
 .product-card:hover {
@@ -20,26 +19,27 @@
     align-items: center;
     width: 100%;
     height: 355px;
-    padding: 30px;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
+    padding: 32px;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
     background-color: #fff;
     object-fit: contain;
 }
 .product-card__body {
     background-color: #2ec7d6;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
     color: #fff;
     position: relative;
-    height: 115px;
     padding-left: 40px;
     padding-right: 16px;
     display: flex;
-    gap: 10px;
+    gap: 8px;
     align-items: flex-end;
     justify-content: space-between;
-    padding-bottom: 30px;
+    padding-bottom: 32px;
+    padding-top: 24px;
+    flex-grow: 1;
 }
 .product-card__mode {
     margin-top: 5px;
@@ -47,27 +47,25 @@
     font-weight: 300;
 }
 .product-card__category-icon {
-    height: 50px;
-    width: 50px;
+    height: 48px;
+    width: 48px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 15px;
+    border-radius: 16px;
     background-color: #2659d1;
     position: absolute;
-    top: calc(50% - 25px);
-    left: -25px;
+    top: calc(50% - 24px);
+    left: -24px;
     padding: 12px;
     fill: #fff;
 }
 .products-card__view-more {
     display: flex;
-    min-width: 95px;
     text-transform: capitalize;
     gap: 8px;
     align-items: center;
     font-size: 11px;
-    max-width: 95px;
     color: #fff;
 }
 .products-card__view-more-icon {
@@ -75,8 +73,13 @@
     justify-content: center;
     align-items: center;
     background-color: #00b052;
-    min-width: 25px;
-    min-height: 25px;
+    min-width: 24px;
+    min-height: 24px;
     border-radius: 8px;
     padding-left: 1px;
+}
+@media screen and (max-width: 1299px) {
+    .product-card:hover {
+        box-shadow: none;
+    }
 }

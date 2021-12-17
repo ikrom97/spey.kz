@@ -1,25 +1,23 @@
 /** report section start */
 .report-title {
-    margin-bottom: 32px;
+    padding-top: 0px;
 }
 .report-img {
     width: 100%;
     height: 400px;
     object-fit: cover;
-    border-radius: 15px;
+    border-radius: 16px;
 }
 .report-content {
-    margin-top: 32px;
     color: #8f8f8f;
 }
 /** report section end */
 /** reports section start */
 .reports {
-    padding-top: 80px;
     margin-bottom: 80px;
 }
-.reports-title {
-    margin-bottom: 32px;
+.report-content {
+    margin-top: 32px;
 }
 .reports-carousel .owl-nav,
 .reports-carousel .owl-dots {
@@ -29,10 +27,6 @@
 /*! adaptive start */
 @media screen and (max-width: 1299px) {
     /** tablet */
-    .report-title,
-    .reports-title {
-        margin-bottom: 16px;
-    }
     .report-img {
         height: 300px;
         border-radius: 12px;
@@ -41,7 +35,6 @@
         margin-top: 16px;
     }
     .reports {
-        padding-top: 48px;
         margin-bottom: 48px;
     }
 }

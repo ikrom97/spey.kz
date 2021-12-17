@@ -48,7 +48,6 @@ if (productPage) {
 
             success: function (productsList) {
                 productsSection.innerHTML = productsList;
-                productsSection.style.marginTop = '48px';
             }
         });
     }
@@ -128,8 +127,10 @@ if (productPage) {
                 }
             });
             search(page, keyword, filter, category);
-            const scrollToEl = productSearchSection.querySelector('#products');
-            scrollToEl.scrollIntoView();
+            if (window.screen.width > 1299) {
+                const scrollToEl = productSearchSection.querySelector('#products');
+                scrollToEl.scrollIntoView();
+            }
         } else if (
             e.target.dataset.action != 'filter'
             && e.target.className != 'page-link'

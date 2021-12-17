@@ -1,26 +1,26 @@
-/*! product-search section start */
-.product-search {
-    padding-top: 80px;
+.products-page {
+    padding-bottom: 80px;
 }
+/*! product-search section start */
 .product-search__container {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px 16px;
 }
 .product-search__title {
     width: 100%;
-    margin-bottom: 24px;
 }
 /** search form start */
 .product-search__form {
     flex-grow: 1;
+    margin-right: 16px;
 }
 .product-search__label {
     display: flex;
-    height: 50px;
+    height: 48px;
     background-color: #fff;
-    border-radius: 15px;
-    padding: 0px 16px;
+    border-radius: 16px;
+    padding-left: 16px;
+    padding-right: 16px;
     align-items: center;
     gap: 8px;
     position: relative;
@@ -35,9 +35,10 @@
     top: 0px;
     left: 0px;
     width: 100%;
-    border-radius: 15px;
+    border-radius: 16px;
     background-color: transparent;
-    padding: 0px 0px 0px 48px;
+    padding-left: 48px;
+    padding-right: 16px;
     transition: 0.3s;
 }
 .product-search__input:focus {
@@ -51,7 +52,7 @@
 .product-filter {
     display: flex;
     background-color: #fff;
-    border-radius: 15px;
+    border-radius: 16px;
     position: relative;
 }
 .product-filter__link {
@@ -67,7 +68,7 @@
     padding-left: 16px;
     padding-right: 16px;
     flex-grow: 1;
-    height: 50px;
+    height: 48px;
     transition: 0.3s;
 }
 .product-filter__link:hover {
@@ -84,7 +85,7 @@
     background-color: #0033ab;
     height: 100%;
     width: 100%;
-    border-radius: 15px;
+    border-radius: 16px;
     z-index: -1;
     opacity: 0;
     transition: 0.3s;
@@ -99,6 +100,7 @@
 /** product categories start */
 .product-categories {
     width: 100%;
+    margin-top: 16px;
     transition: 0.3s;
 }
 .product-categories__dropdown-btn {
@@ -106,12 +108,12 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 50px;
+    height: 48px;
     border: none;
-    border-radius: 15px;
+    border-radius: 16px;
     background-color: #0033ab;
     color: #fff;
-    gap: 10px;
+    gap: 16px;
     cursor: pointer;
     position: relative;
     z-index: 2;
@@ -129,7 +131,7 @@
 }
 .product-categories__content-wrap {
     position: relative;
-    top: -15px;
+    top: 0px;
     max-height: 2000px;
     overflow: hidden;
     transition: 0.3s;
@@ -138,7 +140,7 @@
     max-height: 0px;
 }
 .product-categories__content {
-    padding-top: 47px;
+    padding-top: 16px;
     display: grid;
     grid-template-columns: repeat(6, minmax(180px, 1fr));
     grid-gap: 8px 16px;
@@ -151,7 +153,7 @@
 .product-categories__link {
     display: flex;
     align-items: center;
-    height: 35px;
+    height: 40px;
     text-decoration: none;
     width: 100%;
     border-radius: 10px;
@@ -218,49 +220,38 @@
 /** product categories end */
 /*! product-search section end */
 /*! all-products section start */
-.all-products {
-    padding-top: 80px;
-    margin-bottom: 80px;
-}
-.all-products__title {
-    margin-bottom: 32px;
-}
 .all-products__list {
     display: grid;
     grid-template-columns: repeat(3, minmax(300px, 1fr));
     grid-gap: 32px 32px;
 }
-.all-products__pagination {
+.all-products__pagination .pagination {
     margin-top: 32px;
 }
 /*! all-products section end */
 /*! adaptive & responsive start */
 @media screen and (max-width: 1299px) {
     /** tablet */
-    .product-search {
-        padding-top: 48px;
-    }
-    .product-search__title {
-        margin-bottom: 8px;
+    .products-page {
+        padding-bottom: 48px;
     }
     .product-categories__content {
-        padding-top: 31px;
         grid-template-columns: repeat(3, minmax(180px, 1fr));
-    }
-    .all-products {
-        padding-top: 48px;
-        margin-bottom: 48px;
-    }
-    .all-products__title {
-        margin-bottom: 16px;
     }
     .all-products__list {
         grid-template-columns: 1fr 1fr;
         grid-gap: 24px;
     }
+    .product-categories__dropdown-btn:hover {
+        box-shadow: none;
+    }
 }
 @media screen and (max-width: 833px) {
     /** mobile */
+    .product-search__form {
+        margin-right: 0px;
+        margin-bottom: 16px;
+    }
     .product-categories__content {
         grid-template-columns: minmax(180px, 1fr);
     }

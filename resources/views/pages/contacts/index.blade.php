@@ -19,7 +19,7 @@
                                 <ul class="vitrin-dropdown__list" data-family="vitrin-dropdown">
                                     @foreach ($speySites as $site)
                                         <li class="vitrin-dropdown__item" data-family="vitrin-dropdown">
-                                            <a class="vitrin-dropdown__link" data-family="vitrin-dropdown" href="{{route('news')}}?category={{$site->id}}#all-news">{{$site->title}}</a>
+                                            <a class="vitrin-dropdown__link" data-family="vitrin-dropdown" href="{{route('contacts')}}?site={{$site->id}}#geography-presence">{{$site->title}}</a>
                                         </li>
                                     @endforeach
                                 </ul>
@@ -106,9 +106,9 @@
                     {{__('You can report all adverse side reactions to Spey drugs')}}:
                     </p><br>
                     <p class="pharmacovigilanc__text">
-                    By filling out the information on the website: <b>www.spey.com.ru</b> <br>
-                    By sending the information by e-mail: <b>info@spey.com.ru</b> <br>
-                    By calling a free round-the-clock phone: <b>8-800-600-00-00</b>
+                    {{__('By filling out the information on the website')}}: <b>www.spey.com.ru</b> <br>
+                    {{__('By sending the information by e-mail')}}: <b>info@spey.com.ru</b> <br>
+                    {{__('By calling a free round-the-clock phone')}}: <b>8-800-600-00-00</b>
                     </p>
                 </div>
                 <div class="pharmacovigilanc-form">

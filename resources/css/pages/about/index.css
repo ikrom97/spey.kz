@@ -1,10 +1,9 @@
 /** our histories section start */
 .our-history {
-    padding-top: 80px;
-    padding-bottom: 80px;
+    margin-bottom: 80px;
 }
 .our-history-title {
-    margin-bottom: 32px;
+    padding-bottom: 32px;
 }
 .histories {
     display: grid;
@@ -25,15 +24,15 @@
     align-items: center;
     position: relative;
     padding-left: 40px;
-    padding-top: 8px;
-    padding-right: 8px;
-    padding-bottom: 8px;
+    padding-top: 16px;
+    padding-right: 16px;
+    padding-bottom: 16px;
     background-color: #fff;
-    border-radius: 15px;
+    border-radius: 16px;
     font-weight: 400;
     text-transform: uppercase;
-    min-height: 80px;
-    max-height: 80px;
+    min-height: 86px;
+    max-height: 86px;
     cursor: pointer;
     transition: 0.3s;
 }
@@ -56,7 +55,7 @@
     left: -25px;
 }
 .histories__inner {
-    font-size: 10px;
+    font-size: 14px;
     font-weight: 300;
     color: #8f8f8f;
     display: flex;
@@ -133,7 +132,7 @@
 }
 .present-time__title {
     color: #fff;
-    margin-bottom: 32px;
+    padding-top: 0px;
 }
 .present-time__notation {
     text-transform: uppercase;
@@ -144,12 +143,6 @@
 }
 /** present time section end */
 /** company in numbers section start */
-.company-in-numbers {
-    padding-top: 80px;
-}
-.company-numbers__title {
-    margin-bottom: 32px;
-}
 .company-numbers-item {
     padding-left: 48px;
     display: flex;
@@ -168,7 +161,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 15px;
+    border-radius: 16px;
     height: 66px;
     width: 66px;
     color: #fff;
@@ -246,7 +239,7 @@
 .mission-vision-item {
     color: #fff;
     background-color: #2659d1;
-    border-radius: 15px;
+    border-radius: 16px;
     flex-grow: 1;
     display: flex;
     justify-content: center;
@@ -264,20 +257,12 @@
 }
 /** company in numbers section end */
 .about-page-values {
-    padding-top: 80px;
     overflow: hidden;
-}
-.about-page-values__title {
-    margin-bottom: 32px;
 }
 /** rdp-areas section start */
 .rdp-areas {
-    padding-top: 80px;
     color: #8f8f8f;
     overflow: hidden;
-}
-.rdp-areas__heading {
-    margin-bottom: 32px;
 }
 .rdp-areas-carousel__wrap {
     position: relative;
@@ -338,10 +323,10 @@
     text-transform: uppercase;
     color: #0033ab;
     font-weight: 500;
+    padding: 0px;
 }
 /** rdp-areas section end */
 .geography-presence {
-    padding-top: 80px;
     margin-bottom: 80px;
 }
 /*! adaptive & responsive start */
@@ -355,10 +340,12 @@
         padding-left: 20px;
     }
     .histories__title {
-        min-height: 60px;
-        max-height: 60px;
         border-radius: 12px;
         padding-left: 32px;
+    }
+    .histories__item:hover .histories__title,
+    .our-history__view-all-btn:hover .our-history__view-all-icon {
+        box-shadow: none;
     }
     .histories__year {
         min-width: 40px;
@@ -371,25 +358,20 @@
         left: -20px;
     }
     .our-history {
-        padding-top: 48px;
-        padding-bottom: 48px;
+        margin-bottom: 48px;
     }
     .our-history-title {
-        margin-bottom: 16px;
+        padding-bottom: 16px;
     }
     .present-time {
         padding-top: 48px;
         padding-bottom: 48px;
     }
     .present-time__title {
-        margin-bottom: 16px;
+        padding-bottom: 16px;
     }
     .company-in-numbers {
-        padding-top: 48px;
         overflow: hidden;
-    }
-    .company-numbers__title {
-        margin-bottom: 16px;
     }
     .company-carousel__icon {
         display: none;
@@ -420,12 +402,6 @@
     .mission-vision-item {
         padding: 16px;
     }
-    .about-page-values {
-        padding-top: 48px;
-    }
-    .about-page-values__title {
-        margin-bottom: 16px;
-    }
     .rdp-areas-carousel__prev-btn,
     .rdp-areas-carousel__next-btn {
         display: none;
@@ -434,7 +410,6 @@
         display: none;
     }
     .geography-presence {
-        padding-top: 48px;
         margin-bottom: 48px;
     }
 }

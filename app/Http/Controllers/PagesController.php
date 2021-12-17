@@ -26,11 +26,12 @@ class PagesController extends Controller
         )->where('trashed', false)->orderby('view_rate', 'desc')->get();
         // Attach to each news categories the most popular news' titles as description
         foreach ($industryNews as $newsCategory) {
-            $newsCategory->description = $newsCategory->news()->select(
+            $newsCategory->new = $newsCategory->news()->select(
+                'id',
                 $locale . '_title as title',
                 'view_rate',
                 'trashed'
-            )->where('trashed', false)->orderBy('view_rate')->first()->title;
+            )->where('trashed', false)->orderBy('view_rate')->first();
         }
         // Get 6 most viewed product categories
         $prodCategories = ProductsCategory::select(
@@ -212,7 +213,7 @@ class PagesController extends Controller
             $locale . '_text as text',
             'view_rate',
             'img',
-        )->first($id);
+        )->where('id', $id)->first();
         // increase view rate
         $news->view_rate++;
         $news->save();

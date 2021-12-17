@@ -134,6 +134,7 @@ if (aboutPage) {
                 margin: 32,
             },
             1300: {
+                mouseDrag: false,
                 loop: false,
                 margin: 48,
             }
