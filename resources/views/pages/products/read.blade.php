@@ -4,6 +4,21 @@
 
 @section('content')
    <main class="main products-read" data-id="products-read-page">
+        <div class="container breadcrumbs-container">
+            <ul class="breadcrumbs book-read-page__breadcrumbs">
+                <li class="breadcrumbs-item">
+                    <a class="breadcrumbs-link" href="{{route('home')}}">{{__('Home')}}</a>
+                    <svg width="5" height="6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 3c0 1.845 2.23 2.77 3.536 1.464a2.071 2.071 0 000-2.928C2.23.23 0 1.155 0 3z" fill="#D71920"/></svg>
+                </li>
+                <li class="breadcrumbs-item">
+                    <a class="breadcrumbs-link" href="{{route('products')}}">{{__('Products')}}</a>
+                    <svg width="5" height="6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 3c0 1.845 2.23 2.77 3.536 1.464a2.071 2.071 0 000-2.928C2.23.23 0 1.155 0 3z" fill="#D71920"/></svg>
+                </li>
+                <li class="breadcrumbs-item">
+                    <a class="breadcrumbs-link current" href="{{route('products.read', $product->id)}}">{{$product->title}}</a>
+                </li>
+            </ul>
+        </div>
         <section class="vitrin">
             <img class="vitrin-img" src="{{asset('img/products/default-vitrin-bg.jpg')}}">
             <div class="container vitrin-container">

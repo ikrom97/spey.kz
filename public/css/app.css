@@ -293,16 +293,20 @@ input[type="search"]::-webkit-search-results-decoration {
 /* vitrin dropdown end */
 /** vitrin section end */
 /** breadcrumbs start */
+.breadcrumbs-container {
+    position: relative;
+}
 .breadcrumbs {
-    width: 100%;
     display: flex;
-    gap: 10px;
+    gap: 8px;
     align-items: center;
     font-size: 13px;
     color: #8f8f8f;
-    line-height: 1;
-    padding-top: 17px;
-    padding-bottom: 20px;
+    height: 64px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    transform: translateY(-100%);
 }
 .breadcrumbs-item {
     display: flex;
@@ -338,6 +342,8 @@ input[type="search"]::-webkit-search-results-decoration {
     max-width: 1300px;
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
+    margin-left: auto;
+    margin-right: auto;
 }
 .geography-container::-webkit-scrollbar {
     display: none;
@@ -418,6 +424,13 @@ input[type="search"]::-webkit-search-results-decoration {
     .geography-presence__title {
         margin-bottom: 16px;
     }
+    .breadcrumbs {
+        height: 48px;
+        left: 174px;
+    }
+    .vitrin-dropdown__button {
+        height: 50px;
+    }
 }
 @media screen and (max-width: 833px) {
     /** mobile */
@@ -437,6 +450,13 @@ input[type="search"]::-webkit-search-results-decoration {
     .vitrin-container {
         flex-direction: column-reverse;
         gap: 32px;
+    }
+    .breadcrumbs {
+        height: 32px;
+        left: 0;
+    }
+    .vitrin-dropdown {
+        width: 100%;
     }
 }
 /*! adaptive end */
@@ -1175,9 +1195,6 @@ input[type="search"]::-webkit-search-results-decoration {
     padding-left: 30px;
     transition: 0.3s;
 }
-.news-card:hover .news-card__more {
-    padding-left: 0px;
-}
 .news-card__more-icon {
     display: flex;
     justify-content: center;
@@ -1190,10 +1207,6 @@ input[type="search"]::-webkit-search-results-decoration {
     border-radius: 8px;
     background-color: #00b052;
     transition: 0.3s;
-}
-.news-card:hover .news-card__more-icon {
-    left: calc(100% + 5px);
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 15%);
 }
 
 .pagination {
@@ -2170,6 +2183,9 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 /** cooperation section end */
 /** geography presence start */
+.contacts-geography-presence {
+    overflow: hidden;
+}
 .geography-presence-title {
     padding-top: 80px;
 }
@@ -2211,7 +2227,6 @@ input[type="search"]::-webkit-search-results-decoration {
 .geography-info__content {
     max-width: 230px;
     flex-grow: 1;
-    min-width: max-content;
 }
 .geography-info__location-icon {
     display: flex;
@@ -2230,113 +2245,266 @@ input[type="search"]::-webkit-search-results-decoration {
 /** geography presence end */
 /** pharmacovigilanc section start */
 .pharmacovigilanc__container {
-   width: 585px;
-   padding-left: 0px;
-   padding-right: 0px;
+    width: 585px;
+    padding-left: 0px;
+    padding-right: 0px;
 }
 .pharmacovigilanc__title {
-   padding-top: 80px;
-   padding-bottom: 30px;
+    padding-top: 80px;
+    padding-bottom: 30px;
 }
 .pharmacovigilanc__text {
-   color: #8f8f8f;
+    color: #8f8f8f;
 }
 .pharmacovigilanc__text b {
-   color: #1d1d1d;
-   font-weight: 400;
+    color: #1d1d1d;
+    font-weight: 400;
 }
-/** pharmacovigilanc section end */
-/** contact-us section start */
 .contact-us {
-   padding-bottom: 80px;
+    padding-bottom: 80px;
 }
 .contact-us__container {
-   width: 585px;
-   padding-left: 0px;
-   padding-right: 0px;
+    width: 585px;
+    padding-left: 0px;
+    padding-right: 0px;
 }
 .contact-us__title {
     padding-top: 80px;
     padding-bottom: 30px;
 }
 .contact-form {
-   border-radius: 15px;
-   position: relative;
-   display: flex;
-   flex-direction: column;
-   background-color: #fff;
-   width: calc(100% - 33px);
-   margin-left: 33px;
-   padding: 30px 25px 30px 75px;
-   gap: 10px;
+    border-radius: 15px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    width: calc(100% - 33px);
+    margin-left: 33px;
+    padding: 30px 25px 30px 75px;
+    gap: 10px;
 }
 .contact-form__icon {
-   position: absolute;
-   top: 30px;
-   left: -33px;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   border-radius: 15px;
-   background-color: #2659d1;
-   height: 66px;
-   width: 66px;
+    position: absolute;
+    top: 30px;
+    left: -33px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    background-color: #2659d1;
+    height: 66px;
+    width: 66px;
 }
 .contact-form__input {
-   border-radius: 15px;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   padding: 8px 15px;
-   height: 50px;
-   border: 1px solid #707070;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 15px;
+    height: 50px;
+    border: 1px solid #707070;
 }
 .contact-form__input--medicine {
-   border-color: #2ec7d6;
-   background-color: #2ec7d6;
-   color: #fff;
-   font-weight: 600;
+    border-color: #2ec7d6;
+    background-color: #2ec7d6;
+    color: #fff;
+    font-weight: 600;
 }
 .contact-form__input--medicine::placeholder {
-   color: inherit;
+    color: inherit;
 }
 .contact-form__textarea {
-   border: 1px solid #707070;
-   border-radius: 15px;
-   padding: 15px;
-   min-height: 130px;
-   margin: 10px 0px 15px 0px;
+    border: 1px solid #707070;
+    border-radius: 15px;
+    padding: 15px;
+    min-height: 130px;
+    margin: 10px 0px 15px 0px;
 }
 .contact-form__submit-btn {
-   width: 200px;
-   display: flex;
-   justify-content: center;
-   margin-left: auto;
-   transition: 0.3s;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    transition: 0.3s;
 }
 .contact-form__submit-btn:hover {
-   box-shadow: 0px 6px 12px rgba(0, 0, 0, 15%);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 15%);
 }
-/** contact-us section start */
+.pharmacovigilanc {
+    margin-bottom: 80px;
+}
+/** pharmacovigilanc section end */
+/*! adaptive start */
+@media screen and (max-width: 1299px) {
+    /** tablet */
+    .geography-presence-title {
+        padding-top: 48px;
+    }
+    .geography-info {
+        flex-direction: column;
+    }
+    .geography-info__item {
+        margin-left: 20px;
+        border-radius: 12px;
+        height: 60px;
+        padding-left: 32px;
+        padding-right: 8px;
+        box-shadow: 0px 3px 6px rgb(0 0 0 / 10%);
+    }
+    .geography-info__icon {
+        height: 40px;
+        width: 40px;
+        border-radius: 8px;
+        top: calc(50% - 20px);
+        left: -20px;
+    }
+    .geography-info__content {
+        max-width: initial;
+    }
+    .pharmacovigilanc__title {
+        padding-top: 48px;
+        padding-bottom: 16px;
+    }
+    .contact-us__title {
+        display: none;
+    }
+    .pharmacovigilanc {
+        margin-bottom: 48px;
+    }
+    .pharmacovigilanc__container {
+        width: 694px;
+        display: flex;
+        gap: 16px;
+    }
+    .contact-form {
+        margin-top: 48px;
+        margin-left: 20px;
+        margin-right: 0px;
+        width: calc(100% - 20px);
+        padding-left: 40px;
+        min-width: 338px;
+        padding-right: 16px;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        gap: 8px;
+    }
+    .contact-form__icon {
+        height: 40px;
+        width: 40px;
+        border-radius: 8px;
+        left: -20px;
+        top: 16px;
+        padding: 8px;
+    }
+    .contact-form__textarea {
+        margin-top: 0px;
+    }
+    .contact-form__submit-btn {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 833px) {
+    /** mobile */
+    .pharmacovigilanc__container {
+        flex-wrap: wrap;
+        gap: 32px;
+    }
+    .contact-form {
+        margin-top: 0px;
+    }
+}
+/*! adaptive end */
+
 /** all-news section start */
 .all-news {
     padding-top: 80px;
-    padding-bottom: 80px;
+    margin-bottom: 80px;
 }
 .all-news__title {
-    margin-bottom: 30px;
+    margin-bottom: 32px;
 }
 .all-news__list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px 35px;
-    margin-bottom: 30px;
-}
-.all-news__item {
-    width: calc((100% - 70px) / 3);
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 32px;
+    margin-bottom: 32px;
 }
 /** all-news section end */
+/*! adaptive start */
+@media screen and (max-width: 1299px) {
+    /** tablet */
+    .all-news {
+        padding-top: 48px;
+        margin-bottom: 48px;
+    }
+    .all-news__title {
+        margin-bottom: 16px;
+    }
+    .all-news__list {
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+    }
+}
+@media screen and (max-width: 833px) {
+    /** mobile */
+    .all-news__list {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+}
+/*! adaptive end */
+
+/** report section start */
+.report-title {
+    margin-bottom: 32px;
+}
+.report-img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+.report-content {
+    margin-top: 32px;
+    color: #8f8f8f;
+}
+/** report section end */
+/** reports section start */
+.reports {
+    padding-top: 80px;
+    margin-bottom: 80px;
+}
+.reports-title {
+    margin-bottom: 32px;
+}
+.reports-carousel .owl-nav,
+.reports-carousel .owl-dots {
+    display: none;
+}
+/** reports section end */
+/*! adaptive start */
+@media screen and (max-width: 1299px) {
+    /** tablet */
+    .report-title,
+    .reports-title {
+        margin-bottom: 16px;
+    }
+    .report-img {
+        height: 300px;
+        border-radius: 12px;
+    }
+    .report-content {
+        margin-top: 16px;
+    }
+    .reports {
+        padding-top: 48px;
+        margin-bottom: 48px;
+    }
+}
+@media screen and (max-width: 833px) {
+    /** mobile */
+}
+/*! adaptive end */
 
 /*! product-search section start */
 .product-search {

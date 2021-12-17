@@ -190,20 +190,49 @@ class PagesController extends Controller
         )->where('trashed', false)->orderBy('view_rate', 'desc')->get();
 
         if ($request->category) {
-            $allNews = $allNews->where('category_id', $request->category)->paginate(9)->fragment('all-news');
+            $allNews = $allNews->where('category_id', $request->category)->paginate(6)->fragment('all-news');
             $currentCategory = NewsCategory::select(
                 'id',
                 $locale . '_title as title',
             )->find($request->category);
             return view('pages.news.index', compact('allNews', 'newsCategories', 'currentCategory'));
         } else {
-            $allNews = $allNews->paginate(9)->fragment('all-news');
+            $allNews = $allNews->paginate(6)->fragment('all-news');
             return view('pages.news.index', compact('allNews', 'newsCategories'));
         }
     }
     public function newsRead($id)
     {
-        return view('pages.news.read');
+        $locale = App::currentLocale();
+
+        $news = News::select(
+            'id',
+            'category_id',
+            $locale . '_title as title',
+            $locale . '_text as text',
+            'view_rate',
+            'img',
+        )->first($id);
+        // increase view rate
+        $news->view_rate++;
+        $news->save();
+        $newsCategory = NewsCategory::select(
+            'id',
+            'view_rate',
+        )->find($news->category_id);
+        $newsCategory->view_rate++;
+        $newsCategory->save();
+        // get similar news
+        $similarNews = News::select(
+            'id',
+            'category_id',
+            $locale . '_title as title',
+            'view_rate',
+            'img',
+            'trashed',
+        )->where('trashed', false)->orderBy('view_rate', 'desc')->get();
+
+        return view('pages.news.read', compact('news', 'similarNews'));
     }
     public function contacts(Request $request)
     {

@@ -465,6 +465,38 @@ if (aboutPage) {
 
 // This entry need to be wrapped in an IIFE because it need to be isolated against other entry modules.
 (() => {
+/*!*****************************************!*\
+  !*** ./resources/js/pages/news/read.js ***!
+  \*****************************************/
+var newsRead = document.querySelector('.news-read-page');
+
+if (newsRead) {
+  $('.reports-carousel').owlCarousel({
+    nav: true,
+    items: 3,
+    margin: 32,
+    autoplay: true,
+    autoplayTimeout: 4000,
+    autoplayHoverPause: true,
+    responsive: {
+      0: {
+        items: 1,
+        margin: 16
+      },
+      834: {
+        items: 2,
+        margin: 24
+      },
+      1300: {
+        loop: false
+      }
+    }
+  });
+}
+})();
+
+// This entry need to be wrapped in an IIFE because it need to be isolated against other entry modules.
+(() => {
 /*!**********************************************!*\
   !*** ./resources/js/pages/products/index.js ***!
   \**********************************************/
