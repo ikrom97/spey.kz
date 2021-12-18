@@ -82,7 +82,7 @@ class PagesController extends Controller
         if ($siteID) {
             $siteMap = Site::select(
                 'id',
-                $locale . '_map as map',
+                'map',
             )->find($siteID)->map;
         }
 
@@ -255,7 +255,7 @@ class PagesController extends Controller
             'id',
             $locale . '_title as title',
             $locale . '_location as location',
-            $locale . '_map as map',
+            'map',
             $locale . '_address as address',
             'email',
         )->find($siteID);

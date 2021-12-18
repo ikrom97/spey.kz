@@ -19,8 +19,7 @@ class CreateSitesTable extends Migration
             $table->string('ru_title');
             $table->string('en_location')->nullable();
             $table->string('ru_location')->nullable();
-            $table->text('en_map')->nullable();
-            $table->text('ru_map')->nullable();
+            $table->text('map')->nullable();
             $table->text('en_address');
             $table->text('ru_address');
             $table->text('email');
