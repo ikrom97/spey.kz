@@ -5,12 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ProductsCategory extends Model
+class Text extends Model
 {
   use HasFactory;
 
-  public function products()
+  public function page()
   {
-    return $this->hasMany(Product::class, 'category_id');
+    return $this->belongsTo(Page::class, 'page_id');
   }
 }

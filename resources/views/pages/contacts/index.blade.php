@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', __('Contacts'))
+@section('title', $page[$locale . '_title'])
 
 @section('content')
     <main class="contacts-page">
@@ -8,10 +8,8 @@
             <img class="vitrin-img" src="{{asset('img/contacts-vitrin-bg.jpg')}}">
             <div class="container vitrin-container">
                 <div class="vitrin-left">
-                    <h1 class="vitrin-title">{{__('Contacts')}}</h1>
-                    <p class="vitrin__text">
-                        {{__('Write us if you have any questions, want to cooperate or have any questions about Pharmacovigilance')}}.
-                    </p>
+                    <h1 class="vitrin-title">{!! $page['vitrin-title'] !!}</h1>
+                    <p class="vitrin__text">{!! $page['vitrin-text'] !!}</p>
                     <div class="vitrin__link-wrap">
                         <div class="vitrin-dropdown" data-family="vitrin-dropdown">
                             <button class="button vitrin-dropdown__button" data-family="vitrin-dropdown" type="button">{{__('Select region')}}</button>
@@ -31,27 +29,19 @@
         </section>
         <section class="cooperation" id="cooperation">
             <div class="container">
-                <h2 class="cooperation__title">{{__('Cooperation')}}</h2>
-                <p class="cooperation-text">
-                {{__("We are ready to offer regular supplies of affordable and effective drugs in various therapeutic areas. It is possible to refine the products and expand its range to meet the customer's requirements.")}}
-                </p> <br>
-                <p class="cooperation-text">
-                {{__('SPEY is looking for buyers and partners interested both in the manufacture of new drugs and in maintaining existing forms. This allows us and those who cooperate with us to maintain a stronger market position.')}}
-                </p> <br>
-                <p class="cooperation-text">
-                {{__('We have accumulated extensive experience in the production of various dosage forms for different areas of medicine: dermatology, endocrinology, gynecology, cardiology and others. In each industry, SPEY has both its own developments and a pool of clients from among well-known international manufacturers, for whom their products are produced under contractual agreements.')}}
-                </p>
+                <h2 class="cooperation__title">{!! $page['cooperation-title'] !!}</h2>
+                <div>{!! $page['cooperation-text'] !!}</div>
             </div>
         </section>
         <section class="contacts-geography-presence" id="geography-presence">
             <div class="container">
-                <h2 class="geography-presence-title">{{__('Geography of presence')}}</h2>
+                <h2 class="geography-presence-title">{!! $page['geography-title'] !!}</h2>
             </div>
             <div class="geography-container">
                 <ul class="geography-countries">
                     @foreach ($speySites as $site)
                         <li class="countries-item">
-                            <a class="countries-link {{$activeSite->id == $site->id ? 'current' : ''}}" href="{{route('contacts')}}?site={{$site->id}}#geography-presence">{{$site->location}}</a>
+                            <a class="countries-link {{$activeSite->id == $site->id ? 'current' : ''}}" href="{{route('contacts')}}?site={{$site->id}}#geography-presence">{!! $site->location !!}</a>
                         </li>
                     @endforeach
                 </ul>
@@ -101,18 +91,11 @@
         <section class="pharmacovigilanc" id="pharmacovigilance">
             <div class="container pharmacovigilanc__container">
                 <div class="pharmacovigilanc-first">
-                    <h2 class="pharmacovigilanc__title">{{__('Pharmacovigilanc')}}</h2>
-                    <p class="pharmacovigilanc__text">
-                    {{__('You can report all adverse side reactions to Spey drugs')}}:
-                    </p><br>
-                    <p class="pharmacovigilanc__text">
-                    {{__('By filling out the information on the website')}}: <b>www.spey.com.ru</b> <br>
-                    {{__('By sending the information by e-mail')}}: <b>info@spey.com.ru</b> <br>
-                    {{__('By calling a free round-the-clock phone')}}: <b>8-800-600-00-00</b>
-                    </p>
+                    <h2 class="pharmacovigilanc__title">{!! $page['pharmacovigilance-title'] !!}</h2>
+                    <div>{!! $page['pharmacovigilance-text'] !!}</div>
                 </div>
                 <div class="pharmacovigilanc-form">
-                    <h2 class="contact-us__title">{{__('Contact us via online form')}}</h2>
+                    <h2 class="contact-us__title">{!! $page['contacts-form-title'] !!}</h2>
                     <form class="contact-form">
                         <span class="contact-form__icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"><path d="M113.82,0h-7.056a1.764,1.764,0,0,0,0,3.528h7.056a1.764,1.764,0,1,0,0-3.528Z" transform="translate(-98.879)" fill="#fff"/><g transform="translate(0 1.764)"><path d="M19.607,30H18.437a3.517,3.517,0,0,1-1.756,3.042v.473a3.517,3.517,0,0,1-3.512,3.515H9.657a3.517,3.517,0,0,1-3.512-3.515v-.473A3.517,3.517,0,0,1,4.39,30H3.219A3.224,3.224,0,0,0,0,33.222V55.014a3.224,3.224,0,0,0,3.219,3.222H19.607a3.224,3.224,0,0,0,3.219-3.222V33.222A3.224,3.224,0,0,0,19.607,30ZM6.146,51.675H4.39a.879.879,0,0,1,0-1.757H6.146a.879.879,0,0,1,0,1.757Zm0-3.515H4.39a.879.879,0,0,1,0-1.757H6.146a.879.879,0,0,1,0,1.757Zm0-3.515H4.39a.879.879,0,0,1,0-1.757H6.146a.879.879,0,0,1,0,1.757Zm0-3.515H4.39a.879.879,0,0,1,0-1.757H6.146a.879.879,0,0,1,0,1.757ZM8.779,50.8a.878.878,0,0,1,.878-.879H15.51a.879.879,0,0,1,0,1.757H9.657A.878.878,0,0,1,8.779,50.8Zm9.657,4.394H14.925a.879.879,0,0,1,0-1.757h3.512a.879.879,0,0,1,0,1.757Zm0-7.03H9.657a.879.879,0,0,1,0-1.757h8.779a.879.879,0,0,1,0,1.757ZM8.779,43.767a.878.878,0,0,1,.878-.879h7.024a.879.879,0,0,1,0,1.757H9.657A.878.878,0,0,1,8.779,43.767Zm9.657-2.636H9.657a.879.879,0,0,1,0-1.757h8.779a.879.879,0,0,1,0,1.757Z" transform="translate(0 -30)" fill="#fff"/></g><path d="M136.764,91.764h3.528A1.764,1.764,0,0,0,142.056,90H135A1.764,1.764,0,0,0,136.764,91.764Z" transform="translate(-127.115 -84.728)" fill="#fff"/><path d="M454.551,432l.747,3.984a.882.882,0,0,0,1.734,0l.747-3.984Z" transform="translate(-427.929 -406.704)" fill="#fff"/><g transform="translate(26.472 2.47)"><path d="M455.528,47.88V43.764a1.764,1.764,0,1,0-3.528,0V47.88Z" transform="translate(-452 -42)" fill="#fff"/><path d="M452,172h3.528v13.524H452Z" transform="translate(-452 -164.356)" fill="#fff"/></g></svg>

@@ -1,6 +1,6 @@
 <div class="container">
     <h2 class="all-products__title">
-        {{isset($currentCategory) ? $currentCategory->$title : __('All products')}}
+        {{isset($currentCategory) ? $currentCategory[$locale . '_title'] : __('All products')}}
         @if (isset($recipe))
             (@if ($recipe)
                 {{__('With recipe')}}

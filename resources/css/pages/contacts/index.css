@@ -1,5 +1,5 @@
 /** cooperation section start */
-.cooperation-text {
+.cooperation p {
     color: #8f8f8f;
 }
 /** cooperation section end */
@@ -68,10 +68,10 @@
     padding-left: 0px;
     padding-right: 0px;
 }
-.pharmacovigilanc__text {
+.pharmacovigilanc p {
     color: #8f8f8f;
 }
-.pharmacovigilanc__text b {
+.pharmacovigilanc p b {
     color: #1d1d1d;
     font-weight: 400;
 }

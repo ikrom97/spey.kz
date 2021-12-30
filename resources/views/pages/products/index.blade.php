@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', __('Products'))
+@section('title', $page[$locale . '_title'])
 
 @section('content')
     <main class="products-page" data-id="products-page">
@@ -8,10 +8,8 @@
             <img class="vitrin-img" src="{{asset('img/products-vitrin-bg.jpg')}}">
             <div class="container vitrin-container">
                 <div class="vitrin-left">
-                    <h1 class="vitrin-title">{{__('Our products')}}</h1>
-                    <p class="vitrin__text">
-                        {{__('We pay great attention to the issue of the production of drugs and choose the most modern production sites, which are located in several European countries, proven by time and quality control system')}}.
-                    </p>
+                    <h1 class="vitrin-title">{!! $page['vitrin-title'] !!}</h1>
+                    <p class="vitrin__text">{!! $page['vitrin-text'] !!}</p>
                     <div class="vitrin__link-wrap">
                         <a class="button vitrin__link" href="{{route('contacts')}}#cooperation">{{__('Cooperate with us')}}</a>
                     </div>
@@ -20,7 +18,7 @@
         </section>
         <section class="product-search" data-id="product-search">
             <div class="container product-search__container">
-                <h2 class="product-search__title" id="products">{{__("Help to find what you're looking for")}}</h2>
+                <h2 class="product-search__title" id="products">{!! $page['products-search-title'] !!}</h2>
                 <form class="product-search__form" action="{{route('products.search')}}" method="POST">
                     @csrf
                     <label class="product-search__label">
@@ -43,11 +41,11 @@
                     </button>
                     <div class="product-categories__content-wrap">
                         <ul class="product-categories__content">
-                            @foreach ($productsCategories as $category)
+                            @foreach ($data->categories as $category)
                                 <li class="product-categories__item">
                                     <a class="product-categories__link @isset($currentCategory) {{$currentCategory->id == $category->id ? 'current' : ''}} @endisset" data-name="category-link" data-type="category" data-category="{{$category->id}}" href="#">
-                                        <span data-type="category" data-category="{{$category->id}}">{{$category->title}}</span>
-                                        <span data-type="category" data-category="{{$category->id}}">{{$category->title}}</span>
+                                        <span data-type="category" data-category="{{$category->id}}">{!! $category->title !!}</span>
+                                        <span data-type="category" data-category="{{$category->id}}">{!! $category->title !!}</span>
                                     </a>
                                 </li>
                             @endforeach
@@ -59,13 +57,13 @@
         <section class="all-products" data-id="products-section">
             <div class="container">
                 <h2 class="title all-products__title">
-                    {{isset($currentCategory) ? $currentCategory->$title : __('All products')}}
+                    {!! isset($currentCategory) ? $currentCategory[$locale .'_title'] : $page['all-products-title'] !!}
                 </h2>
                 <ul class="all-products__list">
-                    @if ($products->count() == 0)
+                    @if ($data->products->count() == 0)
                         {{__('No products')}}
                     @else
-                        @foreach ($products as $product)
+                        @foreach ($data->products as $product)
                             <li class="all-products__item">
                                 <x-products-card :product="$product"/>
                             </li>
@@ -73,7 +71,7 @@
                     @endif
                 </ul>
                 <div class="all-products__pagination">
-                    {{$products->links('components/pagination')}}
+                    {{$data->products->links('components/pagination')}}
                 </div>
             </div>
             @if (isset($currentCategory))

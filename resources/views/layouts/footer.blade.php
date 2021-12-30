@@ -12,7 +12,7 @@
             </ul>
             <ul class="footer-navigation">
                 <li class="footer-navigation__item" data-action="show">{{__('Products')}}</li>
-                @foreach ($footerProdCategories as $category)
+                @foreach ($footer->products as $category)
                     <li class="footer-navigation__item">
                         <a class="footer-navigation__link" data-type="footer-category" href="{{route('products')}}?category={{$category->id}}#products">{{$category->title}}</a>
                     </li>
@@ -20,7 +20,7 @@
             </ul>
             <ul class="footer-navigation">
                 <li class="footer-navigation__item" data-action="show">{{__('Industry news')}}</li>
-                @foreach ($footerNewsCategories as $category)
+                @foreach ($footer->news as $category)
                     <li class="footer-navigation__item">
                         <a class="footer-navigation__link" href="{{route('news')}}?category={{$category->id}}#all-news">{{$category->title}}</a>
                     </li>
