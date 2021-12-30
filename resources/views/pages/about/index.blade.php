@@ -4,7 +4,7 @@
 
 @section('content')
     <main class="about-page">
-        <section class="vitrin">
+        <section class="vitrin" id="vitrin">
             <img class="vitrin-img" src="{{asset('img/about-vitrin-bg.jpg')}}">
             <div class="container vitrin-container">
                 <div class="vitrin-left">
@@ -46,13 +46,13 @@
                 </button>
             </div>
         </section>
-        <section class="present-time">
+        <section class="present-time" id="present-time">
             <div class="container present-time__container">
                 <h2 class="present-time__title">{!! $page['present-time-title'] !!}</h2>
                 {!! $page['present-time-text'] !!}
             </div>
         </section>
-        <section class="company-in-numbers">
+        <section class="company-in-numbers" id="companies">
             <div class="container">
                 <h2 class="company-numbers__title">{!! $page['company-number-title'] !!}</h2>
                 <div class="company-carousel-wrap">
@@ -101,7 +101,7 @@
                 </div>
             </div>
         </section>
-        <section class="rdp-areas">
+        <section class="rdp-areas" id="rdp">
             <div class="container">
                 <h2 class="rdp-areas__heading">{!! $page['rdp-title'] !!}</h2>
                 <div class="rdp-areas-carousel__wrap">

@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Helpers\Helper;
 use App\Models\NewsCategory;
 use App\Models\Page;
 use App\Models\ProductsCategory;

@@ -4,7 +4,7 @@
 
 @section('content')
     <main class="contacts-page">
-        <section class="vitrin">
+        <section class="vitrin" id="vitrin">
             <img class="vitrin-img" src="{{asset('img/contacts-vitrin-bg.jpg')}}">
             <div class="container vitrin-container">
                 <div class="vitrin-left">

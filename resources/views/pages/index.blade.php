@@ -4,7 +4,7 @@
 
 @section('content')
     <main class="home-page">
-        <section class="vitrin">
+        <section class="vitrin" id="vitrin">
             <img class="vitrin-img" src="{{asset('img/home-vitrin-bg.jpg')}}">
             <div class="container vitrin-container">
                 <div class="vitrin-left">
@@ -16,7 +16,7 @@
                 </div>
             </div>
         </section>
-        <section class="our-values">
+        <section class="our-values" id="values">
             <div class="our-values-inner">
                 <h2 class="our-values-title">{!! $page['our-values-title'] !!}</h2>
                 <div class="owl-carousel values-carousel">
@@ -29,7 +29,7 @@
                 </div>
             </div>
         </section>
-        <section class="industry-news">
+        <section class="industry-news" id="news">
             <h2 class="industry-news-title">{!! $page['industry-news-title'] !!}</h2>
             <div class="owl-carousel industry-news-carousel">
                 @foreach ($data->newsCategories as $newsCategory)
@@ -46,7 +46,7 @@
                 @endforeach
             </div>
         </section>
-        <section class="products-categories">
+        <section class="products-categories" id="products">
             <div class="container">
                 <h2 class="products-block-title">{!! $page['products-block-title'] !!}</h2>
                 <ul class="products-categories-list">
@@ -74,7 +74,7 @@
                 </div>
             </div>
         </section>
-        <section class="popular-products">
+        <section class="popular-products" id="popular-products">
             <div class="container">
                 <h2 class="popular-products-title">{!! $page['popular-products-title'] !!}</h2>
                 <div class="owl-carousel popular-products-carousel">

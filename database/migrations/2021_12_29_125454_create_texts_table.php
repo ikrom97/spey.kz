@@ -17,6 +17,7 @@ class CreateTextsTable extends Migration
       $table->id();
       $table->integer('page_id');
       $table->string('caption');
+      $table->string('anchor');
       $table->text('en_text');
       $table->text('ru_text');
       $table->timestamps();

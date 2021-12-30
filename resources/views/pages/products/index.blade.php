@@ -4,7 +4,7 @@
 
 @section('content')
     <main class="products-page" data-id="products-page">
-        <section class="vitrin">
+        <section class="vitrin" id="vitrin">
             <img class="vitrin-img" src="{{asset('img/products-vitrin-bg.jpg')}}">
             <div class="container vitrin-container">
                 <div class="vitrin-left">
@@ -16,7 +16,7 @@
                 </div>
             </div>
         </section>
-        <section class="product-search" data-id="product-search">
+        <section class="product-search" data-id="product-search" id="search">
             <div class="container product-search__container">
                 <h2 class="product-search__title" id="products">{!! $page['products-search-title'] !!}</h2>
                 <form class="product-search__form" action="{{route('products.search')}}" method="POST">
@@ -54,7 +54,7 @@
                 </div>
             </div>
         </section>
-        <section class="all-products" data-id="products-section">
+        <section class="all-products" data-id="products-section" id="products">
             <div class="container">
                 <h2 class="title all-products__title">
                     {!! isset($currentCategory) ? $currentCategory[$locale .'_title'] : $page['all-products-title'] !!}
