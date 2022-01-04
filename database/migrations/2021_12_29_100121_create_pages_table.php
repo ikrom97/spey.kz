@@ -18,7 +18,6 @@ class CreatePagesTable extends Migration
       $table->string('en_title')->unique();
       $table->string('ru_title')->unique();
       $table->string('route');
-      $table->text('content')->nullable();
       $table->timestamps();
     });
   }

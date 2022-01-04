@@ -229,7 +229,7 @@
 }
 
 .mission-vision {
-  margin-top: 80px;
+  padding-top: 80px;
   display: flex;
   gap: 24px;
   flex-wrap: wrap;
@@ -397,7 +397,7 @@
     margin-bottom: 8px;
   }
   .mission-vision {
-    margin-top: 48px;
+    padding-top: 48px;
     gap: 16px;
   }
   .mission-vision-item {

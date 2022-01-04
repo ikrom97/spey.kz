@@ -72,7 +72,7 @@
                         <svg xmlns="http://www.w3.org/2000/svg" width="8" height="14.525" viewBox="0 0 8 14.525"><g id="download" transform="translate(0 14.525) rotate(-90)"><path id="Expand_More" d="M13.276.216,7.263,6.229,1.251.215A.733.733,0,0,0,.214,1.253l6.53,6.532h0a.732.732,0,0,0,1.036,0l6.53-6.532A.733.733,0,1,0,13.276.216Z" fill="#fff"/></g></svg>
                     </span>
                 </div>
-                <ul class="mission-vision">
+                <ul class="mission-vision" id="mission-vision">
                     <li class="mission-vision-item">
                         <div class="mission-vision-content">
                             <h3 class="mission-vision-title">{!! $page['our-mission-title'] !!}</h3>
